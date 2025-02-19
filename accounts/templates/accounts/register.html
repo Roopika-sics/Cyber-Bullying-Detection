@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center h-screen bg-gray-100">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-96">
+        <h2 class="text-2xl font-bold text-center mb-4">Register</h2>
+
+        <form method="post">
+            {% csrf_token %}
+     
+            <input type="text" name="username" placeholder="Username" class="w-full p-2 border rounded mb-1" value="{{ form.username.value|default:'' }}">
+            {% if form.username.errors %}
+                <p class="text-red-500 mb-3">{{ form.username.errors.0 }}</p>
+            {% endif %}
+
+   
+            <input type="email" name="email" placeholder="Email" class="w-full p-2 border rounded mb-1" value="{{ form.email.value|default:'' }}">
+            {% if form.email.errors %}
+                <p class="text-red-500 mb-3">{{ form.email.errors.0 }}</p>
+            {% endif %}
+
+            <input type="text" name="area_of_interest" placeholder="Area of Interest" class="w-full p-2 border rounded mb-1" value="{{ form.area_of_interest.value|default:'' }}">
+            {% if form.area_of_interest.errors %}
+                <p class="text-red-500 mb-3">{{ form.area_of_interest.errors.0 }}</p>
+            {% endif %}
+            
+
+            <input type="password" name="password" placeholder="Password" class="w-full p-2 border rounded mb-1">
+            <input type="password" name="confirm_password" placeholder="Confirm Password" class="w-full p-2 border rounded mb-1">
+            {% if form.confirm_password.errors %}
+                <p class="text-red-500 mb-3">{{ form.confirm_password.errors.0 }}</p>
+            {% endif %}
+
+            <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded">Register</button>
+        </form>
+
+        <p class="text-center mt-4">Already have an account? 
+            <a href="{% url 'login' %}" class="text-blue-500">Login</a>
+        </p>
+    </div>
+</body>
+</html>
