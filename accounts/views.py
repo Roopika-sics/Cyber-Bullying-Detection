@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from .forms import RegistrationForm
 from django.contrib import messages
 from .models import Profile
+from django.contrib.auth.decorators import login_required
 
 def register(request):
     if request.method == "POST":
@@ -13,9 +14,12 @@ def register(request):
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
             area_of_interest = form.cleaned_data['area_of_interest']
+            age = form.cleaned_data['age']
+            country = form.cleaned_data['country']
+            state = form.cleaned_data['state']
             
             user = User.objects.create_user(username=username, email=email, password=password)
-            Profile.objects.create(user=user, area_of_interest=area_of_interest)
+            Profile.objects.create(user=user, area_of_interest=area_of_interest, age=age, country=country, state=state)
             return redirect('login')  
     else:
         form = RegistrationForm()
@@ -32,9 +36,10 @@ def user_login(request):
             return redirect("dashboard")
         else:
             messages.error(request, 'Invalid username or password')
-            
+
     return render(request, "accounts/login.html")
 
+@login_required(login_url='login')
 def dashboard(request):
     return render(request, "accounts/dashboard.html")
 

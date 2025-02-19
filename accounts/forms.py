@@ -7,6 +7,9 @@ class RegistrationForm(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput)
     confirm_password = forms.CharField(widget=forms.PasswordInput)
     area_of_interest = forms.CharField(max_length=100, required=True)
+    age = forms.IntegerField()
+    country = forms.CharField(max_length=100, required=True)
+    state = forms.CharField(max_length=100, required=True)
 
     def clean(self):
         cleaned_data = super().clean()
