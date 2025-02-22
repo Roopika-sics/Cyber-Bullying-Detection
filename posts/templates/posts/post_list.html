@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Register</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <h2>
+        Hlo
+    </h2>
+    {% for post in posts %}
+    <div>
+        <p>{{ post.user.username }}: {{ post.content }}</p>
+        {% if post.image %}
+            <img src="{{ post.image.url }}" width="300">
+        {% endif %}
+        <p>Likes: {{ post.likes.count }}</p>
+        <a href="{% url 'like_post' post.id %}">Like</a>
+
+        <form method="post" action="{% url 'comment_post' post.id %}">
+            {% csrf_token %}
+            <input type="text" name="text" placeholder="Add a comment">
+            <button type="submit">Comment</button>
+        </form>
+
+        {% for comment in post.comments.all %}
+            <p>{{ comment.user.username }}: {{ comment.text }}</p>
+        {% endfor %}
+    </div>
+{% endfor %}    
+</body>
+
