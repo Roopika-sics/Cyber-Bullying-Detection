@@ -17,6 +17,7 @@ def register(request):
             username = form.cleaned_data['username']
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
+            confirm_password = request.POST.get('confirm_password')
             area_of_interest = form.cleaned_data['area_of_interest']
             age = form.cleaned_data['age']
             country = form.cleaned_data['country']
@@ -24,7 +25,10 @@ def register(request):
             
             user = User.objects.create_user(username=username, email=email, password=password)
             Profile.objects.create(user=user, area_of_interest=area_of_interest, age=age, country=country, state=state)
+
+            messages.success(request, 'Registration Successfull! please login')
             return redirect('login')  
+        
     else:
         form = RegistrationForm()
 
