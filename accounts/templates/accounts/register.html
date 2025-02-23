@@ -3,63 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
     <title>Register</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #ffffff;
+            color: white;
+        }
+        .register-container {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+        .register-box {
+            background: #ffffff;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            width: 450px;
+        }
+        .form-control {
+            background: #f1f5f9;
+            border: none;
+            color: #1e293b;
+        }
+        .form-control::placeholder {
+            color: #64748b;
+        }
+        .register-btn {
+            background: #2563eb;
+            border: none;
+            color: white;
+        }
+        .register-btn:hover {
+            background: #1d4ed8;
+        }
+        .login-link {
+            color: red;
+        }
+    </style>
 </head>
-<body class="flex items-center justify-center h-screen bg-gray-100">
-    <div class="bg-white p-8 rounded-lg shadow-lg w-96">
-        <h2 class="text-2xl font-bold text-center mb-4">Register</h2>
+<body>
+    <div class="register-container">
+        <div class="flex flex-wrap w-3/4 lg:w-2/3">
+            <!-- Left Side: Image -->
+            <div class="w-full lg:w-1/2 flex justify-center items-center">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="w-3/4" alt="Illustration">
+            </div>
+            
+            <!-- Right Side: Register Form -->
+            <div class="w-full lg:w-1/2 flex justify-center items-center">
+                <div class="register-box">
+                    <div class="text-center mb-4 mt-[-10px]">
+                        <p class="text-2xl font-extrabold text-blue-900">Create Account</p>
+                    </div>
 
-        <form method="post">
-            {% csrf_token %}
-     
-            <input type="text" name="username" placeholder="Username" class="w-full p-2 border rounded mb-1" value="{{ form.username.value|default:'' }}">
-            {% if form.username.errors %}
-                <p class="text-red-500 mb-3">{{ form.username.errors.0 }}</p>
-            {% endif %}
+                    <form method="post">
+                        {% csrf_token %}
 
-   
-            <input type="email" name="email" placeholder="Email" class="w-full p-2 border rounded mb-1" value="{{ form.email.value|default:'' }}">
-            {% if form.email.errors %}
-                <p class="text-red-500 mb-3">{{ form.email.errors.0 }}</p>
-            {% endif %}
+                        {% if messages %}
+                        <div class="mb-3 text-red-600">
+                            {% for message in messages %}
+                            <p>{{ message }}</p>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        
+                        <input type="text" name="username" placeholder="Username" class="form-control w-full p-3 rounded-full mb-3" value="{{ form.username.value|default:'' }}" required>
+                        
+                        <input type="email" name="email" placeholder="Email" class="form-control w-full p-3 rounded-full mb-3" value="{{ form.email.value|default:'' }}" required>
+                        
+                        <input type="text" name="area_of_interest" placeholder="Area of Interest" class="form-control w-full p-3 rounded-full mb-3" value="{{ form.area_of_interest.value|default:'' }}">
 
-            <input type="text" name="area_of_interest" placeholder="Area of Interest" class="w-full p-2 border rounded mb-1" value="{{ form.area_of_interest.value|default:'' }}">
-            {% if form.area_of_interest.errors %}
-                <p class="text-red-500 mb-3">{{ form.area_of_interest.errors.0 }}</p>
-            {% endif %}
+                        <input type="password" name="password" placeholder="Password" class="form-control w-full p-3 rounded-full mb-3" required>
+                        
+                        <input type="password" name="confirm_password" placeholder="Confirm Password" class="form-control w-full p-3 rounded-full mb-3" required>
 
+                        <input type="text" name="age" placeholder="Age" class="form-control w-full p-3 rounded-full mb-3">
 
-            <input type="password" name="password" placeholder="Password" class="w-full p-2 border rounded mb-1">
-            <input type="password" name="confirm_password" placeholder="Confirm Password" class="w-full p-2 border rounded mb-1">
-            {% if form.confirm_password.errors %}
-                <p class="text-red-500 mb-3">{{ form.confirm_password.errors.0 }}</p>
-            {% endif %}
+                        <input type="text" name="country" placeholder="Country" class="form-control w-full p-3 rounded-full mb-3">
 
-            <input type="text" name="age" placeholder="Age" class="w-full p-2 border rounded mb-1">
-            {% if form.age.errors %}
-                <p class="text-red-500 mb-3">{{ form.age.errors.0 }}</p>
-            {% endif %}
+                        <input type="text" name="state" placeholder="State" class="form-control w-full p-3 rounded-full mb-3">
 
-            <input type="text" name="country" placeholder="Country" class="w-full p-2 border rounded mb-1">
-            {% if form.country.errors %}
-                <p class="text-red-500 mb-3">{{ form.country.errors.0 }}</p>
-            {% endif %}
+                        <button type="submit" class="w-full register-btn p-3 rounded-full mt-4 text-white font-semibold transition">
+                            REGISTER
+                        </button>
+                    </form>
 
-            <input type="text" name="state" placeholder="State" class="w-full p-2 border rounded mb-1">
-            {% if form.state.errors %}
-                <p class="text-red-500 mb-3">{{ form.state.errors.0 }}</p>
-            {% endif %}
-
-            <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded">Register</button>
-        </form>
-
-        <p class="text-center mt-4">Already have an account? 
-            <a href="{% url 'login' %}" class="text-blue-500">Login</a>
-        </p>
+                    <p class="text-center text-sm mt-4 text-blue-800">
+                        Already have an account?
+                        <a href="{% url 'login' %}" class="login-link">Login</a>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
