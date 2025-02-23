@@ -23,6 +23,10 @@ def create_post(request):
 @login_required
 def post_list(request):
     posts = Post.objects.all().order_by("-created_at")
+
+    for post in posts:
+        post.is_liked_by_user = post.likes.filter(user=request.user).exists()
+        
     return render(request, "posts/post_list.html", {"posts": posts})
 
 @never_cache
