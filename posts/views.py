@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Post, Like, Comment
@@ -28,13 +29,15 @@ def post_list(request):
 @login_required
 def like_post(request, post_id):
     post = get_object_or_404(Post, id=post_id)
-    like = Like.objects.filter(user=request.user, post=post).first()
-    if like:
+    like, created = Like.objects.get_or_create(user=request.user, post=post)
+
+    if not created:
         like.delete()
+        liked = False
     else:
-        Like.objects.create(user=request.user, post=post)
-        
-    return redirect("home")
+        liked = True
+   
+    return JsonResponse({"liked": liked, "likes_count": post.likes.count()})
 
 @never_cache
 @login_required

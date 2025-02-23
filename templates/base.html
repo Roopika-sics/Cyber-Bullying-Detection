@@ -19,11 +19,43 @@
 
 
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://kit.fontawesome.com/a076d05399.js"crossorigin="anonymous"></script>
 <script>
     if (performance.navigation.type === 2) {
         window.location.href = "{% url 'login' %}";  
     }
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll(".like-btn").forEach(button => {
+                button.addEventListener("click", function () {
+                    let postId = this.getAttribute("data-post-id");
+                    let likeButton = this;
+                    let likeCountSpan = document.getElementById(`likes-count-${postId}`);
+                    let likeUrl = `{% url 'like_post' 0 %}`.replace("0", postId); 
+        
+                    fetch(likeUrl, {
+                        method: "POST",
+                        headers: {
+                            "X-CSRFToken": "{{ csrf_token }}",
+                            "Content-Type": "application/json"
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.liked) {
+                            likeButton.textContent = "Unlike";
+                        } else {
+                            likeButton.textContent = "Like";
+                        }
+                        likeCountSpan.textContent = data.likes_count;
+                    })
+                    .catch(error => console.error("Error:", error));
+                });
+            });
+        });
+        </script>
+        
 </body>
 </html>
