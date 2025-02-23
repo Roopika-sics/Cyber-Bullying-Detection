@@ -2,7 +2,9 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Post, Like, Comment
 from .forms import PostForm, CommentForm
+from django.views.decorators.cache import never_cache
 
+@never_cache
 @login_required
 def create_post(request):
     if request.method == "POST":
@@ -16,17 +18,20 @@ def create_post(request):
         form = PostForm()
     return render(request, "posts/create_post.html", {"form": form})
 
+@never_cache
 @login_required
 def post_list(request):
     posts = Post.objects.all().order_by("-created_at")
     return render(request, "posts/post_list.html", {"posts": posts})
 
+@never_cache
 @login_required
 def like_post(request, post_id):
     post = get_object_or_404(Post, id=post_id)
     Like.objects.get_or_create(user=request.user, post=post)
     return redirect("home")
 
+@never_cache
 @login_required
 def comment_on_post(request, post_id):
     post = get_object_or_404(Post, id=post_id)

@@ -115,11 +115,11 @@ def reset_password(request):
 
     return render(request, "accounts/reset_password.html")
 
-
-@login_required(login_url='login')
-def dashboard(request):
-    return render(request, "accounts/dashboard.html")
-
 def user_logout(request):
     logout(request)
+    request.session.flush() 
+    request.session.modified = True 
+    response = redirect('login')  
+    response['Cache-Control'] = 'no-store, no-cache, must-revalidate, max-age=0'
+    response['Pragma'] = 'no-cache'
     return redirect("login")

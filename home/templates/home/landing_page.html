@@ -21,5 +21,11 @@
             {% endif %}
         </div>
     </div>
+
+    <script>
+        if (performance.navigation.type === 2) {
+            window.location.href = "{% url 'login' %}";  
+        }
+      </script>
 </body>
 </html>
