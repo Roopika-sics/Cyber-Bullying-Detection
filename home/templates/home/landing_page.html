@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
+{% extends "base.html" %}
+{% block content %}
+
 <body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen">
     <div class="text-center p-6 bg-white shadow-lg rounded-lg">
         <h1 class="text-3xl font-bold text-blue-600">Welcome to Our Site</h1>
@@ -21,11 +16,4 @@
             {% endif %}
         </div>
     </div>
-
-    <script>
-        if (performance.navigation.type === 2) {
-            window.location.href = "{% url 'login' %}";  
-        }
-      </script>
-</body>
-</html>
+{% endblock %}

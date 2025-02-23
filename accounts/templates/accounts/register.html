@@ -1,51 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <style>
-        body {
-            background-color: #ffffff;
-            color: white;
-        }
-        .register-container {
-            display: flex;
-            height: 100vh;
-            align-items: center;
-            justify-content: center;
-        }
-        .register-box {
-            background: #ffffff;
-            padding: 3rem;
-            border-radius: 12px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            width: 450px;
-        }
-        .form-control {
-            background: #f1f5f9;
-            border: none;
-            color: #1e293b;
-        }
-        .form-control::placeholder {
-            color: #64748b;
-        }
-        .register-btn {
-            background: #2563eb;
-            border: none;
-            color: white;
-        }
-        .register-btn:hover {
-            background: #1d4ed8;
-        }
-        .login-link {
-            color: red;
-        }
-    </style>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+
     <div class="register-container">
         <div class="flex flex-wrap w-3/4 lg:w-2/3">
             <!-- Left Side: Image -->
@@ -98,5 +53,5 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+
+{% endblock %}

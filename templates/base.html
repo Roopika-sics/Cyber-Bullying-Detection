@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+{% block content %}
+{% endblock %}
+
+
+
+<script src="https://kit.fontawesome.com/a076d05399.js"crossorigin="anonymous"></script>
+<script>
+    if (performance.navigation.type === 2) {
+        window.location.href = "{% url 'login' %}";  
+    }
+    </script>
+</body>
+</html>

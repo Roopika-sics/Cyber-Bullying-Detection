@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Verify OTP</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
+{% extends "base.html" %}
+{% block content %}
 <body class="flex items-center justify-center h-screen bg-gray-100">
     <div class="bg-white p-8 rounded-lg shadow-lg w-96">
         <h2 class="text-2xl text-center font-extrabold text-blue-900 mb-4">Verify OTP</h2>
@@ -21,5 +16,4 @@
             <button type="submit" class="w-full bg-blue-500 p-3 rounded-full mt-4 text-white font-semibold hover:bg-blue-600 transition">Verify</button>
         </form>
     </div>
-</body>
-</html>
+{% endblock %}
