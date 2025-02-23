@@ -70,7 +70,7 @@
                         {% endfor %}
 
                         <input type="text" name="username" placeholder="Username" class="form-control w-full p-3 rounded-full mb-3" value="{{ form.username.value|default:'' }}" required>
-                            
+
                         <input type="email" name="email" placeholder="Email" class="form-control w-full p-3 rounded-full mb-3" value="{{ form.email.value|default:'' }}" required>
                         
                         <input type="text" name="area_of_interest" placeholder="Area of Interest" class="form-control w-full p-3 rounded-full mb-3" value="{{ form.area_of_interest.value|default:'' }}">
@@ -92,7 +92,7 @@
 
                     <p class="text-center text-sm mt-4 text-blue-800">
                         Already have an account?
-                        <a href="{% url 'login' %}" class="login-link">Login</a>
+                        <a href="{% url 'login' %}" class="login-link hover:underline">Login</a>
                     </p>
                 </div>
             </div>

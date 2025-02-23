@@ -16,6 +16,7 @@ def create_post(request):
         form = PostForm()
     return render(request, "posts/create_post.html", {"form": form})
 
+@login_required
 def post_list(request):
     posts = Post.objects.all().order_by("-created_at")
     return render(request, "posts/post_list.html", {"posts": posts})
