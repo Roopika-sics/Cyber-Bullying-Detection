@@ -26,7 +26,7 @@ def post_list(request):
 
     for post in posts:
         post.is_liked_by_user = post.likes.filter(user=request.user).exists()
-        
+
     return render(request, "posts/post_list.html", {"posts": posts})
 
 @never_cache
@@ -48,10 +48,15 @@ def like_post(request, post_id):
 def comment_on_post(request, post_id):
     post = get_object_or_404(Post, id=post_id)
     if request.method == "POST":
-        form = CommentForm(request.POST)
-        if form.is_valid():
-            comment = form.save(commit=False)
-            comment.user = request.user
-            comment.post = post
-            comment.save()
-    return redirect("home")
+        text = request.POST.get("text")
+
+        if text:
+            comment = Comment.objects.create(user=request.user, post=post, text=text)
+            return JsonResponse({
+                "success": True,
+                "comment_id": comment.id,
+                "username": comment.user.username,
+                "text": comment.text,
+            })
+    
+    return JsonResponse({"success": False}, status=400)
