@@ -6,7 +6,7 @@
     Hlo
 </h2>
 {% for post in posts %}
-<div>
+<div class="bg-black">
     <p>{{ post.user.username }}: {{ post.content }}</p>
     {% if post.image %}
         <img src="{{ post.image.url }}" width="300">

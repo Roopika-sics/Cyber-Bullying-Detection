@@ -28,7 +28,12 @@ def post_list(request):
 @login_required
 def like_post(request, post_id):
     post = get_object_or_404(Post, id=post_id)
-    Like.objects.get_or_create(user=request.user, post=post)
+    like = Like.objects.filter(user=request.user, post=post).first()
+    if like:
+        like.delete()
+    else:
+        Like.objects.create(user=request.user, post=post)
+        
     return redirect("home")
 
 @never_cache
