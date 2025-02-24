@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from .forms import RegistrationForm
@@ -9,6 +9,8 @@ import random
 from django.core.mail import send_mail
 from django.utils.timezone import now, timedelta
 from .models import OTP
+from django.views.decorators.cache import never_cache
+from django.contrib.auth.decorators import login_required
 
 def register(request):
     if request.method == "POST":
@@ -114,6 +116,15 @@ def reset_password(request):
             messages.error(request, "Passwords do not match")
 
     return render(request, "accounts/reset_password.html")
+
+@never_cache
+@login_required
+def user_profile(request, username):
+    user = get_object_or_404(User, username=username)
+    profile = get_object_or_404(Profile, user=user)
+
+    return render(request, 'accounts/user_profile.html', {'user': user, 'profile': profile})
+
 
 def user_logout(request):
     logout(request)

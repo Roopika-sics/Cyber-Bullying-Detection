@@ -21,6 +21,7 @@
         <div class="logout">
             {% if user.is_authenticated %}
             <a href="{% url 'logout' %}" class="text-white font-bold text-lg ml-4 hover:text-blue-500">logout</a>
+            <a href="{% url 'user_profile' user.username %}" class="text-white font-bold text-lg ml-4 hover:text-blue-500">Profile</a>
             {% else %}
             <a href="{% url 'login' %}" class="text-white font-bold text-lg ml-4 hover:text-blue-500">login</a>
             {% endif %}

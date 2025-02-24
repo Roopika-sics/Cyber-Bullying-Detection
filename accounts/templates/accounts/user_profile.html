@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}{{ user.username }}'s Profile{% endblock %}
+{% block content %}
+
+<div class="profile-section bg-white p-8 rounded-lg shadow-lg text-black">
+    <h2 class="text-2xl text-center font-extrabold text-blue-900 mb-4">{{ profile.user }} Profile</h2>
+    <div class="profile-container">
+        <div class="profile-info flex gap-2">
+            <p class="profile-label">Username:</p>
+            <p class="profile-value">{{ profile.user }}</p>
+        </div>
+        <div class="profile-info flex gap-2">
+            <p class="profile-label">Email:</p>
+            <p class="profile-value">{{ user.email }}</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
