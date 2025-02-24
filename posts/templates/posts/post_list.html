@@ -2,6 +2,9 @@
 {% block title %}Post List{% endblock %}
 {% block content %}
 
+<div class="header w-full text-right  mt-2">
+    <a class="btn bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded mr-2" href="{% url 'logout' %}">logout</a>
+</div>
 <div class="max-w-2xl mx-auto mt-10 space-y-6">
     {% for post in posts %}
     <div class="bg-gray-900 text-white rounded-lg shadow-lg p-4">
