@@ -28,3 +28,39 @@ class RegistrationForm(forms.Form):
             self.add_error('confirm_password', 'Passwords do not match.')
 
         return cleaned_data
+
+
+class EditProfileForm(forms.Form):
+    username = forms.CharField(max_length=150, widget=forms.TextInput(attrs={'class': 'text-black p-2 w-full'}))
+    email = forms.EmailField(widget=forms.TextInput(attrs={'class': 'text-black p-2 w-full'}))
+    area_of_interest = forms.CharField(max_length=100, required=True, widget=forms.TextInput(attrs={'class': 'text-black p-2 w-full'}))
+    age = forms.IntegerField(widget=forms.TextInput(attrs={'class': 'text-black p-2 w-full'}))
+    country = forms.CharField(max_length=100, required=True, widget=forms.TextInput(attrs={'class': 'text-black p-2 w-full'}))
+    state = forms.CharField(max_length=100, required=True, widget=forms.TextInput(attrs={'class': 'text-black p-2 w-full'}))
+
+    def __init__(self, *args, **kwargs):
+        self.user = kwargs.pop('user', None)
+        super().__init__(*args, **kwargs)
+
+        # Pre-fill fields with user data
+        if self.user:
+            self.fields['username'].initial = self.user.username
+            self.fields['email'].initial = self.user.email
+            profile = getattr(self.user, 'profile', None)
+            if profile:
+                self.fields['age'].initial = profile.age
+                self.fields['country'].initial = profile.country
+                self.fields['state'].initial = profile.state
+                self.fields['area_of_interest'].initial = profile.area_of_interest
+
+    def clean_username(self):
+        username = self.cleaned_data.get('username')
+        if User.objects.exclude(pk=self.user.pk).filter(username=username).exists():
+            raise forms.ValidationError("This username is already taken.")
+        return username
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if User.objects.exclude(pk=self.user.pk).filter(email=email).exists():
+            raise forms.ValidationError("This email is already registered.")
+        return email

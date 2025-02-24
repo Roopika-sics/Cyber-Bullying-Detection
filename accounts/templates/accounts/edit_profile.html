@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Profile{% endblock %}
+
+{% block content %}
+<div class="max-w-3xl mx-auto mt-10 bg-gray-800 p-6 rounded-lg shadow-lg text-white">
+    <h2 class="text-3xl font-bold text-blue-400">Edit Profile</h2>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="mb-4 p-3 rounded {% if message.tags == 'success' %} bg-green-500 {% else %} bg-red-500 {% endif %}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <form method="POST" class="mt-6">
+        {% csrf_token %}
+        
+        <div class="mb-4">
+            <label class="block text-lg font-semibold">Username</label>
+            {{ form.username }}
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-lg font-semibold">Email</label>
+            {{ form.email }}
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-lg font-semibold">Age</label>
+            {{ form.age }}
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-lg font-semibold">Country</label>
+            {{ form.country }}
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-lg font-semibold">State</label>
+            {{ form.state }}
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-lg font-semibold">Area of Interest</label>
+            {{ form.area_of_interest }}
+        </div>
+        <div class="btns flex justify-between">
+            <button type="submit" class="px-4 py-2 bg-blue-500 hover:bg-blue-700 rounded">Update Profile</button>
+            <div class="mt-4">
+                <a href="{% url 'user_profile' user.username %}" class="text-blue-300 hover:underline">Back to Profile</a>
+            </div>
+        </div>
+    </form>
+    
+    
+</div>
+{% endblock %}

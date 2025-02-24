@@ -11,6 +11,8 @@ from django.utils.timezone import now, timedelta
 from .models import OTP
 from django.views.decorators.cache import never_cache
 from django.contrib.auth.decorators import login_required
+from .forms import EditProfileForm
+
 
 def register(request):
     if request.method == "POST":
@@ -125,6 +127,34 @@ def user_profile(request, username):
 
     return render(request, 'accounts/user_profile.html', {'user': user, 'profile': profile})
 
+
+@login_required
+def edit_profile(request):
+    if request.method == 'POST':
+        form = EditProfileForm(request.POST, user=request.user)
+        
+        if form.is_valid():
+            request.user.username = form.cleaned_data['username']
+            request.user.email = form.cleaned_data['email']
+            request.user.save()
+
+            # Update Profile Model
+            profile, created = Profile.objects.get_or_create(user=request.user)
+            profile.age = form.cleaned_data['age']
+            profile.country = form.cleaned_data['country']
+            profile.state = form.cleaned_data['state']
+            profile.area_of_interest = form.cleaned_data['area_of_interest']
+            profile.save()
+
+            messages.success(request, "Your profile has been updated successfully!")
+            return redirect('user_profile', username=request.user.username)
+        else:
+            messages.error(request, "Please correct the errors below.")
+
+    else:
+        form = EditProfileForm(user=request.user)
+
+    return render(request, 'accounts/edit_profile.html', {'form': form})
 
 def user_logout(request):
     logout(request)
