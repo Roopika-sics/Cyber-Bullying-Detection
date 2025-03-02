@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}All Posts{% endblock %}
+
+{% block content %}
+{% if messages %}
+    {% for message in messages %}
+        <p class="text-white bg-green-500 p-2 rounded">{{ message }}</p>
+    {% endfor %}
+{% endif %}
+<div class="bg-black">
+    <h2>All Posts</h2>
+    <table class="p-4" border="1">
+        <tr class="p-4">
+            <th>ID</th>
+            <th>Title</th>
+            <th>User</th>
+        </tr>
+        {% for post in posts %}
+        <tr>
+            <td>{{ post.id }}</td>
+            <td>{{ post.content }}</td>
+            <td>{{ post.user.username }}</td>
+            <td><img class="w-[100px] h-[100px]" src="{{ post.image.url }}" alt=""></td>
+            <td><a href="{% url 'delete_post' post.id %}" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

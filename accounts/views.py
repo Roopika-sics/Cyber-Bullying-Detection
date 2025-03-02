@@ -12,8 +12,10 @@ from .models import OTP
 from django.views.decorators.cache import never_cache
 from django.contrib.auth.decorators import login_required
 from .forms import EditProfileForm
+from django.views.decorators.csrf import csrf_exempt
 
 
+@csrf_exempt
 def register(request):
     if request.method == "POST":
         form = RegistrationForm(request.POST)
@@ -38,6 +40,7 @@ def register(request):
 
     return render(request, "accounts/register.html", {"form": form})
 
+@csrf_exempt
 def user_login(request):
     if request.method == "POST":
         username = request.POST["username"]
@@ -45,13 +48,16 @@ def user_login(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect("landing")
+            if user.is_superuser:
+                return redirect('admin_dashboard')
+            else:
+                return redirect("landing")
         else:
             messages.error(request, 'Invalid username or password')
 
     return render(request, "accounts/login.html")
 
-
+@csrf_exempt
 def forgot_password(request):
     if request.method == "POST":
         email = request.POST.get("email")
@@ -75,6 +81,7 @@ def forgot_password(request):
 
     return render(request, "accounts/forgot_password.html")
 
+@csrf_exempt
 def verify_otp(request):
     if request.method == "POST":
         email = request.session.get("reset_email")
@@ -94,6 +101,7 @@ def verify_otp(request):
 
     return render(request, "accounts/verify_otp.html")
 
+@csrf_exempt
 def reset_password(request):
     if not request.session.get("otp_verified"):
         return redirect("forgot_password")

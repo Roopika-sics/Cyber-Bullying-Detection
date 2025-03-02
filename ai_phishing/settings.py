@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'posts',
-    'home'
+    'home',
+    'admin_panel',
 ]
 
 AUTHENTICATION_BACKENDS = [
