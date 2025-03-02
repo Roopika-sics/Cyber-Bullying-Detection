@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="bg-black">
+    <h2>Abusive Comments</h2>
+    <table border="1">
+        <tr>
+            <th>User</th>
+            <th>Comment</th>
+            <th>Post</th>
+            <th>Date</th>
+        </tr>
+        {% for comment in flagged_comments %}
+        <tr>
+            <td>{{ comment.user.username }}</td>
+            <td>{{ comment.text }}</td>
+            <td>{{ comment.post.content|truncatechars:50 }}</td>
+            <td>{{ comment.created_at }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">No abusive comments found.</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

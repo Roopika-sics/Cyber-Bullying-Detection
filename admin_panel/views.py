@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.models import User
-from posts.models import Post
+from posts.models import Post, Comment
 
 # Create your views here.
 
@@ -33,3 +33,7 @@ def delete_post(request, post_id):
         post.delete()
         messages.success(request, "Post deleted successfully.")
     return redirect('all_posts')
+
+def abusive_comments(request):
+    flagged_comments = Comment.objects.filter(flagged=True)
+    return render(request, 'admin_panel/abusive_comments.html', {'flagged_comments': flagged_comments})
