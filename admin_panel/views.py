@@ -36,4 +36,11 @@ def delete_post(request, post_id):
 
 def abusive_comments(request):
     flagged_comments = Comment.objects.filter(flagged=True)
-    return render(request, 'admin_panel/abusive_comments.html', {'flagged_comments': flagged_comments})
+    reported_comments = Comment.objects.filter(reported=True)
+    return render(request, 'admin_panel/abusive_comments.html', {'flagged_comments': flagged_comments, 'reported_comments': reported_comments})
+
+@login_required
+def delete_comment(request, comment_id):
+    comment = get_object_or_404(Comment, id=comment_id)
+    comment.delete()
+    return redirect('abusive_comments')

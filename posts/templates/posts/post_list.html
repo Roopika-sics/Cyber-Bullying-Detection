@@ -42,7 +42,15 @@
 
         <div class="comments-list mt-2" id="comments-list-{{ post.id }}">
             {% for comment in post.comments.all %}
-                <p class="text-gray-300 mt-1"><strong>{{ comment.user.username }}</strong>: {{ comment.text }}</p>
+            <div class="flex items-center justify-between text-gray-300 mt-1">
+                <p>
+                    <strong>{{ comment.user.username }}</strong>: {{ comment.text }}
+                </p>
+                <button class="report-btn bg-red-600 text-white px-2 py-1 rounded text-sm"
+                    data-comment-id="{{ comment.id }}">
+                    Report
+                </button>
+            </div>
             {% endfor %}
         </div>
     </div>

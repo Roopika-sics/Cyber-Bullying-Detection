@@ -4,6 +4,8 @@ from django.contrib.auth.decorators import login_required
 from .models import Post, Like, Comment
 from .forms import PostForm, CommentForm
 from django.views.decorators.cache import never_cache
+from django.views.decorators.csrf import csrf_exempt
+import json
 
 @never_cache
 @login_required
@@ -58,5 +60,16 @@ def comment_on_post(request, post_id):
                 "username": comment.user.username,
                 "text": comment.text,
             })
+    
+    return JsonResponse({"success": False}, status=400)
+
+@csrf_exempt
+@login_required
+def report_comment(request, comment_id):
+    if request.method == "POST":
+        comment = get_object_or_404(Comment, id=comment_id)
+        comment.reported = True
+        comment.save()
+        return JsonResponse({"success": True})
     
     return JsonResponse({"success": False}, status=400)

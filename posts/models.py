@@ -27,6 +27,7 @@ class Comment(models.Model):
     text = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     flagged = models.BooleanField(default=False) 
+    reported = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):
         if self.is_bullying():
