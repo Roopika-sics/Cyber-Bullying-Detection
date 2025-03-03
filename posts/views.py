@@ -75,3 +75,14 @@ def report_comment(request, comment_id):
         return JsonResponse({"success": True})
     
     return JsonResponse({"success": False}, status=400)
+
+def my_posts(request, user_id):
+    my_posts = Post.objects.filter(user_id=user_id)
+    return render(request, 'posts/my_posts.html', {'my_posts':my_posts})
+
+@login_required
+def delete_post(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    if request.user == post.user:
+        post.delete()
+    return redirect('my_posts')
