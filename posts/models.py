@@ -30,7 +30,8 @@ class Comment(models.Model):
 
     def save(self, *args, **kwargs):
         if self.is_bullying():
-            self.flagged = True  # Mark as bullying
+            self.flagged = True 
+            self.text = "This comment has been deleted by admin"
         super().save(*args, **kwargs)
 
     def is_bullying(self):
