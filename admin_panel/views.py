@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.models import User
 from posts.models import Post, Comment
+from accounts.models import Profile
 
 # Create your views here.
 
@@ -44,3 +45,10 @@ def delete_comment(request, comment_id):
     comment = get_object_or_404(Comment, id=comment_id)
     comment.delete()
     return redirect('abusive_comments')
+
+@login_required
+def user_profile(request, username):
+    user = get_object_or_404(User, username=username)
+    profile = get_object_or_404(Profile, user=user)
+
+    return render(request, 'accounts/user_profile.html', {'user': user, 'profile': profile})

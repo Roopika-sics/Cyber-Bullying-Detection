@@ -1,7 +1,18 @@
 {% extends "base.html" %}
 {% block title %}Feed | SocialConnect{% endblock %}
 {% block content %}
+<style>
 
+.custom-scrollbar::-webkit-scrollbar {
+    width: 2px; 
+}
+
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(0, 1%, 33%) rgb(17 24 39 / var(--tw-bg-opacity, 1));
+}
+
+</style>
 <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="mb-8">
         <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Your Feed</h1>
@@ -59,7 +70,7 @@
             </div>
 
             <!-- Comments section -->
-            <div class="bg-gray-50 dark:bg-gray-900 p-4">
+            <div class="bg-gray-50 dark:bg-gray-900 p-4 max-h-[200px] overflow-y-scroll custom-scrollbar">
                 <div class="mb-4 space-y-2" id="comments-list-{{ post.id }}">
                     {% for comment in post.comments.all %}
                     <div class="flex items-center justify-between bg-white dark:bg-gray-800 p-3 rounded-lg mb-2">
