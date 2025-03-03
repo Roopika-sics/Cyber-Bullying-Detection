@@ -47,8 +47,20 @@ def delete_comment(request, comment_id):
     return redirect('abusive_comments')
 
 @login_required
-def user_profile(request, username):
+@user_passes_test(is_admin)
+def user_profile_admin(request, username):
     user = get_object_or_404(User, username=username)
     profile = get_object_or_404(Profile, user=user)
 
-    return render(request, 'accounts/user_profile.html', {'user': user, 'profile': profile})
+    return render(request, 'admin_panel/user_profile_admin.html', {'user': user, 'profile': profile})
+
+def suspend_user(request, user_id):
+    user = get_object_or_404(User, id=user_id)
+    user.is_active = not user.is_active
+    user.save()
+    return redirect('all_users')
+
+def total_count(request):
+    users_count = User.objects.all()
+
+    return render(request, 'admin_panel/admin_dashboard.htm', {'users_count':users_count})
