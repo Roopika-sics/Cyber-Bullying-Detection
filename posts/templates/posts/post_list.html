@@ -46,10 +46,12 @@
                 <p>
                     <strong>{{ comment.user.username }}</strong>: {{ comment.text }}
                 </p>
+                {% if comment.user != request.user %}
                 <button class="report-btn bg-red-600 text-white px-2 py-1 rounded text-sm"
                     data-comment-id="{{ comment.id }}">
                     Report
                 </button>
+                {% endif %}
             </div>
             {% endfor %}
         </div>

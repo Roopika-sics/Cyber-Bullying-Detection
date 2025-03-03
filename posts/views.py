@@ -68,6 +68,8 @@ def comment_on_post(request, post_id):
 def report_comment(request, comment_id):
     if request.method == "POST":
         comment = get_object_or_404(Comment, id=comment_id)
+        if comment.user == request.user:
+                return JsonResponse({"success": False, "error": "You cannot report your own comment"}, status=403)
         comment.reported = True
         comment.save()
         return JsonResponse({"success": True})
