@@ -8,49 +8,192 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="">
+    <title>{% block title %}SocialConnect{% endblock %}</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        secondary: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .animate-pulse-slow {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.8;
+            }
+        }
+    </style>
 </head>
-<body>
+<body class="bg-gray-100 dark:bg-gray-900 min-h-screen">
     {% block navbar %}
     {% if user.is_authenticated %}
     {% if user.is_superuser %}
-    <nav class="flex justify-between items-center bg-gray-800 p-4 text-white">
-        <ul>
-            <li><a href="{% url 'admin_dashboard' %}">Admin Dashboard</a></li>
-            <li><a href="{% url 'all_users' %}">All Users</a></li>
-            <li><a href="{% url 'all_posts' %}">All Posts</a></li>
-            <li><a href="{% url 'abusive_comments' %}">Abusive Comments</a></li>
-            <li><a href="{% url 'logout' %}">Logout</a></li>
-        </ul>
+    <nav class="bg-white dark:bg-gray-800 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <span class="text-primary-600 dark:text-primary-400 text-2xl font-bold">SocialConnect</span>
+                    </div>
+                    <div class="hidden md:ml-6 md:flex md:space-x-8">
+                        <a href="{% url 'admin_dashboard' %}" class="border-transparent text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Dashboard
+                        </a>
+                        <a href="{% url 'all_users' %}" class="border-transparent text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Users
+                        </a>
+                        <a href="{% url 'all_posts' %}" class="border-transparent text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Posts
+                        </a>
+                        <a href="{% url 'abusive_comments' %}" class="border-transparent text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Abusive Comments
+                        </a>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <a href="{% url 'logout' %}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                        Logout
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="{% url 'admin_dashboard' %}" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 block px-3 py-2 rounded-md text-base font-medium">Dashboard</a>
+                <a href="{% url 'all_users' %}" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 block px-3 py-2 rounded-md text-base font-medium">Users</a>
+                <a href="{% url 'all_posts' %}" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 block px-3 py-2 rounded-md text-base font-medium">Posts</a>
+                <a href="{% url 'abusive_comments' %}" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 block px-3 py-2 rounded-md text-base font-medium">Abusive Comments</a>
+                <a href="{% url 'logout' %}" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 block px-3 py-2 rounded-md text-base font-medium">Logout</a>
+            </div>
+        </div>
     </nav>
     {% else %}
-    <nav class="flex justify-between items-center bg-gray-800 p-4">
-        <div class="flex items-center">
-            <a href="{% url 'create_post' %}" class="text-white font-bold text-lg hover:text-blue-500">create post</a>
-            <a href="{% url 'home' %}" class="text-white font-bold text-lg ml-4 hover:text-blue-500">post lists</a>
+    <nav class="bg-white dark:bg-gray-800 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <span class="text-primary-600 dark:text-primary-400 text-2xl font-bold">SocialConnect</span>
+                    </div>
+                    <div class="hidden md:ml-6 md:flex md:space-x-8">
+                        <a href="{% url 'home' %}" class="border-transparent text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                            </svg>
+                            Home
+                        </a>
+                        <a href="{% url 'create_post' %}" class="border-transparent text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                            </svg>
+                            Create Post
+                        </a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="{% url 'user_profile' user.username %}" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 inline-flex items-center">
+                        <div class="h-8 w-8 rounded-full bg-primary-500 flex items-center justify-center text-white font-semibold">
+                            {{ user.username.0|upper }}
+                        </div>
+                        <span class="ml-2 hidden md:inline">{{ user.username }}</span>
+                    </a>
+                    <a href="{% url 'logout' %}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1V7.414l-5-5H3zm7 2a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1zm0 6a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd" />
+                        </svg>
+                        Logout
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="logout">
-            <a href="{% url 'logout' %}" class="text-white font-bold text-lg ml-4 hover:text-blue-500">logout</a>
-            <a href="{% url 'user_profile' user.username %}" class="text-white font-bold text-lg ml-4 hover:text-blue-500">Profile</a>
+        <!-- Mobile menu -->
+        <div class="md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="{% url 'home' %}" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="{% url 'create_post' %}" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 block px-3 py-2 rounded-md text-base font-medium">Create Post</a>
+                <a href="{% url 'user_profile' user.username %}" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 block px-3 py-2 rounded-md text-base font-medium">Profile</a>
+                <a href="{% url 'logout' %}" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 block px-3 py-2 rounded-md text-base font-medium">Logout</a>
+            </div>
         </div>
     </nav>
     {% endif %}
     {% else %}
-    <nav class="flex justify-between items-center bg-gray-800 p-4">
-        <a href="{% url 'login' %}" class="text-white font-bold text-lg ml-4 hover:text-blue-500">login</a>
+    <nav class="bg-white dark:bg-gray-800 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <span class="text-primary-600 dark:text-primary-400 text-2xl font-bold">SocialConnect</span>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <a href="{% url 'login' %}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                        Login
+                    </a>
+                </div>
+            </div>
+        </div>
     </nav>
     {% endif %}
     {% endblock navbar %}
 
-{% block content %}
-{% endblock content %}
+    <main class="py-6">
+        {% block content %}
+        {% endblock content %}
+    </main>
 
+    <footer class="bg-white dark:bg-gray-800 shadow-inner mt-8 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-gray-500 dark:text-gray-400">
+                <p>© 2025 SocialConnect. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://kit.fontawesome.com/a076d05399.js"crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -59,6 +202,7 @@
                     let postId = this.getAttribute("data-post-id");
                     let likeButton = this;
                     let likeCountSpan = document.getElementById(`likes-count-${postId}`);
+                    let likeIcon = document.getElementById(`like-icon-${postId}`);
                     let likeUrl = `{% url 'like_post' 0 %}`.replace("0", postId); 
         
                     fetch(likeUrl, {
@@ -71,9 +215,15 @@
                     .then(response => response.json())
                     .then(data => {
                         if (data.liked) {
-                            likeButton.textContent = "Unlike";
+                            likeButton.classList.remove('bg-gray-200', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300');
+                            likeButton.classList.add('bg-red-100', 'dark:bg-red-900', 'text-red-600', 'dark:text-red-400');
+                            likeIcon.classList.add('text-red-600', 'dark:text-red-400');
+                            likeIcon.classList.remove('text-gray-700', 'dark:text-gray-300');
                         } else {
-                            likeButton.textContent = "Like";
+                            likeButton.classList.add('bg-gray-200', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300');
+                            likeButton.classList.remove('bg-red-100', 'dark:bg-red-900', 'text-red-600', 'dark:text-red-400');
+                            likeIcon.classList.remove('text-red-600', 'dark:text-red-400');
+                            likeIcon.classList.add('text-gray-700', 'dark:text-gray-300');
                         }
                         likeCountSpan.textContent = data.likes_count;
                     })
@@ -81,82 +231,136 @@
                 });
             });
         });
-        </script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll(".comment-form").forEach(form => {
-            form.addEventListener("submit", function (event) {
-                event.preventDefault();
-    
-                let postId = this.getAttribute("data-post-id");
-                let textInput = this.querySelector(".comment-input");
-                let commentText = textInput.value.trim();
-                let commentsList = document.getElementById(`comments-list-${postId}`);
-                let CommentUrl = `{% url 'comment_post' 0 %}`.replace("0", postId); 
-    
-                if (commentText === "") return;
-    
-                let formData = new FormData();
-                formData.append("text", commentText);
-    
-                fetch(CommentUrl, {
-                    method: "POST",
-                    body: formData,
-                    headers: {
-                        "X-CSRFToken": document.querySelector("[name=csrfmiddlewaretoken]").value,
-                    },
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        let newComment = document.createElement("p");
-                        newComment.classList.add("text-gray-300", "mt-1");
-                        newComment.innerHTML = `<strong>${data.username}</strong>: ${data.text}`;
-                        commentsList.appendChild(newComment);
-
-                        textInput.value = "";
-                    }
-                })
-                .catch(error => console.error("Error:", error));
-            });
-        });
-    });
     </script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-        function getCSRFToken() {
-            return document.querySelector("[name=csrfmiddlewaretoken]")?.value;
-        }
-
-        document.querySelectorAll(".report-btn").forEach(button => {
-            button.addEventListener("click", function () {
-                let commentId = this.getAttribute("data-comment-id");
-                let reportUrl = "{% url 'report_comment' 0 %}".replace("0", commentId);
-                
-                fetch(reportUrl, {
-                    method: "POST",
-                    headers: {
-                        "X-CSRFToken": "{{ csrf_token }}",
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({})
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        alert("Comment reported successfully!");
-                    } else {
-                        alert("Error reporting comment.");
-                    }
-                })
-                .catch(error => console.error("Error:", error));
+            document.querySelectorAll(".comment-form").forEach(form => {
+                form.addEventListener("submit", function (event) {
+                    event.preventDefault();
+        
+                    let postId = this.getAttribute("data-post-id");
+                    let textInput = this.querySelector(".comment-input");
+                    let commentText = textInput.value.trim();
+                    let commentsList = document.getElementById(`comments-list-${postId}`);
+                    let CommentUrl = `{% url 'comment_post' 0 %}`.replace("0", postId); 
+        
+                    if (commentText === "") return;
+        
+                    let formData = new FormData();
+                    formData.append("text", commentText);
+        
+                    fetch(CommentUrl, {
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            "X-CSRFToken": document.querySelector("[name=csrfmiddlewaretoken]").value,
+                        },
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            let newCommentDiv = document.createElement("div");
+                            newCommentDiv.classList.add("flex", "items-center", "justify-between", "bg-gray-50", "dark:bg-gray-800", "p-3", "rounded-lg", "mb-2");
+                            
+                            let commentContent = document.createElement("div");
+                            commentContent.classList.add("flex", "items-start", "space-x-2");
+                            
+                            let avatarDiv = document.createElement("div");
+                            avatarDiv.classList.add("h-8", "w-8", "rounded-full", "bg-primary-500", "flex", "items-center", "justify-center", "text-white", "font-semibold", "flex-shrink-0");
+                            avatarDiv.textContent = data.username.charAt(0).toUpperCase();
+                            
+                            let textDiv = document.createElement("div");
+                            textDiv.innerHTML = `<p class="font-medium text-gray-900 dark:text-white">${data.username}</p>
+                                                <p class="text-gray-700 dark:text-gray-300">${data.text}</p>`;
+                            
+                            commentContent.appendChild(avatarDiv);
+                            commentContent.appendChild(textDiv);
+                            
+                            newCommentDiv.appendChild(commentContent);
+                            
+                            commentsList.appendChild(newCommentDiv);
+                            textInput.value = "";
+                            
+                            // Scroll to the new comment
+                            newCommentDiv.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    })
+                    .catch(error => console.error("Error:", error));
+                });
             });
         });
-    });
-
     </script>
-        
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function getCSRFToken() {
+                return document.querySelector("[name=csrfmiddlewaretoken]")?.value;
+            }
+
+            document.querySelectorAll(".report-btn").forEach(button => {
+                button.addEventListener("click", function () {
+                    let commentId = this.getAttribute("data-comment-id");
+                    let reportUrl = "{% url 'report_comment' 0 %}".replace("0", commentId);
+                    
+                    fetch(reportUrl, {
+                        method: "POST",
+                        headers: {
+                            "X-CSRFToken": "{{ csrf_token }}",
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({})
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            // Create toast notification
+                            const toast = document.createElement('div');
+                            toast.className = 'fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg transform transition-all duration-500 ease-in-out';
+                            toast.innerHTML = `
+                                <div class="flex items-center">
+                                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span>Comment reported successfully!</span>
+                                </div>
+                            `;
+                            document.body.appendChild(toast);
+                            
+                            // Remove toast after 3 seconds
+                            setTimeout(() => {
+                                toast.classList.add('opacity-0');
+                                setTimeout(() => {
+                                    document.body.removeChild(toast);
+                                }, 500);
+                            }, 3000);
+                        } else {
+                            // Create error toast
+                            const toast = document.createElement('div');
+                            toast.className = 'fixed bottom-4 right-4 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg';
+                            toast.innerHTML = `
+                                <div class="flex items-center">
+                                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                    </svg>
+                                    <span>Error reporting comment.</span>
+                                </div>
+                            `;
+                            document.body.appendChild(toast);
+                            
+                            // Remove toast after 3 seconds
+                            setTimeout(() => {
+                                toast.classList.add('opacity-0');
+                                setTimeout(() => {
+                                    document.body.removeChild(toast);
+                                }, 500);
+                            }, 3000);
+                        }
+                    })
+                    .catch(error => console.error("Error:", error));
+                });
+            });
+        });
+    </script>
 </body>
 </html>
