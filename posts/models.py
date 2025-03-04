@@ -27,10 +27,12 @@ class Comment(models.Model):
     text = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     flagged = models.BooleanField(default=False) 
+    reported = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):
         if self.is_bullying():
-            self.flagged = True  # Mark as bullying
+            self.flagged = True 
+            self.text = "This comment has been deleted by admin"
         super().save(*args, **kwargs)
 
     def is_bullying(self):
