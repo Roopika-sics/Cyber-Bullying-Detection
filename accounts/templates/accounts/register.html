@@ -32,9 +32,25 @@
                         
                         <input type="text" name="area_of_interest" placeholder="Area of Interest" class="form-control w-full p-3 rounded-full mb-3" value="{{ form.area_of_interest.value|default:'' }}">
 
-                        <input type="password" name="password" placeholder="Password" class="form-control w-full p-3 rounded-full mb-3" required>
+                        <div class="relative w-full mb-3">
+                            <input type="password" id="password" name="password" placeholder="Password" class="form-control w-full p-3 rounded-full pr-10" required>
+                            <button type="button" onclick="togglePassword('password', 'eyeIcon1')" class="absolute inset-y-0 right-3 flex items-center">
+                                <svg id="eyeIcon1" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5s8.268 2.943 9.542 7c-1.274 4.057-5.065 7-9.542 7s-8.268-2.943-9.542-7z" />
+                                </svg>
+                            </button>
+                        </div>
                         
-                        <input type="password" name="confirm_password" placeholder="Confirm Password" class="form-control w-full p-3 rounded-full mb-3" required>
+                        <div class="relative w-full mb-3">
+                            <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" class="form-control w-full p-3 rounded-full pr-10" required>
+                            <button type="button" onclick="togglePassword('confirm_password', 'eyeIcon2')" class="absolute inset-y-0 right-3 flex items-center">
+                                <svg id="eyeIcon2" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5s8.268 2.943 9.542 7c-1.274 4.057-5.065 7-9.542 7s-8.268-2.943-9.542-7z" />
+                                </svg>
+                            </button>
+                        </div>
 
                         <input type="text" name="age" placeholder="Age" class="form-control w-full p-3 rounded-full mb-3">
 

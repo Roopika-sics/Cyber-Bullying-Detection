@@ -8,7 +8,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>{% block title %}SocialConnect{% endblock %}</title>
+    <title>{% block title %}Cyber Guardia{% endblock %}</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
@@ -74,7 +74,7 @@
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
                     <div class="flex-shrink-0 flex items-center">
-                        <span class="text-primary-600 dark:text-primary-400 text-2xl font-bold">SocialConnect</span>
+                        <span class="text-primary-600 dark:text-primary-400 text-2xl font-bold">Cyber Guardia</span>
                     </div>
                     <div class="hidden md:ml-6 md:flex md:space-x-8">
                         <a href="{% url 'admin_dashboard' %}" class="border-transparent text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
@@ -370,6 +370,21 @@
     </script>
 
     <script>
+        function togglePassword(inputId, eyeIconId) {
+            var passwordField = document.getElementById(inputId);
+            var eyeIcon = document.getElementById(eyeIconId);
+        
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                eyeIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12s3.478-7 9-7 9 7 9 7-3.478 7-9 7-9-7-9-7z"/><circle cx="12" cy="12" r="3"/></svg>';
+            } else {
+                passwordField.type = "password";
+                eyeIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5s8.268 2.943 9.542 7c-1.274 4.057-5.065 7-9.542 7s-8.268-2.943-9.542-7z" /></svg>';
+            }
+        }
+    </script>
+
+    <script>
         function previewImage(event) {
             var input = event.target;
             var previewContainer = document.getElementById("image-preview-container");
@@ -383,7 +398,7 @@
                     previewContainer.classList.remove("hidden");
                 }
 
-                reader.readAsDataURL(input.files[0]); // Read the image file as a data URL
+                reader.readAsDataURL(input.files[0]);
             }
         }
     </script>
