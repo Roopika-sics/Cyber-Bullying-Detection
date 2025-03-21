@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from account.models import User 
 
 # Create your models here.
 class Advertiser(models.Model):
@@ -12,3 +12,21 @@ class Advertiser(models.Model):
 
     def __str__(self):
         return self.business_name
+    
+class Advertisements(models.Model):
+    ADVERTISEMENT_TYPE_CHOICES = [
+        ('lifestyle', 'Life Style'),
+        ('food_cooking', 'Food and Cooking'),
+        ('electronics_appliances', 'Electronics and Home Appliances'),
+    ]
+    advertiser = models.ForeignKey(Advertiser, on_delete=models.CASCADE)
+    title = models.CharField(max_length=255)
+    link = models.URLField()
+    start_date = models.DateField()
+    end_date = models.DateField()
+    description = models.TextField()
+    image = models.ImageField(upload_to='advertisements/')
+    advertisement_type = models.CharField(max_length=30, choices=ADVERTISEMENT_TYPE_CHOICES, default='lifestyle')
+
+    def __str__(self):
+        return self.title

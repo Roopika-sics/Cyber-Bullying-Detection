@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.models import User
+from account.models import User
 from .forms import RegistrationForm
 from django.contrib import messages
 from .models import Profile
@@ -29,7 +29,7 @@ def register(request):
             country = form.cleaned_data['country']
             state = form.cleaned_data['state']
             
-            user = User.objects.create_user(username=username, email=email, password=password)
+            user = User.objects.create_user(username=username, email=email, password=password, user_type='normal')
             Profile.objects.create(user=user, area_of_interest=area_of_interest, age=age, country=country, state=state)
 
             messages.success(request, 'Registration Successfull! please login')

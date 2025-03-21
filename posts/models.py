@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from account.models import User
 import pickle
 from sklearn.feature_extraction.text import CountVectorizer
 import os
