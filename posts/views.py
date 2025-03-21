@@ -6,7 +6,8 @@ from .forms import PostForm, CommentForm
 from django.views.decorators.cache import never_cache
 from django.views.decorators.csrf import csrf_exempt
 import json
-
+from accounts.models import Profile
+from advertisers.models import Advertisements
 @never_cache
 @login_required
 def create_post(request):
@@ -25,11 +26,20 @@ def create_post(request):
 @login_required
 def post_list(request):
     posts = Post.objects.all().order_by("-created_at")
+    user_profile = Profile.objects.filter(user=request.user).first()
+    user_interests = [interest.strip().lower().replace(" ", "") for interest in user_profile.area_of_interest.split(",")]
+    # user_interests = user_profile.area_of_interest.split(",")
+    # ads = Advertisements.objects.filter(advertisement_type__in=user_interests).first()
+    # adss = Advertisements.objects.values_list("advertisement_type", flat=True)
+    ads = Advertisements.objects.filter(advertisement_type__in=user_interests)
 
+    # print('advertismetns ',ads)
+    # print(adss)
+    # print('user interests',user_interests)
     for post in posts:
         post.is_liked_by_user = post.likes.filter(user=request.user).exists()
 
-    return render(request, "posts/post_list.html", {"posts": posts})
+    return render(request, "posts/post_list.html", {"posts": posts, "ads": ads})
 
 @never_cache
 @login_required

@@ -122,6 +122,20 @@
             </a>
         </div>
         {% endfor %}
+
+        <div class="col-span-1">
+            <h2 class="text-xl font-bold mb-4">Sponsored Ads</h2>
+            {% for ad in ads %}
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-3 mb-3">
+                <a href="{{ ad.link }}" target="_blank">
+                    <img src="{{ ad.image.url }}" class="w-full rounded-lg mb-2" alt="{{ ad.title }}">
+                    <p class="text-gray-900 dark:text-white font-semibold">{{ ad.title }}</p>
+                </a>
+            </div>
+            {% empty %}
+            <p class="text-gray-500">No relevant ads found.</p>
+            {% endfor %}
+        </div>
     </div>
 </div>
 

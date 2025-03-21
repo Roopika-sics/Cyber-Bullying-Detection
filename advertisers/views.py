@@ -3,6 +3,8 @@ from .forms import AdvertiserRegistrationForm
 from account.models import User
 from .models import Advertiser, Advertisements
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.views.decorators.cache import never_cache
 # Create your views here.
 
 def resister(request):
@@ -27,6 +29,8 @@ def resister(request):
         form = AdvertiserRegistrationForm
     return render(request, 'advertisers/register.html', {'form': form})
 
+@never_cache
+@login_required
 def add_advertisement(request):
     advertiser = Advertiser.objects.get(user=request.user)
     if request.method == 'POST':
@@ -54,4 +58,10 @@ def add_advertisement(request):
         else:
             messages.error(request, "All fields are required.")
 
-    return render(request, 'advertisers/add_advertisement.html')
+    return render(request, 'advertisers/add_advertisement.html')\
+
+@never_cache
+@login_required 
+def view_advertisements(request):
+    advertisements = Advertisements.objects.filter(advertiser=request.user.advertiser)
+    return render(request, 'advertisers/view_advertisements.html', {'advertisements': advertisements})

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Registration{% endblock %}
+{% load static %}
+{% block content %}
+{% block navbar %}{% endblock %}
+
+
+<h1>View Advertisements</h1>
+
+{% if advertisements %}
+    <ul>
+        {% for advertisement in advertisements %}
+            <li>
+                <h2>{{ advertisement.title }}</h2>
+                <p>{{ advertisement.description }}</p>
+                
+                <p>Image: <img src="{{ advertisement.image.url }}" alt="Advertisement Image"></p>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No advertisements found.</p>
+{% endif %}
+
+{% endblock %}

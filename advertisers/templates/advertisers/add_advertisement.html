@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Advertisement</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}Registration{% endblock %}
+{% load static %}
+{% block content %}
+{% block navbar %}{% endblock %}
+
     <h2>Add Advertisement</h2>
 
     {% if messages %}
@@ -47,5 +45,6 @@
 
         <button type="submit">Submit</button>
     </form>
-</body>
-</html>
+
+
+    {% endblock %}
