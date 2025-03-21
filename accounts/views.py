@@ -51,7 +51,7 @@ def user_login(request):
             if user.is_superuser:
                 return redirect('admin_dashboard')
             else:
-                return redirect("landing")
+                return redirect("home")
         else:
             messages.error(request, 'Invalid username or password')
 

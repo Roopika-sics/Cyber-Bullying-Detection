@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'posts',
     'home',
     'admin_panel',
+    'advertisers',
 ]
 
 AUTHENTICATION_BACKENDS = [

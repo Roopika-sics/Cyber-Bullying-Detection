@@ -70,10 +70,10 @@
             </div>
 
             <!-- Comments section -->
-            <div class="bg-gray-50 dark:bg-gray-900 p-4 max-h-[200px] overflow-y-scroll custom-scrollbar">
+            <div class="bg-black-50 dark:bg-gray-900 p-4 max-h-[200px] overflow-y-scroll custom-scrollbar">
                 <div class="mb-4 space-y-2" id="comments-list-{{ post.id }}">
                     {% for comment in post.comments.all %}
-                    <div class="flex items-center justify-between bg-white dark:bg-gray-800 p-3 rounded-lg mb-2">
+                    <div class="flex items-center justify-between bg-black dark:bg-gray-800 p-3 rounded-lg mb-2">
                         <div class="flex items-start space-x-2">
                             <div class="h-8 w-8 rounded-full bg-primary-500 flex items-center justify-center text-white font-semibold flex-shrink-0">
                                 {{ comment.user.username.0|upper }}

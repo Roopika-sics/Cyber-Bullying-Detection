@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% block title %}Registration{% endblock %}
+{% load static %}
+{% block content %}
+{% block navbar %}{% endblock %}
+
+<div class="signup-container">
+    <div class="Signup_LeftSide">
+        <img
+            class="SignUp_Page_Img"
+            src="{% static 'Images/Signup_Page_Img.png' %}"
+            alt="Sign Up"
+        />
+    </div>
+    <div class="Signup_RightSide">
+        <p class="Signup_RightSide_head"> Advertiser Sign Up!</p>
+        <form method="post">
+            {% csrf_token %}
+
+            {% for field in form %}
+            {% if field.errors %}
+                <div class="error text-red-500 text-center mb-3">{{ field.errors }}</div>
+            {% endif %}
+            {% endfor %}
+            <div class="mb-3 mt-3">
+                <input
+                    type="text"
+                    class="form-control"
+                    id="username"
+                    placeholder="Name",
+                    name="username"
+                />
+                <div id="usernameError" class="error"></div>
+            </div>
+
+            <div class="mb-3 mt-3">
+                <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="E-mail"
+                    name="email"
+                />
+                <div id="emailError" class="error"></div>
+            </div>
+
+            <div class="mb-3 signup-password-relative">
+                <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    placeholder="Password",
+                    name="password"
+                />
+                <div id="passwordError" class="error"></div>
+            </div>
+
+            <div class="mb-3 signup-confirm-relative">
+                <input
+                    type="password"
+                    class="form-control"
+                    id="confirm_password"
+                    placeholder="Confirm Password",
+                    name="confirm_password"
+                />
+                <div id="confirmPasswordError" class="error"></div>
+            </div>
+
+            <div class="mb-3 mt-3">
+                <input
+                    type="text"
+                    class="form-control"
+                    name="business_name"
+                    placeholder="Business Name",
+                />
+                <div id="usernameError" class="error"></div>
+            </div>
+
+            <div class="mb-3 mt-3">
+                <input
+                    type="text"
+                    class="form-control"
+                    name="business_type"
+                    placeholder="Business Type",
+                
+                />
+                <div id="usernameError" class="error"></div>
+            </div>
+
+            <div class="mb-3 mt-3">
+                <input
+                    type="text"
+                    class="form-control"
+                    name="contact_number"
+                    placeholder="Contact Number",
+                
+                />
+                <div id="usernameError" class="error"></div>
+            </div>
+
+            <div class="mb-3 mt-3">
+                <input
+                    type="text"
+                    class="form-control"
+                    name="address"
+                    placeholder="Address",
+                
+                />
+                <div id="usernameError" class="error"></div>
+            </div>
+            
+
+            <button type="submit" class="btn Signup_Button mb-5">
+                Sign Up
+            </button>
+        </form>
+
+        <p>
+            Already have an account?
+            <a class="user-signup-login" href="{% url 'login' %}">Login</a>
+        </p>
+    </div>
+</div>
+
+
+    
+
+{% endblock %}
