@@ -50,8 +50,10 @@ def user_login(request):
             login(request, user)
             if user.is_superuser:
                 return redirect('admin_dashboard')
-            else:
+            elif user.user_type == 'normal':
                 return redirect("home")
+            elif user.user_type == 'advertiser':
+                return redirect("advertisers:add_advertisement")
         else:
             messages.error(request, 'Invalid username or password')
 

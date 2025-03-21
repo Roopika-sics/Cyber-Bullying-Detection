@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import AdvertiserRegistrationForm
 from account.models import User
-from .models import Advertiser
+from .models import Advertiser, Advertisements
 from django.contrib import messages
 # Create your views here.
 
@@ -26,3 +26,32 @@ def resister(request):
     else:
         form = AdvertiserRegistrationForm
     return render(request, 'advertisers/register.html', {'form': form})
+
+def add_advertisement(request):
+    advertiser = Advertiser.objects.get(user=request.user)
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        link = request.POST.get('link')
+        start_date = request.POST.get('start_date')
+        end_date = request.POST.get('end_date')
+        description = request.POST.get('description')
+        advertisement_type = request.POST.get('advertisement_type')
+        image = request.FILES.get('image')
+
+        if title and link and start_date and end_date and description and advertisement_type and image:
+            Advertisements.objects.create(
+                advertiser=advertiser, 
+                title=title,
+                link=link,
+                start_date=start_date,
+                end_date=end_date,
+                description=description,
+                advertisement_type=advertisement_type,
+                image=image
+            )
+            messages.success(request, "Advertisement added successfully!")
+            return redirect('advertisers:add_advertisement')
+        else:
+            messages.error(request, "All fields are required.")
+
+    return render(request, 'advertisers/add_advertisement.html')
