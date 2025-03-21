@@ -1,75 +1,127 @@
 {% extends "base.html" %}
 {% block title %}Registration{% endblock %}
+{% load static %}
 {% block content %}
 {% block navbar %}{% endblock %}
 
-    <div class="register-container">
-        <div class="flex flex-wrap w-3/4 lg:w-2/3">
-            <!-- Left Side: Image -->
-            <div class="w-full lg:w-1/2 flex justify-center items-center">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="w-3/4" alt="Illustration">
-            </div>
-            
-            <!-- Right Side: Register Form -->
-            <div class="w-full lg:w-1/2 flex justify-center items-center">
-                <div class="register-box">
-                    <div class="text-center mb-4 mt-[-10px]">
-                        <p class="text-2xl font-extrabold text-blue-900">Create Account</p>
-                    </div>
-
-                    <form method="post">
-                        {% csrf_token %}
-
-                        {% for field in form %}
-                        {% if field.errors %}
-                            <div class="error text-red-500 text-center mb-3">{{ field.errors }}</div>
-                        {% endif %}
-                        {% endfor %}
-
-                        <input type="text" name="username" placeholder="Username" class="form-control w-full p-3 rounded-full mb-3" value="{{ form.username.value|default:'' }}" required>
-
-                        <input type="email" name="email" placeholder="Email" class="form-control w-full p-3 rounded-full mb-3" value="{{ form.email.value|default:'' }}" required>
-                        
-                        <input type="text" name="area_of_interest" placeholder="Area of Interest" class="form-control w-full p-3 rounded-full mb-3" value="{{ form.area_of_interest.value|default:'' }}">
-
-                        <div class="relative w-full mb-3">
-                            <input type="password" id="password" name="password" placeholder="Password" class="form-control w-full p-3 rounded-full pr-10" required>
-                            <button type="button" onclick="togglePassword('password', 'eyeIcon1')" class="absolute inset-y-0 right-3 flex items-center">
-                                <svg id="eyeIcon1" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5s8.268 2.943 9.542 7c-1.274 4.057-5.065 7-9.542 7s-8.268-2.943-9.542-7z" />
-                                </svg>
-                            </button>
-                        </div>
-                        
-                        <div class="relative w-full mb-3">
-                            <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" class="form-control w-full p-3 rounded-full pr-10" required>
-                            <button type="button" onclick="togglePassword('confirm_password', 'eyeIcon2')" class="absolute inset-y-0 right-3 flex items-center">
-                                <svg id="eyeIcon2" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5s8.268 2.943 9.542 7c-1.274 4.057-5.065 7-9.542 7s-8.268-2.943-9.542-7z" />
-                                </svg>
-                            </button>
-                        </div>
-
-                        <input type="text" name="age" placeholder="Age" class="form-control w-full p-3 rounded-full mb-3">
-
-                        <input type="text" name="country" placeholder="Country" class="form-control w-full p-3 rounded-full mb-3">
-
-                        <input type="text" name="state" placeholder="State" class="form-control w-full p-3 rounded-full mb-3">
-
-                        <button type="submit" class="w-full register-btn p-3 rounded-full mt-4 text-white font-semibold transition">
-                            REGISTER
-                        </button>
-                    </form>
-
-                    <p class="text-center text-sm mt-4 text-blue-800">
-                        Already have an account?
-                        <a href="{% url 'login' %}" class="login-link hover:underline">Login</a>
-                    </p>
-                </div>
-            </div>
-        </div>
+<div class="signup-container">
+    <div class="Signup_LeftSide">
+        <img
+            class="SignUp_Page_Img"
+            src="{% static 'Images/Signup_Page_Img.png' %}"
+            alt="Sign Up"
+        />
     </div>
+    <div class="Signup_RightSide">
+        <p class="Signup_RightSide_head">Sign Up!</p>
+        <form method="post">
+            {% csrf_token %}
+
+            {% for field in form %}
+            {% if field.errors %}
+                <div class="error text-red-500 text-center mb-3">{{ field.errors }}</div>
+            {% endif %}
+            {% endfor %}
+            <div class="mb-3 mt-3">
+                <input
+                    type="text"
+                    class="form-control"
+                    id="username"
+                    placeholder="Username",
+                    name="username"
+                />
+                <div id="usernameError" class="error"></div>
+            </div>
+
+            <div class="mb-3 mt-3">
+                <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="E-mail"
+                    name="email"
+                />
+                <div id="emailError" class="error"></div>
+            </div>
+
+            <div class="mb-3 mt-3">
+                <input
+                    type="text"
+                    class="form-control"
+                    name="area_of_interest"
+                    placeholder="Arar Of Interest",
+                />
+                <div id="usernameError" class="error"></div>
+            </div>
+
+            <div class="mb-3 signup-password-relative">
+                <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    placeholder="Password",
+                    name="password"
+                />
+                <div id="passwordError" class="error"></div>
+            </div>
+
+            <div class="mb-3 signup-confirm-relative">
+                <input
+                    type="password"
+                    class="form-control"
+                    id="confirm_password"
+                    placeholder="Confirm Password",
+                    name="confirm_password"
+                />
+                <div id="confirmPasswordError" class="error"></div>
+            </div>
+
+            <div class="mb-3 mt-3">
+                <input
+                    type="text"
+                    class="form-control"
+                    name="age"
+                    placeholder="age",
+                />
+                <div id="usernameError" class="error"></div>
+            </div>
+
+            <div class="mb-3 mt-3">
+                <input
+                    type="text"
+                    class="form-control"
+                    name="country"
+                    placeholder="country",
+                
+                />
+                <div id="usernameError" class="error"></div>
+            </div>
+
+            <div class="mb-3 mt-3">
+                <input
+                    type="text"
+                    class="form-control"
+                    name="state"
+                    placeholder="state",
+                />
+                <div id="usernameError" class="error"></div>
+            </div>
+
+            <div id="apiError" class="api-error"></div>
+
+            <button type="submit" class="btn Signup_Button mb-5">
+                Sign Up
+            </button>
+        </form>
+
+        <p>
+            Already have an account?
+            <a class="user-signup-login" href="{% url 'login' %}">Login</a>
+        </p>
+    </div>
+</div>
+
+
+    
 
 {% endblock %}
