@@ -130,6 +130,7 @@
                 <a href="{{ ad.link }}" target="_blank">
                     <img src="{{ ad.image.url }}" class="w-full rounded-lg mb-2" alt="{{ ad.title }}">
                     <p class="text-gray-900 dark:text-white font-semibold">{{ ad.title }}</p>
+                    <a href="{% url 'advertisers:ad_click' ad.id %}" class="btn btn-primary">View Ad</a>
                 </a>
             </div>
             {% empty %}

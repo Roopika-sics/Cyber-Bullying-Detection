@@ -5,6 +5,7 @@ from .models import Advertiser, Advertisements
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.cache import never_cache
+from .utils import check_malicious_url
 # Create your views here.
 
 def resister(request):
@@ -65,3 +66,27 @@ def add_advertisement(request):
 def view_advertisements(request):
     advertisements = Advertisements.objects.filter(advertiser=request.user.advertiser)
     return render(request, 'advertisers/view_advertisements.html', {'advertisements': advertisements})
+
+
+def ad_click(request, ad_id):
+    """
+    Handles ad clicks, checks if the URL is malicious, and redirects the user accordingly.
+
+    Args:
+        request: The HTTP request object.
+        ad_id (int): The ID of the clicked advertisement.
+
+    Returns:
+        Redirects to the ad URL or displays a warning.
+    """
+    ad = Advertisements.objects.get(id=ad_id)
+
+    # Run ML model to check if the ad URL is safe
+    result = check_malicious_url(ad.link)
+
+    if result == "Benign":
+        return redirect(ad.link)
+    else:
+        # If the ad is unsafe, show a warning message
+        messages.error(request, f"Warning! This website is classified as {result}. Proceed with caution.")
+        return render(request, "posts/ad_warning.html", {"ad": ad, "result": result})
