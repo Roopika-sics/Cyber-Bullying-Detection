@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from .forms import AdvertiserRegistrationForm
 from account.models import User
 from .models import Advertiser, Advertisements
@@ -6,6 +6,8 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.cache import never_cache
 from .utils import check_malicious_url
+from accounts.models import Profile
+from .models import MaliciousClick
 # Create your views here.
 
 def resister(request):
@@ -67,7 +69,8 @@ def view_advertisements(request):
     advertisements = Advertisements.objects.filter(advertiser=request.user.advertiser)
     return render(request, 'advertisers/view_advertisements.html', {'advertisements': advertisements})
 
-
+@never_cache
+@login_required
 def ad_click(request, ad_id):
     """
     Handles ad clicks, checks if the URL is malicious, and redirects the user accordingly.
@@ -79,14 +82,39 @@ def ad_click(request, ad_id):
     Returns:
         Redirects to the ad URL or displays a warning.
     """
-    ad = Advertisements.objects.get(id=ad_id)
+    ad = get_object_or_404(Advertisements, id=ad_id)
+    user = request.user
+    profile, _ = Profile.objects.get_or_create(user=user)
 
-    # Run ML model to check if the ad URL is safe
-    result = check_malicious_url(ad.link)
+    # Run ML model to check if the ad URL is malicious
+    result = check_malicious_url(ad.link)  # Always run ML, even if Safe Mode is OFF
 
-    if result == "Benign":
-        return redirect(ad.link)
-    else:
-        # If the ad is unsafe, show a warning message
-        messages.error(request, f"Warning! This website is classified as {result}. Proceed with caution.")
-        return render(request, "posts/ad_warning.html", {"ad": ad, "result": result})
+    if profile.safe_mode:
+        if result == "Benign":
+            return redirect(ad.link)  # Safe, allow direct access
+        else:
+            return render(request, "posts/ad_warning.html", {"ad": ad, "result": result})
+    # Safe Mode OFF: Allow all links, but log if malicious
+    if result != "Benign":
+        MaliciousClick.objects.get_or_create(user=user, ad=ad)  # Log unsafe clicks
+    return redirect(ad.link)  # Always allow access
+    
+
+@login_required
+def visit_anyway(request, ad_id):
+    """
+    Logs user details when they click 'Visit Anyway' and redirects them to the malicious site.
+    """
+    ad = get_object_or_404(Advertisements, id=ad_id)
+    
+    # Log the click (store user details and ad info)
+    MaliciousClick.objects.get_or_create(user=request.user, ad=ad)
+
+    # Redirect the user to the actual ad link
+    return redirect(ad.link)
+
+def toggle_safe_mode(request):
+    profile, created = Profile.objects.get_or_create(user=request.user)
+    profile.safe_mode = not profile.safe_mode
+    profile.save()
+    return redirect('dashboard') 

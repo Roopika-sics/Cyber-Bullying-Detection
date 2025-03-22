@@ -30,3 +30,11 @@ class Advertisements(models.Model):
 
     def __str__(self):
         return self.title
+    
+class MaliciousClick(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    ad = models.ForeignKey(Advertisements, on_delete=models.CASCADE)
+    clicked_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.user.username} clicked on {self.ad.title}"

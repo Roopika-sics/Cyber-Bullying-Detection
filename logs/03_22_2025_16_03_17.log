@@ -1,0 +1,19 @@
+[ 2025-03-22 16:03:19,071 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 16:03:22,147 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 16:03:23,509 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 16:03:24,682 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 16:03:32,175 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 16:03:36,434 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 16:03:39,639 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 16:04:34,078 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 16:04:40,813 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 16:05:06,532 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 16:05:07,852 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 16:05:08,671 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 16:05:09,319 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 16:05:10,405 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 16:05:11,971 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 16:05:12,409 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 16:05:13,268 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 16:05:14,872 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 16:05:57,273 ] 266 django.utils.autoreload - INFO - C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\advertisers\views.py changed, reloading.

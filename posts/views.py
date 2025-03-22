@@ -96,3 +96,10 @@ def delete_post(request, post_id):
     if request.user == post.user:
         post.delete()
     return redirect('my_posts')
+
+@login_required
+def toggle_safe_mode(request):
+    profile, created = Profile.objects.get_or_create(user=request.user)
+    profile.safe_mode = not profile.safe_mode
+    profile.save()
+    return redirect('home')

@@ -49,3 +49,9 @@ Traceback (most recent call last):
 django.urls.exceptions.NoReverseMatch: Reverse for 'post_list' not found. 'post_list' is not a valid view function or pattern name.
 [ 2025-03-22 13:57:41,500 ] 248 django.request - WARNING - Not Found: /posts/font.css
 [ 2025-03-22 13:57:44,142 ] 248 django.request - WARNING - Not Found: /advertisers/ad-click/2/font.css
+[ 2025-03-22 14:00:27,017 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 14:00:31,969 ] 248 django.request - WARNING - Not Found: /advertisers/ad-click/2/font.css
+[ 2025-03-22 14:00:34,253 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 14:00:43,892 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 14:00:47,317 ] 248 django.request - WARNING - Not Found: /advertisers/ad-click/2/font.css
+[ 2025-03-22 16:00:12,567 ] 266 django.utils.autoreload - INFO - C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\accounts\models.py changed, reloading.

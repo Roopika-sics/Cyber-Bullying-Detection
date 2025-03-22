@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>🚨 Users Who Clicked Malicious Ads 🚨</h2>
+<table border="1">
+    <tr>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Ad Clicked</th>
+        <th>Time</th>
+    </tr>
+    {% for entry in clicked_users %}
+    <tr>
+        <td>{{ entry.user.username }}</td>
+        <td>{{ entry.user.email }}</td>
+        <td>{{ entry.ad.title }}</td>
+        <td>{{ entry.clicked_at }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

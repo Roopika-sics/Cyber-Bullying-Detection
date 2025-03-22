@@ -15,6 +15,17 @@
 </style>
 <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="mb-8">
+        <form action="{% url 'toggle_safe_mode' %}" method="POST">
+            {% csrf_token %}
+            <button type="submit">
+                {% if request.user.profile.safe_mode %}
+                    Turn Safe Mode OFF
+                {% else %}
+                    Turn Safe Mode ON
+                {% endif %}
+            </button>
+        </form>
+        
         <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Your Feed</h1>
         <p class="text-gray-600 dark:text-gray-400">See what people are sharing</p>
     </div>
@@ -127,10 +138,10 @@
             <h2 class="text-xl font-bold mb-4">Sponsored Ads</h2>
             {% for ad in ads %}
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-3 mb-3">
-                <a href="{{ ad.link }}" target="_blank">
+                <a href="{% url 'advertisers:ad_click' ad.id %}" target="_blank">
                     <img src="{{ ad.image.url }}" class="w-full rounded-lg mb-2" alt="{{ ad.title }}">
                     <p class="text-gray-900 dark:text-white font-semibold">{{ ad.title }}</p>
-                    <a href="{% url 'advertisers:ad_click' ad.id %}" class="btn btn-primary">View Ad</a>
+                
                 </a>
             </div>
             {% empty %}

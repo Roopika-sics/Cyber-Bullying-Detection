@@ -8,6 +8,7 @@ class Profile(models.Model):
     age = models.IntegerField(null=True)
     country = models.CharField(max_length=20, null=True)
     state = models.CharField(max_length=20, null=True)
+    safe_mode = models.BooleanField(default=True)
 
 
     def __str__(self):
