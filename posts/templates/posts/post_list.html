@@ -1,154 +1,238 @@
 {% extends "base.html" %}
 {% block title %}Feed | SocialConnect{% endblock %}
 {% block content %}
-<style>
-
-.custom-scrollbar::-webkit-scrollbar {
-    width: 2px; 
-}
-
-.custom-scrollbar {
-    scrollbar-width: thin;
-    scrollbar-color: hsl(0, 1%, 33%) rgb(17 24 39 / var(--tw-bg-opacity, 1));
-}
-
-</style>
-<div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="mb-8">
-        <form action="{% url 'toggle_safe_mode' %}" method="POST">
-            {% csrf_token %}
-            <button type="submit">
-                {% if request.user.profile.safe_mode %}
-                    Turn Safe Mode OFF
-                {% else %}
-                    Turn Safe Mode ON
-                {% endif %}
-            </button>
-        </form>
-        
-        <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Your Feed</h1>
-        <p class="text-gray-600 dark:text-gray-400">See what people are sharing</p>
-    </div>
-    
-    <div class="space-y-6">
-        {% for post in posts %}
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
-            <!-- Post header -->
-            <div class="p-4 flex items-center space-x-3 border-b border-gray-200 dark:border-gray-700">
-                <div class="h-10 w-10 rounded-full bg-primary-500 flex items-center justify-center text-white font-semibold">
-                    {{ post.user.username.0|upper }}
-                </div>
-                <div>
-                    <p class="font-medium text-gray-900 dark:text-white">{{ post.user.username }}</p>
-                    <p class="text-xs text-gray-500 dark:text-gray-400">
-                        {% if post.created_at %}
-                            {{ post.created_at|date:"F j, Y • g:i a" }}
-                        {% else %}
-                            Just now
-                        {% endif %}
-                    </p>
-                </div>
-            </div>
-
-            <!-- Post content -->
-            <div class="p-4">
-                <p class="text-gray-800 dark:text-gray-200 mb-4">{{ post.content }}</p>
-
-                {% if post.image %}
-                <div class="rounded-lg overflow-hidden mb-4">
-                    <img src="{{ post.image.url }}" class="w-full h-auto object-cover transform transition-transform duration-500 hover:scale-[1.02]" alt="Post image">
-                </div>
-                {% endif %}
-
-                <!-- Post actions -->
-                <div class="flex items-center space-x-4 mt-4 pt-3 border-t border-gray-200 dark:border-gray-700">
-                    <button 
-                        class="like-btn flex items-center space-x-1 px-3 py-2 rounded-md transition-colors duration-200 {% if post.is_liked_by_user %}bg-red-100 dark:bg-red-900 text-red-600 dark:text-red-400{% else %}bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300{% endif %}"
-                        data-post-id="{{ post.id }}">
-                        <svg id="like-icon-{{ post.id }}" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 {% if post.is_liked_by_user %}text-red-600 dark:text-red-400{% else %}text-gray-700 dark:text-gray-300{% endif %}" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
-                        </svg>
-                        <span id="likes-count-{{ post.id }}" class="font-medium">{{ post.likes.count }}</span>
-                    </button>
-                    
-                    <button class="flex items-center space-x-1 px-3 py-2 rounded-md bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 transition-colors duration-200 hover:bg-gray-300 dark:hover:bg-gray-600">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z" clip-rule="evenodd" />
-                        </svg>
-                        <span class="font-medium">{{ post.comments.all|length }}</span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Comments section -->
-            <div class="bg-black-50 dark:bg-gray-900 p-4 max-h-[200px] overflow-y-scroll custom-scrollbar">
-                <div class="mb-4 space-y-2" id="comments-list-{{ post.id }}">
-                    {% for comment in post.comments.all %}
-                    <div class="flex items-center justify-between bg-black dark:bg-gray-800 p-3 rounded-lg mb-2">
-                        <div class="flex items-start space-x-2">
-                            <div class="h-8 w-8 rounded-full bg-primary-500 flex items-center justify-center text-white font-semibold flex-shrink-0">
-                                {{ comment.user.username.0|upper }}
-                            </div>
-                            <div>
-                                <p class="font-medium text-gray-900 dark:text-white">{{ comment.user.username }}</p>
-                                <p class="text-gray-700 dark:text-gray-300">{{ comment.text }}</p>
-                            </div>
+<main class="max-w-7xl mx-auto px-4 py-8">
+    <div class="grid md:grid-cols-4 gap-8">
+        <!-- Main Content Area -->
+        <div class="md:col-span-3">
+            <!-- Hero Section -->
+            <!-- Social Media Post Card -->
+            {% for post in posts %}
+            <div
+                class="max-w-2xl mx-auto bg-white rounded-xl shadow-md overflow-hidden mb-8"
+            >
+                <!-- Card Header -->
+                <div class="p-4 flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <img
+                            src="{{ post.user.profile.profile_image.url }}"
+                            alt="Profile"
+                            class="w-10 h-10 rounded-full"
+                        />
+                        <div>
+                            <h3 class="font-semibold text-gray-800">
+                                {{ post.user.username }}
+                            </h3>
+                            <p class="text-sm text-gray-500">
+                                <span class="mr-2">{{ post.location }}</span>
+                                <span>• {{post.created_at}}</span>
+                            </p>
                         </div>
-                        {% if comment.user != request.user %}
-                        <button class="report-btn ml-2 text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400 transition-colors duration-200"
-                            data-comment-id="{{ comment.id }}">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M3 6a3 3 0 013-3h10a1 1 0 01.8 1.6L14.25 8l2.55 3.4A1 1 0 0116 13H6a1 1 0 00-1 1v3a1 1 0 11-2 0V6z" clip-rule="evenodd" />
-                            </svg>
-                        </button>
-                        {% endif %}
                     </div>
-                    {% endfor %}
-                </div>
-
-                <!-- Comment form -->
-                <form class="comment-form flex items-center space-x-2" data-post-id="{{ post.id }}">
-                    {% csrf_token %}
-                    <div class="relative flex-grow">
-                        <input type="text" name="text" placeholder="Add a comment..." 
-                            class="w-full px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-full focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent comment-input">
-                    </div>
-                    <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                    <button
+                        class="text-gray-500 hover:text-gray-700 p-2 rounded-full hover:bg-gray-100"
+                    >
+                        <svg
+                            class="w-5 h-5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+                            />
                         </svg>
                     </button>
-                </form>
-            </div>
-        </div>
-        {% empty %}
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-8 text-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-            </svg>
-            <h3 class="mt-4 text-lg font-medium text-gray-900 dark:text-white">No posts yet</h3>
-            <p class="mt-2 text-gray-500 dark:text-gray-400">Get started by creating your first post!</p>
-            <a href="{% url 'create_post' %}" class="mt-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
-                Create a post
-            </a>
-        </div>
-        {% endfor %}
+                </div>
 
-        <div class="col-span-1">
-            <h2 class="text-xl font-bold mb-4">Sponsored Ads</h2>
-            {% for ad in ads %}
-            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-3 mb-3">
-                <a href="{% url 'advertisers:ad_click' ad.id %}" target="_blank">
-                    <img src="{{ ad.image.url }}" class="w-full rounded-lg mb-2" alt="{{ ad.title }}">
-                    <p class="text-gray-900 dark:text-white font-semibold">{{ ad.title }}</p>
-                
-                </a>
+                <!-- Post Content -->
+                <div class="p-4">
+                    <p class="text-gray-800 mb-4">
+                        {{post.content}}
+                    </p>
+                    <img
+                        src="{{ post.image.url }}"
+                        alt="Post"
+                        class="w-full object-cover rounded-lg"
+                    />
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="p-4 flex justify-between">
+                    <button
+                        class="flex items-center space-x-2 text-gray-600 hover:text-red-500" data-post-id="{{ post.id }}"
+                    >
+                    
+                        <svg
+                            id="like-icon-{{ post.id }}"
+                            class="w-5 h-5"
+                            fill="{% if post.is_liked_by_user %}red{% else %}none{% endif %}" fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                            />
+                        </svg>
+                        <span id="likes-count-{{ post.id }}">{{ post.likes.count }}</span>
+                    </button>
+
+                    <button
+                        class="flex items-center space-x-2 text-gray-600 hover:text-blue-500 comment-button"
+                    >
+                        <svg
+                            class="w-5 h-5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                            />
+                        </svg>
+                        <span>{{ post.comments.all|length }}</span>
+                    </button>
+                </div>
             </div>
-            {% empty %}
-            <p class="text-gray-500">No relevant ads found.</p>
             {% endfor %}
+        </div>
+
+        <!-- advertisement section -->
+        <!-- Sidebar -->
+        <aside class="md:col-span-1">
+            {% for ad in ads %}
+            <div class="space-y-6">
+                <div class="bg-white rounded-lg">
+                    <a href="{% url 'advertisers:ad_click' ad.id %}"><img
+                        src="{{ ad.image.url }}"
+                        alt="Ad"
+                        class="w-full object-fill mb-4"
+                    /></a>
+                </div>
+            {% endfor %}
+            </div>
+        </aside>
+    </div>
+</main>
+<!-- Modal Container -->
+<div
+    id="commentModal"
+    class="hidden fixed inset-0 bg-black/50 z-50 p-8"
+>
+    <!-- Modal Content -->
+    <div class="bg-white rounded-xl w-full h-full flex overflow-hidden">
+        <!-- Left Side - Original Post -->
+        <div class="w-1/2 p-6 flex flex-col">
+            <button
+                onclick="toggleCommentModal()"
+                class="absolute top-2 right-2 text-gray-600 hover:text-gray-800"
+            >
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <!-- Post Image -->
+            <img
+                src="assets/Images/pfpimg.png"
+                alt="Post"
+                class="w-full object-cover rounded-xl mb-4"
+            />
+
+            <!-- Post Description -->
+            <p class="text-gray-600 mb-4">
+                Exploring the vibrant streets of NYC! 🗽 The energy here
+                is absolutely electric! #travel #newyork #adventure
+            </p>
+
+            <!-- Profile Info -->
+            <div class="flex items-center gap-3 mb-4">
+                <img
+                    src="assets/Images/pfpimg.png"
+                    alt="Profile"
+                    class="w-10 h-10 rounded-full"
+                />
+                <div>
+                    <h3 class="font-semibold">John Traveler</h3>
+                    <p class="text-sm text-gray-500">New York City</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side - Comments Section -->
+        <div class="w-2/3 flex flex-col">
+            <!-- Comments Header -->
+            <div class="p-6">
+                <h2 class="text-xl font-bold">Comments (248)</h2>
+            </div>
+
+            <!-- Comments List -->
+            <div class="flex-1 overflow-y-auto p-6 space-y-6">
+                <!-- Comment Item -->
+                <div class="flex gap-4">
+                    <img
+                        src="assets/Images/pfpimg.png"
+                        alt="User"
+                        class="w-10 h-10 rounded-full"
+                    />
+                    <div class="flex-1">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h4 class="text-gray-600 font-semibold">
+                                    Sarah Smith
+                                </h4>
+                                <p class="text-gray-400 text-sm">
+                                    2h ago
+                                </p>
+                            </div>
+                            <button
+                                class="text-gray-500 hover:text-red-500 mt-1"
+                            >
+                                <i class="far fa-heart"></i> 12
+                            </button>
+                        </div>
+                        <p class="text-gray-600">
+                            Love this perspective! The colors are
+                            amazing 👏
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Add more comments here -->
+            </div>
+
+            <!-- Post Actions -->
+            <div class="p-4 flex gap-4">
+                <button class="text-gray-500 hover:text-red-500">
+                    <i class="far fa-heart"></i> 1.2K
+                </button>
+                <button class="text-gray-500 hover:text-blue-500">
+                    <i class="far fa-share-square"></i>
+                </button>
+            </div>
+
+            <!-- Comment Input -->
+            <div class="p-4">
+                <div class="flex gap-2">
+                    <input
+                        type="text"
+                        placeholder="Add a comment..."
+                        class="flex-1 px-4 py-2 border rounded-full focus:outline-none focus:border-gray-400"
+                    />
+                    <button
+                        class="px-6 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600"
+                    >
+                        Send
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-
 {% endblock %}

@@ -48,11 +48,11 @@
                 <a class="navbar-brand logo" href="{% url 'home' %}">
                     <span class="logo_Blog_Color">CYBER</span>&nbsp;
                     <span class="logo_color">GUARDIA</span>
-                    {% if request.user.user_type == 'normal' and not request.user.is_superuser %}
+                    <!-- {% if request.user.user_type == 'normal' and not request.user.is_superuser %}
                         <p class="text-red-500">This is a normal user.</p>
                     {% elif request.user.user_type == 'advertiser' %}
                         <p class="text-red-500">This is an advertiser.</p>
-                    {% endif %}
+                    {% endif %} -->
                 </a>
                     <ul class="navbar-nav navbar_list mx-auto">
                         {% if request.user.user_type == 'normal' and not request.user.is_superuser %}
@@ -328,13 +328,13 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            document.querySelectorAll(".like-btn").forEach(button => {
+            document.querySelectorAll("[data-post-id]").forEach(button => {
                 button.addEventListener("click", function () {
                     let postId = this.getAttribute("data-post-id");
-                    let likeButton = this;
-                    let likeCountSpan = document.getElementById(`likes-count-${postId}`);
                     let likeIcon = document.getElementById(`like-icon-${postId}`);
-                    let likeUrl = `{% url 'like_post' 0 %}`.replace("0", postId); 
+                    let likeCountSpan = document.getElementById(`likes-count-${postId}`);
+                    let currentLikes = parseInt(likeCountSpan.textContent); // Get the current like count
+                    let likeUrl = `{% url 'like_post' 0 %}`.replace("0", postId);
         
                     fetch(likeUrl, {
                         method: "POST",
@@ -346,23 +346,22 @@
                     .then(response => response.json())
                     .then(data => {
                         if (data.liked) {
-                            likeButton.classList.remove('bg-gray-200', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300');
-                            likeButton.classList.add('bg-red-100', 'dark:bg-red-900', 'text-red-600', 'dark:text-red-400');
-                            likeIcon.classList.add('text-red-600', 'dark:text-red-400');
-                            likeIcon.classList.remove('text-gray-700', 'dark:text-gray-300');
+                            likeIcon.setAttribute("fill", "red");
+                            likeIcon.classList.add("text-red-500");
+                            likeCountSpan.textContent = currentLikes + 1; // Increment like count
                         } else {
-                            likeButton.classList.add('bg-gray-200', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300');
-                            likeButton.classList.remove('bg-red-100', 'dark:bg-red-900', 'text-red-600', 'dark:text-red-400');
-                            likeIcon.classList.remove('text-red-600', 'dark:text-red-400');
-                            likeIcon.classList.add('text-gray-700', 'dark:text-gray-300');
+                            likeIcon.setAttribute("fill", "none");
+                            likeIcon.classList.remove("text-red-500");
+                            likeCountSpan.textContent = Math.max(currentLikes - 1, 0); // Decrement like count, ensuring it doesn’t go below zero
                         }
-                        likeCountSpan.textContent = data.likes_count;
                     })
                     .catch(error => console.error("Error:", error));
                 });
             });
         });
-    </script>
+        </script>
+        
+        
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -545,5 +544,28 @@
         }
     });
 </script>
+<script>
+    // Modal Control
+    function toggleCommentModal() {
+        const modal = document.getElementById("commentModal");
+        modal.classList.toggle("hidden");
+    }
+
+    // Close modal when clicking outside
+    document
+        .getElementById("commentModal")
+        .addEventListener("click", function (e) {
+            if (e.target === this) {
+                toggleCommentModal();
+            }
+        });
+
+    // Add to your existing post click handler
+    document.querySelectorAll(".comment-button").forEach((button) => {
+        button.addEventListener("click", toggleCommentModal);
+    });
+</script>
+
+
 </body>
 </html>

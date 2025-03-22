@@ -1,0 +1,43 @@
+[ 2025-03-22 22:05:31,886 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-03-22 22:05:31,921 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-03-22 22:05:32,066 ] 248 django.request - WARNING - Not Found: /vite.svg
+[ 2025-03-22 22:05:35,088 ] 248 django.request - ERROR - Internal Server Error: /posts/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\views.py", line 30, in post_list
+    user_interests = [interest.strip().lower().replace(" ", "") for interest in user_profile.area_of_interest.split(",")]
+AttributeError: 'NoneType' object has no attribute 'area_of_interest'
+[ 2025-03-22 22:05:35,169 ] 248 django.request - WARNING - Not Found: /favicon.ico
+[ 2025-03-22 22:05:49,184 ] 248 django.request - ERROR - Internal Server Error: /posts/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\views.py", line 30, in post_list
+    user_interests = [interest.strip().lower().replace(" ", "") for interest in user_profile.area_of_interest.split(",")]
+AttributeError: 'NoneType' object has no attribute 'area_of_interest'
+[ 2025-03-22 22:05:55,214 ] 248 django.request - ERROR - Internal Server Error: /posts/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\views.py", line 30, in post_list
+    user_interests = [interest.strip().lower().replace(" ", "") for interest in user_profile.area_of_interest.split(",")]
+AttributeError: 'NoneType' object has no attribute 'area_of_interest'
