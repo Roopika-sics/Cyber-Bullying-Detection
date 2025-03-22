@@ -11,6 +11,10 @@
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        />
+        <link
             href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
             rel="stylesheet"
         />
@@ -83,15 +87,50 @@
                         </li>
                         {% endif %}
                     </ul>
-                    <form class="d-flex ms-auto">
+                    <div class="d-flex ms-auto">
                         {% if request.user.is_authenticated %}
-                        <a
-                            type="button"
-                            class="btn btn-outline navbar_login_button"
-                            href="{% url 'logout' %}"
-                        >
-                            Logout
-                        </a>
+                        <!-- Profile Dropdown -->
+                        <div class="relative" id="profile-dropdown">
+                            <button
+                                onclick="toggleProfileMenu()"
+                                class="flex items-center gap-2 hover:text-orange-500 transition-colors cursor-pointer"
+                            >
+                                <div class="flex items-center gap-2">
+                                    <span class="nav-link navbar_links"
+                                        >Hi, {{user.username}}!</span
+                                    >
+                                    <img
+                                        src="{{ user.profile.profile_image.url }}"
+                                        alt="Profile"
+                                        class="w-9 h-9 rounded-full"
+                                    />
+                                </div>
+                            </button>
+
+                            <!-- Dropdown Menu -->
+                            <div
+                                id="profile-menu"
+                                class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 border border-gray-100"
+                            >
+                                <a
+                                    href="/edit-profile"
+                                    class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors nav-link"
+                                >
+                                    <i class="fas fa-user-edit mr-2 text-sm"></i
+                                    >Edit Profile
+                                </a>
+                                <a
+                                    href="{% url 'logout' %}"
+                                    class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors nav-link"
+                                >
+                                    <i
+                                        class="fas fa-sign-out-alt mr-2 text-sm"
+                                    ></i
+                                    >Log Out
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                         {% else %}
                         <div class="dropdown">
                             <button
@@ -125,7 +164,7 @@
                             </ul>
                         </div>
                         {% endif %}
-                    </form>
+                    </div>
                
             </div>
         </nav>
@@ -489,5 +528,22 @@
         }
     </script>
 
+<script>
+    function toggleProfileMenu() {
+        const menu = document.getElementById("profile-menu");
+        menu.classList.toggle("hidden");
+    }
+
+    // Close the dropdown when clicking outside
+    document.addEventListener("click", function (event) {
+        const profileContainer =
+            document.getElementById("profile-dropdown");
+        const menu = document.getElementById("profile-menu");
+
+        if (!profileContainer.contains(event.target)) {
+            menu.classList.add("hidden");
+        }
+    });
+</script>
 </body>
 </html>
