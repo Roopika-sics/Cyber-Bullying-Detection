@@ -141,7 +141,7 @@ def user_profile(request, username):
 @login_required
 def edit_profile(request):
     if request.method == 'POST':
-        form = EditProfileForm(request.POST, user=request.user)
+        form = EditProfileForm(request.POST, request.FILES, user=request.user)
         
         if form.is_valid():
             request.user.username = form.cleaned_data['username']
@@ -154,6 +154,7 @@ def edit_profile(request):
             profile.country = form.cleaned_data['country']
             profile.state = form.cleaned_data['state']
             profile.area_of_interest = form.cleaned_data['area_of_interest']
+            profile.profile_image = form.cleaned_data['profile_image']
             profile.save()
 
             messages.success(request, "Your profile has been updated successfully!")

@@ -91,6 +91,7 @@ class EditProfileForm(forms.Form):
     age = forms.IntegerField(widget=forms.TextInput(attrs={'class': 'text-black p-2 w-full'}))
     country = forms.CharField(max_length=100, required=True, widget=forms.TextInput(attrs={'class': 'text-black p-2 w-full'}))
     state = forms.CharField(max_length=100, required=True, widget=forms.TextInput(attrs={'class': 'text-black p-2 w-full'}))
+    profile_image = forms.ImageField(required=False, widget=forms.FileInput(attrs={'class': 'text-black p-2 w-full'}))
 
     def __init__(self, *args, **kwargs):
         self.user = kwargs.pop('user', None)

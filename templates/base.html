@@ -125,7 +125,7 @@
                                 class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 border border-gray-100"
                             >
                                 <a
-                                    href="/edit-profile"
+                                    href="{% url 'user_profile' user.username %}"
                                     class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors nav-link"
                                     style="{% if request.user.is_superuser %} display:none; {% endif %}"
                                 >
