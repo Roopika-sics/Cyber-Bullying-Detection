@@ -1,0 +1,6 @@
+[ 2025-03-23 22:36:05,799 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-03-23 22:36:08,373 ] 248 django.request - WARNING - Not Found: /register/font.css
+[ 2025-03-23 22:36:23,309 ] 248 django.request - WARNING - Not Found: /register/font.css
+[ 2025-03-23 22:36:29,599 ] 248 django.request - WARNING - Not Found: /register/font.css
+[ 2025-03-23 22:36:57,817 ] 248 django.request - WARNING - Not Found: /register/font.css
+[ 2025-03-23 22:37:06,994 ] 266 django.utils.autoreload - INFO - C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\accounts\forms.py changed, reloading.

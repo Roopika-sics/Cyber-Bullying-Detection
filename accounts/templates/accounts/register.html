@@ -14,7 +14,7 @@
     </div>
     <div class="Signup_RightSide">
         <p class="Signup_RightSide_head">Sign Up!</p>
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
 
             {% for field in form %}
@@ -105,6 +105,16 @@
                     placeholder="state",
                 />
                 <div id="usernameError" class="error"></div>
+            </div>
+
+            <div class="mb-3 mt-3">
+                <input 
+                type="file"
+                class="form-control"
+                name="profile_image"
+                placeholder="profile_image"
+                > 
+
             </div>
 
             <div id="apiError" class="api-error"></div>

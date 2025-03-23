@@ -18,7 +18,7 @@ from django.views.decorators.csrf import csrf_exempt
 @csrf_exempt
 def register(request):
     if request.method == "POST":
-        form = RegistrationForm(request.POST)
+        form = RegistrationForm(request.POST, request.FILES)
         if form.is_valid():
             username = form.cleaned_data['username']
             email = form.cleaned_data['email']
@@ -28,9 +28,10 @@ def register(request):
             age = form.cleaned_data['age']
             country = form.cleaned_data['country']
             state = form.cleaned_data['state']
+            profile_image = form.cleaned_data['profile_image']
             
             user = User.objects.create_user(username=username, email=email, password=password, user_type='normal')
-            Profile.objects.create(user=user, area_of_interest=area_of_interest, age=age, country=country, state=state)
+            Profile.objects.create(user=user, area_of_interest=area_of_interest, age=age, country=country, state=state, profile_image=profile_image)
 
             messages.success(request, 'Registration Successfull! please login')
             return redirect('login')  
@@ -140,6 +141,8 @@ def user_profile(request, username):
 
 @login_required
 def edit_profile(request):
+    user = request.user
+    profile = user.profile
     if request.method == 'POST':
         form = EditProfileForm(request.POST, request.FILES, user=request.user)
         
@@ -155,7 +158,12 @@ def edit_profile(request):
             profile.state = form.cleaned_data['state']
             profile.area_of_interest = form.cleaned_data['area_of_interest']
             profile.profile_image = form.cleaned_data['profile_image']
+            
+            if 'profile_image' in request.FILES:  
+                profile.profile_image = request.FILES['profile_image']
+
             profile.save()
+            user.save()
 
             messages.success(request, "Your profile has been updated successfully!")
             return redirect('user_profile', username=request.user.username)

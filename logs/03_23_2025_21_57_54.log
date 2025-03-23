@@ -210,3 +210,4 @@ django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 10: 's
 [ 2025-03-23 22:19:29,749 ] 248 django.request - WARNING - Not Found: /register/font.css
 [ 2025-03-23 22:19:33,488 ] 248 django.request - WARNING - Not Found: /advertisers/register/font.css
 [ 2025-03-23 22:19:39,481 ] 248 django.request - WARNING - Not Found: /register/font.css
+[ 2025-03-23 22:22:35,496 ] 266 django.utils.autoreload - INFO - C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\accounts\forms.py changed, reloading.

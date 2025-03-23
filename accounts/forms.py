@@ -12,6 +12,7 @@ class RegistrationForm(forms.Form):
     age = forms.IntegerField()
     country = forms.CharField(max_length=100, required=True)
     state = forms.CharField(max_length=100, required=True)
+    profile_image = forms.ImageField(required=True)
 
     def clean(self):
         cleaned_data = super().clean()
@@ -107,6 +108,7 @@ class EditProfileForm(forms.Form):
                 self.fields['country'].initial = profile.country
                 self.fields['state'].initial = profile.state
                 self.fields['area_of_interest'].initial = profile.area_of_interest
+                self.fields['profile_image'].initial = profile.profile_image
 
     def clean_username(self):
         username = self.cleaned_data.get('username')
