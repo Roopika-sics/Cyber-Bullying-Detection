@@ -48,7 +48,7 @@
             </div>
 
             <!-- Comments List -->
-            <div class="flex-1 overflow-y-auto p-6 space-y-6" id="comments-list-{{ post.id }}">
+            <div class="flex-1 overflow-y-auto p-6 space-y-6 max-h-[28rem]" id="comments-list-{{ post.id }}">
                 {% for comment in post.comments.all %}
                 <!-- Comment Item -->
                 <div class="flex gap-4">
@@ -67,6 +67,14 @@
                                     {{ comment.created_at }}
                                 </p>
                             </div>
+                            {% if comment.user != request.user %}
+                            <button class="report-btn ml-2 text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400 transition-colors duration-200"
+                                data-comment-id="{{ comment.id }}">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M3 6a3 3 0 013-3h10a1 1 0 01.8 1.6L14.25 8l2.55 3.4A1 1 0 0116 13H6a1 1 0 00-1 1v3a1 1 0 11-2 0V6z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                            {% endif %}
                             <!-- <button
                                 class="text-gray-500 hover:text-red-500 mt-1"
                             >

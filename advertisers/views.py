@@ -113,6 +113,12 @@ def visit_anyway(request, ad_id):
     # Redirect the user to the actual ad link
     return redirect(ad.link)
 
+@login_required
+def user_details(request):
+    advertiser = Advertiser.objects.get(user=request.user)
+    clicked_users = MaliciousClick.objects.filter(ad__advertiser=advertiser)
+    return render(request, "advertisers/user_details.html", {"clicked_users": clicked_users})
+
 def toggle_safe_mode(request):
     profile, created = Profile.objects.get_or_create(user=request.user)
     profile.safe_mode = not profile.safe_mode

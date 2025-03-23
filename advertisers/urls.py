@@ -8,7 +8,8 @@ urlpatterns = [
     path('add-advertisement/', views.add_advertisement, name='add_advertisement'),
     path('view-advertisements/', views.view_advertisements, name='view_advertisements'),
     path('ad-click/<int:ad_id>/', views.ad_click, name='ad_click'),
-    path('ad/<int:ad_id>/visit/', views.visit_anyway, name='visit_anyway')
+    path('ad/<int:ad_id>/visit/', views.visit_anyway, name='visit_anyway'),
+    path("user-details/", views.user_details, name="user_details"),
     
 
 ]
