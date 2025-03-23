@@ -328,8 +328,9 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            document.querySelectorAll("[data-post-id]").forEach(button => {
-                button.addEventListener("click", function () {
+            document.querySelectorAll(".like-button").forEach(button => {
+                button.addEventListener("click", function (event) {
+                    event.stopPropagation(); 
                     let postId = this.getAttribute("data-post-id");
                     let likeIcon = document.getElementById(`like-icon-${postId}`);
                     let likeCountSpan = document.getElementById(`likes-count-${postId}`);
@@ -365,9 +366,9 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            document.querySelectorAll(".comment-form").forEach(form => {
+            document.querySelectorAll(".comment-button").forEach(button => {
                 form.addEventListener("submit", function (event) {
-                    event.preventDefault();
+                    event.stopPropagation();
         
                     let postId = this.getAttribute("data-post-id");
                     let textInput = this.querySelector(".comment-input");
@@ -563,9 +564,88 @@
     // Add to your existing post click handler
     document.querySelectorAll(".comment-button").forEach((button) => {
         button.addEventListener("click", toggleCommentModal);
+        event.stopPropagation();
     });
 </script>
 
+<script>
+   document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll(".comment-form").forEach(form => {
+                form.addEventListener("submit", function (event) {
+                    event.preventDefault();
+        
+                    let postId = this.getAttribute("data-post-id");
+                    let textInput = this.querySelector(".comment-input");
+                    let commentText = textInput.value.trim();
+                    let commentsList = document.getElementById(`comments-list-${postId}`);
+                    let CommentUrl = `{% url 'comment_post' 0 %}`.replace("0", postId); 
+        
+                    if (commentText === "") return;
+        
+                    let formData = new FormData();
+                    formData.append("text", commentText);
+        
+                    fetch(CommentUrl, {
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            "X-CSRFToken": document.querySelector("[name=csrfmiddlewaretoken]").value,
+                        },
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            let newCommentDiv = document.createElement("div");
+                            newCommentDiv.classList.add("flex", "gap-4", "mt-4");
+
+                            let imgElement = document.createElement("img");
+                            imgElement.src = data.profile_image;
+                            imgElement.alt = "User";
+                            imgElement.classList.add("w-10", "h-10", "rounded-full");
+
+                            let commentContent = document.createElement("div");
+                            commentContent.classList.add("flex-1");
+
+                            let headerDiv = document.createElement("div");
+                            headerDiv.classList.add("flex", "items-start", "justify-between");
+
+                            let userInfoDiv = document.createElement("div");
+
+                            let usernameElement = document.createElement("h4");
+                            usernameElement.classList.add("text-gray-600", "font-semibold");
+                            usernameElement.textContent = data.username;
+
+                            let timestampElement = document.createElement("p");
+                            timestampElement.classList.add("text-gray-400", "text-sm");
+                            timestampElement.textContent = data.timestamp; 
+
+                            userInfoDiv.appendChild(usernameElement);
+                            userInfoDiv.appendChild(timestampElement);
+                            headerDiv.appendChild(userInfoDiv);
+
+                            let commentTextElement = document.createElement("p");
+                            commentTextElement.classList.add("text-gray-600", "mt-1");
+                            commentTextElement.textContent = data.text;
+
+                            commentContent.appendChild(headerDiv);
+                            commentContent.appendChild(commentTextElement);
+
+                            newCommentDiv.appendChild(imgElement);
+                            newCommentDiv.appendChild(commentContent);
+
+                            commentsList.appendChild(newCommentDiv);
+                            textInput.value = "";
+                            
+                            // Scroll to the new comment
+                            newCommentDiv.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    })
+                    .catch(error => console.error("Error:", error));
+                });
+            });
+        });
+
+</script>
 
 </body>
 </html>

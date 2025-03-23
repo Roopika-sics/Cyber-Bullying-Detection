@@ -1,0 +1,728 @@
+[ 2025-03-22 22:55:35,952 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 22:55:36,029 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 22:55:38,228 ] 248 django.request - WARNING - Not Found: /get_post_comments/2/
+[ 2025-03-22 22:56:14,399 ] 248 django.request - ERROR - Internal Server Error: /posts/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\views.py", line 42, in post_list
+    return render(request, "posts/post_list.html", {"posts": posts, "ads": ads})
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\defaulttags.py", line 1438, in url
+    args.append(parser.compile_filter(value))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '${postId}' from '${postId}'
+[ 2025-03-22 22:56:19,837 ] 248 django.request - ERROR - Internal Server Error: /posts/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\views.py", line 42, in post_list
+    return render(request, "posts/post_list.html", {"posts": posts, "ads": ads})
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\defaulttags.py", line 1438, in url
+    args.append(parser.compile_filter(value))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '${postId}' from '${postId}'
+[ 2025-03-22 22:56:31,488 ] 248 django.request - ERROR - Internal Server Error: /posts/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\views.py", line 42, in post_list
+    return render(request, "posts/post_list.html", {"posts": posts, "ads": ads})
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\defaulttags.py", line 1438, in url
+    args.append(parser.compile_filter(value))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '${postId}' from '${postId}'
+[ 2025-03-22 22:56:32,239 ] 248 django.request - ERROR - Internal Server Error: /posts/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\views.py", line 42, in post_list
+    return render(request, "posts/post_list.html", {"posts": posts, "ads": ads})
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\defaulttags.py", line 1438, in url
+    args.append(parser.compile_filter(value))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '${postId}' from '${postId}'
+[ 2025-03-22 22:56:54,708 ] 248 django.request - ERROR - Internal Server Error: /posts/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\views.py", line 42, in post_list
+    return render(request, "posts/post_list.html", {"posts": posts, "ads": ads})
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\defaulttags.py", line 1438, in url
+    args.append(parser.compile_filter(value))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '${postId}' from '${postId}'
+[ 2025-03-22 22:57:07,606 ] 248 django.request - ERROR - Internal Server Error: /posts/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\views.py", line 42, in post_list
+    return render(request, "posts/post_list.html", {"posts": posts, "ads": ads})
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\defaulttags.py", line 1436, in url
+    kwargs[name] = parser.compile_filter(value)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '{postId}' from '{postId}'
+[ 2025-03-22 22:57:32,274 ] 248 django.request - ERROR - Internal Server Error: /posts/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\views.py", line 42, in post_list
+    return render(request, "posts/post_list.html", {"posts": posts, "ads": ads})
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\defaulttags.py", line 1438, in url
+    args.append(parser.compile_filter(value))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '${postId}' from '${postId}'
+[ 2025-03-22 22:57:42,668 ] 248 django.request - ERROR - Internal Server Error: /posts/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\views.py", line 42, in post_list
+    return render(request, "posts/post_list.html", {"posts": posts, "ads": ads})
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\defaulttags.py", line 1436, in url
+    kwargs[name] = parser.compile_filter(value)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '${postId}' from '${postId}'
+[ 2025-03-22 22:58:50,643 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 22:58:52,473 ] 248 django.request - WARNING - Not Found: /get_post_comments/2/
+[ 2025-03-22 22:59:19,451 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 22:59:26,322 ] 248 django.request - WARNING - Not Found: /get_post_comments/2/
+[ 2025-03-22 22:59:35,899 ] 248 django.request - WARNING - Not Found: /get_post_comments/1/
+[ 2025-03-22 23:00:46,188 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:00:46,197 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 23:03:29,678 ] 248 django.request - WARNING - Not Found: /dsa
+[ 2025-03-22 23:03:37,423 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 23:03:37,461 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:03:37,464 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 23:03:40,278 ] 248 django.request - WARNING - Not Found: /posts/ds
+[ 2025-03-22 23:06:15,495 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 23:06:15,520 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:23:54,717 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 23:23:54,732 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:23:54,744 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:26:40,626 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 23:26:43,285 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 23:26:43,322 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:26:47,494 ] 248 django.request - WARNING - Not Found: /get_post_comments/2/
+[ 2025-03-22 23:27:43,205 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 23:27:43,219 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:27:45,211 ] 248 django.request - WARNING - Not Found: /get_post_comments/2/
+[ 2025-03-22 23:28:08,133 ] 248 django.request - WARNING - Not Found: /get_post_comments/2/
+[ 2025-03-22 23:28:26,254 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 23:28:26,529 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:28:33,393 ] 248 django.request - WARNING - Not Found: /get_post_comments/2/
+[ 2025-03-22 23:29:07,770 ] 248 django.request - ERROR - Internal Server Error: /posts/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\views.py", line 42, in post_list
+    return render(request, "posts/post_list.html", {"posts": posts, "ads": ads})
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'get_post_comments' with no arguments not found. 1 pattern(s) tried: ['posts/get_post_comments/(?P<post_id>[0-9]+)/\\Z']
+[ 2025-03-22 23:29:22,244 ] 248 django.request - ERROR - Internal Server Error: /posts/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\views.py", line 42, in post_list
+    return render(request, "posts/post_list.html", {"posts": posts, "ads": ads})
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'get_post_comments' with no arguments not found. 1 pattern(s) tried: ['posts/get_post_comments/(?P<post_id>[0-9]+)/\\Z']
+[ 2025-03-22 23:29:37,161 ] 248 django.request - ERROR - Internal Server Error: /posts/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\views.py", line 42, in post_list
+    return render(request, "posts/post_list.html", {"posts": posts, "ads": ads})
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'get_post_comments' with no arguments not found. 1 pattern(s) tried: ['posts/get_post_comments/(?P<post_id>[0-9]+)/\\Z']
+[ 2025-03-22 23:29:44,313 ] 248 django.request - ERROR - Internal Server Error: /posts/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\views.py", line 42, in post_list
+    return render(request, "posts/post_list.html", {"posts": posts, "ads": ads})
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'get_post_comments' with no arguments not found. 1 pattern(s) tried: ['posts/get_post_comments/(?P<post_id>[0-9]+)/\\Z']
+[ 2025-03-22 23:29:59,040 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 23:29:59,313 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:30:02,665 ] 248 django.request - WARNING - Not Found: /get_post_comments/2/
+[ 2025-03-22 23:32:25,243 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 23:32:25,284 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:32:28,087 ] 248 django.request - WARNING - Not Found: /get_post_comments/2/
+[ 2025-03-22 23:33:18,662 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 23:33:19,855 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 23:33:19,906 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:33:19,976 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:33:24,576 ] 248 django.request - WARNING - Not Found: /get_post_comments/2/
+[ 2025-03-22 23:33:34,912 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 23:33:34,931 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:33:35,145 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:33:37,667 ] 248 django.request - WARNING - Not Found: /get_post_comments/2/
+[ 2025-03-22 23:33:51,810 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 23:33:51,814 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:33:51,934 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:33:55,596 ] 248 django.request - WARNING - Not Found: /get_post_comments/2/
+[ 2025-03-22 23:34:09,891 ] 248 django.request - WARNING - Not Found: /get_post_comments/1/
+[ 2025-03-22 23:34:30,305 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 23:34:30,310 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:34:31,729 ] 248 django.request - WARNING - Not Found: /get_post_comments/1/
+[ 2025-03-22 23:35:00,099 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 23:35:00,106 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:35:00,165 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:35:03,511 ] 248 django.request - WARNING - Not Found: /get_post_comments/1/
+[ 2025-03-22 23:35:09,559 ] 248 django.request - WARNING - Not Found: /get_post_comments/2/
+[ 2025-03-22 23:35:25,079 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 23:35:25,088 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:35:25,145 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:35:27,034 ] 248 django.request - WARNING - Not Found: /get_post_comments/2/
+[ 2025-03-22 23:35:32,084 ] 248 django.request - WARNING - Not Found: /get_post_comments/1/
+[ 2025-03-22 23:35:56,337 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 23:35:56,342 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:35:56,398 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:36:25,396 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 23:36:25,400 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:36:25,457 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:36:26,541 ] 248 django.request - WARNING - Not Found: /get_post_comments/2/
+[ 2025-03-22 23:36:44,588 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 23:36:44,596 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:36:44,642 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:36:46,055 ] 248 django.request - WARNING - Not Found: /get_post_comments/2/
+[ 2025-03-22 23:37:41,774 ] 266 django.utils.autoreload - INFO - C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\views.py changed, reloading.

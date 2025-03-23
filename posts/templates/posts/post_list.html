@@ -62,46 +62,23 @@
 
                 <!-- Action Buttons -->
                 <div class="p-4 flex justify-between">
-                    <button
-                        class="flex items-center space-x-2 text-gray-600 hover:text-red-500" data-post-id="{{ post.id }}"
-                    >
-                    
-                        <svg
-                            id="like-icon-{{ post.id }}"
-                            class="w-5 h-5"
-                            fill="{% if post.is_liked_by_user %}red{% else %}none{% endif %}" fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                            />
+                    <button class="like-button flex items-center space-x-2 text-gray-600 hover:text-red-500" data-post-id="{{ post.id }}">
+                        <svg id="like-icon-{{ post.id }}" class="w-5 h-5" fill="{% if post.is_liked_by_user %}red{% else %}none{% endif %}" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                         </svg>
                         <span id="likes-count-{{ post.id }}">{{ post.likes.count }}</span>
                     </button>
-
-                    <button
-                        class="flex items-center space-x-2 text-gray-600 hover:text-blue-500 comment-button"
-                    >
-                        <svg
-                            class="w-5 h-5"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                            />
+                
+                    <a href="{% url 'post_details' post.id %}" class="comment-button flex items-center space-x-2 text-gray-600 hover:text-blue-500" data-post-id="{{ post.id }}">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                         </svg>
                         <span>{{ post.comments.all|length }}</span>
-                    </button>
+                    </a>
                 </div>
+                
             </div>
             {% endfor %}
         </div>
@@ -124,115 +101,6 @@
     </div>
 </main>
 <!-- Modal Container -->
-<div
-    id="commentModal"
-    class="hidden fixed inset-0 bg-black/50 z-50 p-8"
->
-    <!-- Modal Content -->
-    <div class="bg-white rounded-xl w-full h-full flex overflow-hidden">
-        <!-- Left Side - Original Post -->
-        <div class="w-1/2 p-6 flex flex-col">
-            <button
-                onclick="toggleCommentModal()"
-                class="absolute top-2 right-2 text-gray-600 hover:text-gray-800"
-            >
-                <i class="fas fa-times text-2xl"></i>
-            </button>
-            <!-- Post Image -->
-            <img
-                src="assets/Images/pfpimg.png"
-                alt="Post"
-                class="w-full object-cover rounded-xl mb-4"
-            />
 
-            <!-- Post Description -->
-            <p class="text-gray-600 mb-4">
-                Exploring the vibrant streets of NYC! 🗽 The energy here
-                is absolutely electric! #travel #newyork #adventure
-            </p>
 
-            <!-- Profile Info -->
-            <div class="flex items-center gap-3 mb-4">
-                <img
-                    src="assets/Images/pfpimg.png"
-                    alt="Profile"
-                    class="w-10 h-10 rounded-full"
-                />
-                <div>
-                    <h3 class="font-semibold">John Traveler</h3>
-                    <p class="text-sm text-gray-500">New York City</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Right Side - Comments Section -->
-        <div class="w-2/3 flex flex-col">
-            <!-- Comments Header -->
-            <div class="p-6">
-                <h2 class="text-xl font-bold">Comments (248)</h2>
-            </div>
-
-            <!-- Comments List -->
-            <div class="flex-1 overflow-y-auto p-6 space-y-6">
-                <!-- Comment Item -->
-                <div class="flex gap-4">
-                    <img
-                        src="assets/Images/pfpimg.png"
-                        alt="User"
-                        class="w-10 h-10 rounded-full"
-                    />
-                    <div class="flex-1">
-                        <div class="flex items-start justify-between">
-                            <div>
-                                <h4 class="text-gray-600 font-semibold">
-                                    Sarah Smith
-                                </h4>
-                                <p class="text-gray-400 text-sm">
-                                    2h ago
-                                </p>
-                            </div>
-                            <button
-                                class="text-gray-500 hover:text-red-500 mt-1"
-                            >
-                                <i class="far fa-heart"></i> 12
-                            </button>
-                        </div>
-                        <p class="text-gray-600">
-                            Love this perspective! The colors are
-                            amazing 👏
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Add more comments here -->
-            </div>
-
-            <!-- Post Actions -->
-            <div class="p-4 flex gap-4">
-                <button class="text-gray-500 hover:text-red-500">
-                    <i class="far fa-heart"></i> 1.2K
-                </button>
-                <button class="text-gray-500 hover:text-blue-500">
-                    <i class="far fa-share-square"></i>
-                </button>
-            </div>
-
-            <!-- Comment Input -->
-            <div class="p-4">
-                <div class="flex gap-2">
-                    <input
-                        type="text"
-                        placeholder="Add a comment..."
-                        class="flex-1 px-4 py-2 border rounded-full focus:outline-none focus:border-gray-400"
-                    />
-                    <button
-                        class="px-6 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600"
-                    >
-                        Send
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 {% endblock %}

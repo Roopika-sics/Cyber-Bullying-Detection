@@ -43,6 +43,12 @@ def post_list(request):
 
 @never_cache
 @login_required
+def post_details(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    return render(request, "posts/post_details.html", {"post": post})
+
+@never_cache
+@login_required
 def like_post(request, post_id):
     post = get_object_or_404(Post, id=post_id)
     like, created = Like.objects.get_or_create(user=request.user, post=post)
@@ -55,10 +61,12 @@ def like_post(request, post_id):
    
     return JsonResponse({"liked": liked, "likes_count": post.likes.count()})
 
+
 @never_cache
 @login_required
 def comment_on_post(request, post_id):
     post = get_object_or_404(Post, id=post_id)
+
     if request.method == "POST":
         text = request.POST.get("text")
 
@@ -69,8 +77,10 @@ def comment_on_post(request, post_id):
                 "comment_id": comment.id,
                 "username": comment.user.username,
                 "text": comment.text,
+                "timestamp": comment.created_at, 
+                "profile_image": comment.user.profile.profile_image.url, 
             })
-    
+
     return JsonResponse({"success": False}, status=400)
 
 @csrf_exempt

@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% block title %}Feed | SocialConnect{% endblock %}
+{% block content %}
+
+
+   
+    <!-- Modal Content -->
+    <div class="bg-white rounded-xl w-full h-full flex overflow-hidden">
+        <!-- Left Side - Original Post -->
+        <div class="w-1/2 p-6 flex flex-col">
+            <!-- <button
+                onclick="toggleCommentModal()"
+                class="absolute top-2 right-2 text-gray-600 hover:text-gray-800"
+            >
+                <i class="fas fa-times text-2xl"></i>
+            </button> -->
+            <!-- Post Image -->
+            <img
+                src="{{ post.image.url }}"
+                alt="Post"
+                class="w-full object-cover rounded-xl mb-4"
+            />
+
+            <!-- Post Description -->
+            <p class="text-gray-600 mb-4">
+                {{ post.content }}
+            </p>
+
+            <!-- Profile Info -->
+            <div class="flex items-center gap-3 mb-4">
+                <img
+                    src="{{ post.user.profile.profile_image.url }}"
+                    alt="Profile"
+                    class="w-10 h-10 rounded-full"
+                />
+                <div>
+                    <h3 class="font-semibold">{{ post.user.username }}</h3>
+                    <p class="text-sm text-gray-500">{{ post.location }}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side - Comments Section -->
+        <div class="w-2/3 flex flex-col">
+            <!-- Comments Header -->
+            <div class="p-6">
+                <h2 class="text-xl font-bold">Comments ({{ post.comments.all|length }})</h2>
+            </div>
+
+            <!-- Comments List -->
+            <div class="flex-1 overflow-y-auto p-6 space-y-6" id="comments-list-{{ post.id }}">
+                {% for comment in post.comments.all %}
+                <!-- Comment Item -->
+                <div class="flex gap-4">
+                    <img
+                        src="{{ comment.user.profile.profile_image.url }}"
+                        alt="User"
+                        class="w-10 h-10 rounded-full"
+                    />
+                    <div class="flex-1">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h4 class="text-gray-600 font-semibold">
+                                    {{ comment.user.username }}
+                                </h4>
+                                <p class="text-gray-400 text-sm">
+                                    {{ comment.created_at }}
+                                </p>
+                            </div>
+                            <!-- <button
+                                class="text-gray-500 hover:text-red-500 mt-1"
+                            >
+                                <i class="far fa-heart"></i> 12
+                            </button> -->
+                        </div>
+                        <p class="text-gray-600">
+                            {{ comment.text }}
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Post Actions -->
+            <div class="p-4 flex gap-4">
+                <button class="like-button flex items-center space-x-2 text-gray-600 hover:text-red-500" data-post-id="{{ post.id }}">
+                    <svg id="like-icon-{{ post.id }}" class="w-5 h-5" fill="{% if post.is_liked_by_user %}red{% else %}none{% endif %}" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                    <span id="likes-count-{{ post.id }}">{{ post.likes.count }}</span>
+                </button>
+                
+            </div>
+
+            <!-- Comment Input -->
+            <div class="p-4">
+                <div class="flex gap-2">
+                    <form class="comment-form flex items-center space-x-2" data-post-id="{{ post.id }}">
+                        {% csrf_token %}
+                        <div class="relative flex-grow">
+                            <input type="text" name="text" placeholder="Add a comment..." 
+                                class="w-full px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-full focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent comment-input">
+                        </div>
+                        <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

@@ -201,3 +201,7 @@ ValueError: The 'profile_image' attribute has no file associated with it.
 [ 2025-03-22 22:47:38,230 ] 248 django.request - WARNING - Not Found: /advertisers/ad-click/2/font.css
 [ 2025-03-22 22:47:39,831 ] 248 django.request - WARNING - Not Found: /posts/font.css
 [ 2025-03-22 22:47:39,845 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 22:53:14,614 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 22:53:17,678 ] 248 django.request - WARNING - Not Found: /get_post_comments/2/
+[ 2025-03-22 22:53:24,842 ] 248 django.request - WARNING - Not Found: /get_post_comments/2/
+[ 2025-03-22 22:54:54,088 ] 266 django.utils.autoreload - INFO - C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\views.py changed, reloading.
