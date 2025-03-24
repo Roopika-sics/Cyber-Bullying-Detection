@@ -2,84 +2,59 @@
 {% block title %}Create Post | SocialConnect{% endblock %}
 {% block content %}
 
-<div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-hidden">
-        <div class="p-6 border-b border-gray-200 dark:border-gray-700">
-            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Create Post</h2>
-            <p class="text-gray-600 dark:text-gray-400">Share something with your network</p>
-        </div>
-        
-        {% if messages %}
-        <div class="p-4 bg-red-50 dark:bg-red-900 border-l-4 border-red-500">
-            {% for message in messages %}
-            <p class="text-red-700 dark:text-red-300">{{ message }}</p>
-            {% endfor %}
-        </div>
-        {% endif %}
-        
-        <div class="p-6">
-            <form method="post" enctype="multipart/form-data" class="space-y-6">
-                {% csrf_token %}
-                
-                <div>
-                    <label for="title" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Title</label>
-                    <input type="text" name="title" id="title" 
-                        class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent"
-                        placeholder="Give your post a title">
-                </div>
+<main class="max-w-3xl mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold text-gray-800 mb-8">Create Post</h1>
 
-                <div>
-                    <label for="location" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Location</label>
-                    <input type="text" name="location" id="location" 
-                        class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent"
-                        placeholder="Location">
-                </div>
-                
-                <div>
-                    <label for="content" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Content</label>
-                    <textarea name="content" id="content" rows="5"
-                        class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent"
-                        placeholder="What's on your mind?"></textarea>
-                </div>
-                
-                <div>
-                    <label for="image" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Image</label>
-                    <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 dark:border-gray-700 border-dashed rounded-lg">
-                        <div class="space-y-1 text-center">
-                            <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
-                                <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                            <div class="flex text-sm text-gray-600 dark:text-gray-400">
-                                <label for="image" class="relative cursor-pointer bg-white dark:bg-gray-800 rounded-md font-medium text-primary-600 dark:text-primary-400 hover:text-primary-500 dark:hover:text-primary-300 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary-500">
-                                    <span>Upload a file</span>
-                                    <input id="image" name="image" type="file" class="sr-only" accept="image/*" onchange="previewImage(event)">
-                                </label>
-                                <p class="pl-1">or drag and drop</p>
-                            </div>
-                            <p class="text-xs text-gray-500 dark:text-gray-400">
-                                PNG, JPG, GIF up to 10MB
-                            </p>
-                        </div>
-                    </div>
-                    <div id="image-preview-container" class="mt-3 hidden">
-                        <img id="image-preview" class="max-w-full h-auto rounded-lg shadow-md" style="max-height: 200px;">
-                    </div>
-                </div>
-                
-                <div class="flex items-center justify-end">
-                    <a href="{% url 'home' %}" class="mr-4 inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 shadow-sm text-sm font-medium rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
-                        Cancel
-                    </a>
-                    <button type="submit" class="inline-flex items-center px-6 py-3 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-                        Publish Post
-                    </button>
-                </div>
-            </form>
-        </div>
+    {% if messages %}
+    <div class="p-4 bg-red-50 border-l-4 border-red-500">
+        {% for message in messages %}
+        <p class="text-red-700">{{ message }}</p>
+        {% endfor %}
     </div>
-</div>
+    {% endif %}
+
+    <form method="post" enctype="multipart/form-data" class="space-y-6">
+        {% csrf_token %}
+        
+        <!-- Image Upload Area -->
+        <div>
+            <label for="image" class="block text-gray-700 font-medium mb-2">Upload Image</label>
+            <div class="w-full h-96 bg-gray-200 rounded-xl border-2 border-gray-400 border-dashed flex items-center justify-center cursor-pointer hover:bg-gray-300 transition-colors relative overflow-hidden" onclick="document.getElementById('image').click()">
+                <input type="file" id="image" name="image" accept="image/*" class="hidden" onchange="previewImage_1(event)">
+                <img id="previewImage" src="#" alt="Preview" class="absolute inset-0 w-full h-full object-cover hidden">
+                <i class="fas fa-plus text-4xl text-gray-500" id="uploadIcon"></i>
+            </div>
+        </div>
+
+
+        <!-- Title Input -->
+        <div>
+            <label for="title" class="block text-gray-700 font-medium mb-2">Title</label>
+            <input type="text" name="title" id="title" placeholder="Give your post a title" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500">
+        </div>
+
+        <!-- Location Input -->
+        <div>
+            <label for="location" class="block text-gray-700 font-medium mb-2">Location</label>
+            <input type="text" name="location" id="location" placeholder="Location" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500">
+        </div>
+        
+        <!-- Content Input -->
+        <div>
+            <label for="content" class="block text-gray-700 font-medium mb-2">Content</label>
+            <textarea name="content" id="content" rows="5" placeholder="What's on your mind?" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500"></textarea>
+        </div>
+        
+        <div class="flex items-center justify-end">
+            <!-- <a href="{% url 'home' %}" class="mr-4 inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">Cancel</a> -->
+            <button
+                    type="submit"
+                    class="w-full py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors font-medium"
+                >
+                    Post Now
+                </button>
+        </div>
+    </form>
+</main>
 
 {% endblock %}
