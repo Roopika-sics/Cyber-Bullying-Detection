@@ -1,0 +1,202 @@
+[ 2025-03-24 17:40:52,669 ] 248 django.request - ERROR - Internal Server Error: /advertisers/edit/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 883, in _resolve_lookup
+    current = current[bit]
+TypeError: 'ImageFieldFile' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\advertisers\views.py", line 100, in edit_advertiser_profile
+    return render(request, 'advertisers/adver_edit_profile.html', {'form': form})
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1067, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 718, in resolve
+    obj = self.var.resolve(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 850, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\fields\files.py", line 69, in url
+    self._require_file()
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\fields\files.py", line 44, in _require_file
+    raise ValueError(
+ValueError: The 'profile_image' attribute has no file associated with it.
+[ 2025-03-24 17:41:09,383 ] 248 django.request - WARNING - Not Found: /favicon.ico
+[ 2025-03-24 17:41:22,841 ] 248 django.request - WARNING - Not Found: /advertisers/edit/font.css
+[ 2025-03-24 17:41:31,436 ] 248 django.request - WARNING - Not Found: /advertisers/profile/usera/font.css
+[ 2025-03-24 17:41:34,239 ] 248 django.request - WARNING - Not Found: /advertisers/edit/font.css
+[ 2025-03-24 17:41:45,430 ] 248 django.request - WARNING - Not Found: /advertisers/profile/usera/font.css
+[ 2025-03-24 17:41:50,817 ] 248 django.request - WARNING - Not Found: /advertisers/edit/font.css
+[ 2025-03-24 17:41:57,441 ] 248 django.request - ERROR - Internal Server Error: /advertisers/profile/usera/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 883, in _resolve_lookup
+    current = current[bit]
+TypeError: 'ImageFieldFile' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\advertisers\views.py", line 107, in adver_profile
+    return render(request, 'advertisers/adver_profile.html', {'user': user, 'profile': profile})
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1067, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 718, in resolve
+    obj = self.var.resolve(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 850, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\fields\files.py", line 69, in url
+    self._require_file()
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\fields\files.py", line 44, in _require_file
+    raise ValueError(
+ValueError: The 'profile_image' attribute has no file associated with it.
+[ 2025-03-24 17:42:10,072 ] 248 django.request - WARNING - Not Found: /advertisers/profile/usera/font.css
+[ 2025-03-24 17:43:18,541 ] 248 django.request - WARNING - Not Found: /advertisers/profile/usera/font.css
+[ 2025-03-24 17:43:19,683 ] 248 django.request - WARNING - Not Found: /advertisers/edit/font.css
+[ 2025-03-24 17:43:24,614 ] 248 django.request - ERROR - Internal Server Error: /advertisers/profile/usera/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 883, in _resolve_lookup
+    current = current[bit]
+TypeError: 'ImageFieldFile' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\advertisers\views.py", line 107, in adver_profile
+    return render(request, 'advertisers/adver_profile.html', {'user': user, 'profile': profile})
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1067, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 718, in resolve
+    obj = self.var.resolve(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 850, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\fields\files.py", line 69, in url
+    self._require_file()
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\fields\files.py", line 44, in _require_file
+    raise ValueError(
+ValueError: The 'profile_image' attribute has no file associated with it.
+[ 2025-03-24 17:43:35,828 ] 248 django.request - WARNING - Not Found: /advertisers/profile/usera/font.css
+[ 2025-03-24 17:43:37,074 ] 248 django.request - WARNING - Not Found: /advertisers/edit/font.css
+[ 2025-03-24 17:43:38,501 ] 248 django.request - WARNING - Not Found: /advertisers/profile/usera/font.css
+[ 2025-03-24 17:43:39,379 ] 248 django.request - WARNING - Not Found: /advertisers/edit/font.css
+[ 2025-03-24 17:45:40,933 ] 266 django.utils.autoreload - INFO - C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\advertisers\forms.py changed, reloading.

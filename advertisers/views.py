@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, render, redirect
-from .forms import AdvertiserRegistrationForm
+from .forms import AdvertiserRegistrationForm, EditAdvertiserForm
 from account.models import User
 from .models import Advertiser, Advertisements
 from django.contrib import messages
@@ -61,7 +61,52 @@ def add_advertisement(request):
         else:
             messages.error(request, "All fields are required.")
 
-    return render(request, 'advertisers/add_advertisement.html')\
+    return render(request, 'advertisers/add_advertisement.html')
+
+@login_required
+def edit_advertiser_profile(request):
+    user = request.user
+    advertiser = user.advertiser
+    if request.method == 'POST':
+        form = EditAdvertiserForm(request.POST, request.FILES, user=request.user)
+        
+        if form.is_valid():
+            request.user.username = form.cleaned_data['username']
+            request.user.email = form.cleaned_data['email']
+            request.user.save()
+
+            # Update Profile Model
+            advertiser, created = Advertiser.objects.get_or_create(user=request.user)
+            advertiser.business_name = form.cleaned_data['business_name']
+            advertiser.business_type = form.cleaned_data['business_type']
+            advertiser.contact_number = form.cleaned_data['contact_number']
+            advertiser.address = form.cleaned_data['address']
+            advertiser.profile_image = form.cleaned_data['profile_image']
+            
+            if 'profile_image' in request.FILES:  
+                advertiser.profile_image = request.FILES['profile_image']
+
+            advertiser.save()
+            user.save()
+
+            messages.success(request, "Your profile has been updated successfully!")
+            return redirect('advertisers:adver_profile', username=request.user.username)
+        else:
+            messages.error(request, "Please correct the errors below.")
+
+    else:
+        form = EditAdvertiserForm(user=request.user)
+
+    return render(request, 'advertisers/adver_edit_profile.html', {'form': form})
+
+
+def adver_profile(request, username):
+    user = get_object_or_404(User, username=username)
+    profile = get_object_or_404(Advertiser, user=user)
+
+    return render(request, 'advertisers/adver_profile.html', {'user': user, 'profile': profile})
+
+
 
 @never_cache
 @login_required 

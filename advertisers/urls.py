@@ -10,6 +10,8 @@ urlpatterns = [
     path('ad-click/<int:ad_id>/', views.ad_click, name='ad_click'),
     path('ad/<int:ad_id>/visit/', views.visit_anyway, name='visit_anyway'),
     path("user-details/", views.user_details, name="user_details"),
+    path("profile/<str:username>/", views.adver_profile, name="adver_profile"),
+    path('edit/', views.edit_advertiser_profile, name='adver_edit_profile'),
     
 
 ]

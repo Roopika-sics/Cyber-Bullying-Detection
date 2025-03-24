@@ -51,3 +51,27 @@
 [ 2025-03-24 15:34:21,899 ] 248 django.request - WARNING - Not Found: /posts/create/font.css
 [ 2025-03-24 15:34:34,433 ] 248 django.request - WARNING - Not Found: /posts/font.css
 [ 2025-03-24 15:34:40,934 ] 248 django.request - WARNING - Not Found: /posts/create/font.css
+[ 2025-03-24 15:35:11,014 ] 248 django.request - WARNING - Not Found: /posts/create/font.css
+[ 2025-03-24 15:35:16,644 ] 248 django.request - WARNING - Not Found: /profile/user/font.css
+[ 2025-03-24 15:35:19,082 ] 248 django.request - WARNING - Not Found: /edit/font.css
+[ 2025-03-24 15:35:24,241 ] 248 django.request - WARNING - Not Found: /profile/user/font.css
+[ 2025-03-24 15:35:27,358 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-24 15:35:37,122 ] 248 django.request - WARNING - Not Found: /posts/create/font.css
+[ 2025-03-24 15:35:43,014 ] 248 django.request - WARNING - Not Found: /posts/create/font.css
+[ 2025-03-24 15:35:47,403 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-24 15:36:07,287 ] 248 django.request - WARNING - Not Found: /profile/user/font.css
+[ 2025-03-24 15:36:09,551 ] 248 django.request - WARNING - Not Found: /edit/font.css
+[ 2025-03-24 15:36:12,515 ] 248 django.request - WARNING - Not Found: /profile/user/font.css
+[ 2025-03-24 15:36:14,922 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-03-24 15:36:22,089 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-03-24 15:36:27,526 ] 248 django.request - WARNING - Not Found: /advertisers/add-advertisement/font.css
+[ 2025-03-24 15:36:31,090 ] 248 django.request - WARNING - Not Found: /advertisers/add-advertisement/font.css
+[ 2025-03-24 15:36:31,790 ] 248 django.request - WARNING - Not Found: /advertisers/view-advertisements/font.css
+[ 2025-03-24 15:36:32,903 ] 248 django.request - WARNING - Not Found: /advertisers/add-advertisement/font.css
+[ 2025-03-24 15:36:33,554 ] 248 django.request - WARNING - Not Found: /advertisers/user-details/font.css
+[ 2025-03-24 15:36:34,277 ] 248 django.request - WARNING - Not Found: /advertisers/view-advertisements/font.css
+[ 2025-03-24 15:36:34,773 ] 248 django.request - WARNING - Not Found: /advertisers/add-advertisement/font.css
+[ 2025-03-24 15:37:58,326 ] 248 django.request - WARNING - Not Found: /profile/usera/
+[ 2025-03-24 15:37:58,370 ] 248 django.request - WARNING - Not Found: /favicon.ico
+[ 2025-03-24 15:38:03,177 ] 248 django.request - WARNING - Not Found: /profile/usera/
+[ 2025-03-24 15:39:19,708 ] 266 django.utils.autoreload - INFO - C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\advertisers\forms.py changed, reloading.
