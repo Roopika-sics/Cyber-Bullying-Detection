@@ -1,25 +1,24 @@
 {% extends "base.html" %}
-{% block title %}Registration{% endblock %}
-{% load static %}
+{% block title %}View Advertisements{% endblock %}
 {% block content %}
-{% block navbar %}{% endblock %}
 
-
-<h1>View Advertisements</h1>
-
-{% if advertisements %}
-    <ul>
+<div class="container mx-auto p-6">
+    <h1 class="text-3xl font-bold text-center text-orange-500 mb-6">View Advertisements</h1>
+    
+    {% if advertisements %}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {% for advertisement in advertisements %}
-            <li>
-                <h2>{{ advertisement.title }}</h2>
-                <p>{{ advertisement.description }}</p>
-                
-                <p>Image: <img src="{{ advertisement.image.url }}" alt="Advertisement Image"></p>
-            </li>
+        <div class="bg-white rounded-lg shadow-lg p-4">
+            <img src="{{ advertisement.image.url }}" alt="Advertisement Image" class="w-full h-48 object-cover rounded">
+            <h2 class="text-xl font-semibold text-gray-800 mt-3">{{ advertisement.title }}</h2>
+            <p class="text-gray-600 mt-2">{{ advertisement.description }}</p>
+            <a href="{{ advertisement.link }}" target="_blank" class="mt-3 inline-block text-blue-500 hover:underline">View More</a>
+        </div>
         {% endfor %}
-    </ul>
-{% else %}
-    <p>No advertisements found.</p>
-{% endif %}
+    </div>
+    {% else %}
+        <p class="text-center text-gray-600">No advertisements found.</p>
+    {% endif %}
+</div>
 
 {% endblock %}

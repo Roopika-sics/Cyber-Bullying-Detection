@@ -42,7 +42,7 @@
         <link rel="stylesheet" href="{% static 'css/index.css' %}" />
         <link rel="stylesheet" href="font.css" />
     </head>
-    <body>
+    <body class="min-h-screen flex flex-col">
         <nav class="navbar navbar-expand-sm">
             <div class="container-fluid">
                 <a class="navbar-brand logo" href="{% url 'home' %}">
@@ -186,7 +186,7 @@
         {% endblock content %}
    
 
-        <div class="footerBG">
+        <div class="footerBG mt-auto py-4">
             <div class="footerComponents">
                 <div class="footer_sec_one">
                     <p>
