@@ -20,12 +20,26 @@ def admin_dashboard(request):
     return render(request, 'admin_panel/admin_dashboard.html', {'advertisers': advertisers, 'recent_posts': recent_posts})
 
 def all_advertisers_view(request):
-    advertisers = Advertiser.objects.all()
+    advertisers = User.objects.filter(user_type='advertiser')
     return render(request, 'admin_panel/advertiser_requests.html', {'advertisers': advertisers})
 
 def all_posts_view(request):
     posts = Post.objects.all().order_by('-created_at')
     return render(request, 'admin_panel/recent_posts.html', {'posts': posts})
+
+def approve_advertiser(request, id):
+    advertiser = User.objects.get(id=id)
+    advertiser.is_active = True
+    advertiser.save()
+    messages.success(request, "The advertiser has been approved successfully.")
+    return redirect('all_advertisers')
+
+def reject_advertiser(request, id):
+    advertiser = get_object_or_404(User, id=id)
+    advertiser.is_active = False
+    advertiser.save()
+    messages.error(request, "The advertiser has been rejected.")
+    return redirect('all_advertisers')
 
 @never_cache
 @login_required

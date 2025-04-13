@@ -1,0 +1,80 @@
+[ 2025-04-13 22:58:55,741 ] 248 django.request - ERROR - Internal Server Error: /admin_panel/admin/advertiser/approve/17/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\admin_panel\views.py", line 31, in approve_advertiser
+    advertiser = Advertiser.objects.get(id=id)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+advertisers.models.Advertiser.DoesNotExist: Advertiser matching query does not exist.
+[ 2025-04-13 22:59:29,664 ] 248 django.request - ERROR - Internal Server Error: /admin_panel/admin/advertiser/approve/16/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\admin_panel\views.py", line 31, in approve_advertiser
+    advertiser = Advertiser.objects.get(id=id)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+advertisers.models.Advertiser.DoesNotExist: Advertiser matching query does not exist.
+[ 2025-04-13 22:59:39,775 ] 248 django.request - ERROR - Internal Server Error: /admin_panel/admin/advertiser/approve/12/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\admin_panel\views.py", line 31, in approve_advertiser
+    advertiser = Advertiser.objects.get(id=id)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+advertisers.models.Advertiser.DoesNotExist: Advertiser matching query does not exist.
+[ 2025-04-13 22:59:55,121 ] 248 django.request - ERROR - Internal Server Error: /admin_panel/admin/advertiser/approve/12/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\admin_panel\views.py", line 31, in approve_advertiser
+    advertiser = Advertiser.objects.get(id=id)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+advertisers.models.Advertiser.DoesNotExist: Advertiser matching query does not exist.
+[ 2025-04-13 22:59:57,997 ] 248 django.request - ERROR - Internal Server Error: /admin_panel/admin/advertiser/approve/12/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\admin_panel\views.py", line 31, in approve_advertiser
+    advertiser = Advertiser.objects.get(id=id)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+advertisers.models.Advertiser.DoesNotExist: Advertiser matching query does not exist.
+[ 2025-04-13 23:00:03,112 ] 248 django.request - ERROR - Internal Server Error: /admin_panel/admin/advertiser/approve/12/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\admin_panel\views.py", line 31, in approve_advertiser
+    advertiser = Advertiser.objects.get(id=id)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+advertisers.models.Advertiser.DoesNotExist: Advertiser matching query does not exist.
+[ 2025-04-13 23:02:11,654 ] 248 django.request - WARNING - Not Found: /admin_panel/admin/advertiser/reject/14/
+[ 2025-04-13 23:03:25,475 ] 266 django.utils.autoreload - INFO - C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\admin_panel\views.py changed, reloading.

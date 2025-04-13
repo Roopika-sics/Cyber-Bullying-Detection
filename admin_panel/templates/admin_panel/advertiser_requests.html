@@ -1,5 +1,14 @@
 {% extends "admin_base.html" %}
 {% block content %}
+{% if messages %}
+  {% for message in messages %}
+    <div class="{% if message.tags == 'success' %}bg-green-100 border border-green-400 text-green-700{% elif message.tags == 'error' %}bg-orange-100 border border-orange-400 text-orange-800{% endif %} px-4 py-3 rounded relative mb-4 shadow" role="alert">
+      <span class="block sm:inline">{{ message }}</span>
+      <button onclick="this.parentElement.style.display='none'" class="absolute top-2 right-3 text-lg font-bold text-gray-600 hover:text-black">&times;</button>
+    </div>
+  {% endfor %}
+{% endif %}
+
 
 <div class="bg-white p-6 shadow rounded">
   <h2 class="text-xl font-semibold text-orange-500 mb-4">All Advertiser Requests</h2>
@@ -14,25 +23,27 @@
         <th class="border p-2">Company Name</th>
         <th class="border p-2">Business Category</th>
         <th class="border p-2">Actions</th>
+        <th class="border p-2">Status</th>
       </tr>
     </thead>
     <tbody>
       {% for advertiser in advertisers %}
       <tr class="text-center">
         <td class="border p-2">{{ forloop.counter }}</td>
-        <td class="border p-2">{{ advertiser.user.first_name }}</td>
-        <td class="border p-2">{{ advertiser.contact_number }}</td>
-        <td class="border p-2">{{ advertiser.user.email }}</td>
-        <td class="border p-2">{{ advertiser.business_name }}</td>
-        <td class="border p-2">{{ advertiser.business_type }}</td>
+            <td class="border p-2">{{ advertiser.username }}</td>
+            <td class="border p-2">{{ advertiser.advertiser.contact_number }}</td>
+            <td class="border p-2">{{ advertiser.email }}</td>
+            <td class="border p-2">{{ advertiser.advertiser.business_name }}</td>
+            <td class="border p-2">{{ advertiser.advertiser.business_type }}</td>
+            <td class="border p-2">{{ advertiser.is_active }}</td>
         <td class="border p-2">
           <form action="" method="post" class="inline">
             {% csrf_token %}
-            <button class="bg-green-500 text-white px-2 py-1 rounded">Accept</button>
+            <a href="{% url 'approve_advertiser' advertiser.id %}" class="bg-green-500 text-white px-2 py-1 rounded">Accept</a>
           </form>
           <form action="" method="post" class="inline">
             {% csrf_token %}
-            <button class="bg-red-500 text-white px-2 py-1 rounded">Reject</button>
+            <a href="{% url 'reject_advertiser' advertiser.id %}" class="bg-red-500 text-white px-2 py-1 rounded">Reject</a>
           </form>
         </td>
       </tr>

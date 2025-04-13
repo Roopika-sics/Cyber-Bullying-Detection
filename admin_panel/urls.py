@@ -14,4 +14,6 @@ urlpatterns = [
 
     path('admin/advertisers/', views.all_advertisers_view, name='all_advertisers'),
     path('admin/posts/', views.all_posts_view, name='all_posts'),
+    path('admin/advertiser/approve/<int:id>/', views.approve_advertiser, name='approve_advertiser'),
+    path('admin/advertiser/reject/<int:id>/', views.reject_advertiser, name='reject_advertiser'),
 ]
