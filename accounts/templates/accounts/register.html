@@ -12,126 +12,76 @@
             alt="Sign Up"
         />
     </div>
+
     <div class="Signup_RightSide">
         <p class="Signup_RightSide_head">Sign Up!</p>
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
 
-            {% for field in form %}
-            {% if field.errors %}
-                <div class="error text-red-500 text-center mb-3">{{ field.errors }}</div>
-            {% endif %}
-            {% endfor %}
-            <div class="mb-3 mt-3">
-                <input
-                    type="text"
-                    class="form-control"
-                    id="username"
-                    placeholder="Username",
-                    name="username"
-                />
-                <div id="usernameError" class="error"></div>
+            <!-- Image Upload -->
+            <div class="mb-5 flex flex-col items-center justify-center">
+                <label for="image-upload" class="flex flex-col items-center justify-center cursor-pointer">
+                    <input type="file" name="profile_image" id="image-upload" accept="image/*" class="hidden" onchange="previewImage(event)" required />
+                    <img id="image-preview" src="{% static 'assets/profile-pic.png' %}" alt="Upload Profile Pic" class="w-48 h-56 object-contain mt-2 rounded-2xl" />
+                    <span class="text-sm mt-2">Upload Profile Image</span>
+                </label>
+                {% if errors.profile_image %}
+                    <p class="text-red-500 text-sm mt-1">{{ errors.profile_image }}</p>
+                {% endif %}
             </div>
 
-            <div class="mb-3 mt-3">
-                <input
-                    type="email"
-                    class="form-control"
-                    id="email"
-                    placeholder="E-mail"
-                    name="email"
-                />
-                <div id="emailError" class="error"></div>
+            <!-- Form Fields in 2-Column Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <input type="text" class="form-control" name="username" placeholder="Username" required />
+                </div>
+                <div>
+                    <input type="email" class="form-control" name="email" placeholder="Email" required />
+                </div>
+
+                <div>
+                    <input type="text" class="form-control" name="area_of_interest" placeholder="Area of Interest" />
+                </div>
+                <div>
+                    <input type="text" class="form-control" name="age" placeholder="Age" />
+                </div>
+
+                <div>
+                    <input type="text" class="form-control" name="country" placeholder="Country" />
+                </div>
+                <div>
+                    <input type="text" class="form-control" name="state" placeholder="State" />
+                </div>
+
+                <div>
+                    <input type="password" class="form-control" name="password" placeholder="Password" required />
+                </div>
+                <div>
+                    <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required />
+                </div>
             </div>
 
-            <div class="mb-3 mt-3">
-                <input
-                    type="text"
-                    class="form-control"
-                    name="area_of_interest"
-                    placeholder="Arar Of Interest",
-                />
-                <div id="usernameError" class="error"></div>
+            <div class="mt-6 text-center">
+                <button type="submit" class="btn Signup_Button mb-4">Sign Up</button>
             </div>
 
-            <div class="mb-3 signup-password-relative">
-                <input
-                    type="password"
-                    class="form-control"
-                    id="password"
-                    placeholder="Password",
-                    name="password"
-                />
-                <div id="passwordError" class="error"></div>
-            </div>
-
-            <div class="mb-3 signup-confirm-relative">
-                <input
-                    type="password"
-                    class="form-control"
-                    id="confirm_password"
-                    placeholder="Confirm Password",
-                    name="confirm_password"
-                />
-                <div id="confirmPasswordError" class="error"></div>
-            </div>
-
-            <div class="mb-3 mt-3">
-                <input
-                    type="text"
-                    class="form-control"
-                    name="age"
-                    placeholder="age",
-                />
-                <div id="usernameError" class="error"></div>
-            </div>
-
-            <div class="mb-3 mt-3">
-                <input
-                    type="text"
-                    class="form-control"
-                    name="country"
-                    placeholder="country",
-                
-                />
-                <div id="usernameError" class="error"></div>
-            </div>
-
-            <div class="mb-3 mt-3">
-                <input
-                    type="text"
-                    class="form-control"
-                    name="state"
-                    placeholder="state",
-                />
-                <div id="usernameError" class="error"></div>
-            </div>
-
-            <div class="mb-3 mt-3">
-                <input 
-                type="file"
-                class="form-control"
-                name="profile_image"
-                placeholder="profile_image"
-                > 
-
-            </div>
-
-            <div id="apiError" class="api-error"></div>
-
-            <button type="submit" class="btn Signup_Button mb-5">
-                Sign Up
-            </button>
+            <p class="text-center">
+                Already have an account?
+                <a class="user-signup-login" href="{% url 'login' %}">Login</a>
+            </p>
         </form>
-
-        <p>
-            Already have an account?
-            <a class="user-signup-login" href="{% url 'login' %}">Login</a>
-        </p>
     </div>
 </div>
 
-
-    
+<!-- Image Preview Script -->
+<script>
+function previewImage(event) {
+    const image = document.getElementById('image-preview');
+    const file = event.target.files[0];
+    if (file) {
+        image.src = URL.createObjectURL(file);
+    }
+}
+</script>
 
 {% endblock %}

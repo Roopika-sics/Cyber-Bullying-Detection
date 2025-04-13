@@ -13,6 +13,7 @@ from .models import MaliciousClick
 def resister(request):
     if request.method == 'POST':
         form = AdvertiserRegistrationForm(request.POST, request.FILES)
+        profile_image = request.FILES.get('profile_image')
         if form.is_valid():
             username = form.cleaned_data['username']
             email = form.cleaned_data['email']
@@ -22,7 +23,7 @@ def resister(request):
             business_type = form.cleaned_data['business_type']
             contact_number = form.cleaned_data['contact_number']
             address = form.cleaned_data['address']
-            profile_image = form.cleaned_data['profile_image']
+            profile_image=profile_image
 
             user = User.objects.create_user(username=username, email=email, password=password, user_type='advertiser')
             Advertiser.objects.create(user=user, business_name=business_name, business_type=business_type, contact_number=contact_number, address=address, profile_image=profile_image)

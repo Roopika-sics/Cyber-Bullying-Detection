@@ -29,14 +29,14 @@ class AdvertiserRegistrationForm(forms.ModelForm):
     address = forms.CharField(
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Address'})
     )
-    profile_image = forms.ImageField(
-        required=True, 
-        widget=forms.FileInput(attrs={'class': 'form-control'})
-    )
+    # profile_image = forms.ImageField(
+    #     required=True, 
+    #     widget=forms.FileInput(attrs={'class': 'form-control'})
+    # )
 
     class Meta:
         model = Advertiser
-        fields = ['username', 'email', 'password', 'confirm_password', 'business_name', 'business_type', 'contact_number', 'address', 'profile_image']
+        fields = ['username', 'email', 'password', 'confirm_password', 'business_name', 'business_type', 'contact_number', 'address']
 
         
     def clean_username(self):
