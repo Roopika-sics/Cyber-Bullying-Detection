@@ -25,7 +25,7 @@ def resister(request):
             address = form.cleaned_data['address']
             profile_image=profile_image
 
-            user = User.objects.create_user(username=username, email=email, password=password, user_type='advertiser')
+            user = User.objects.create_user(username=username, email=email, password=password, user_type='advertiser', is_active=False)
             Advertiser.objects.create(user=user, business_name=business_name, business_type=business_type, contact_number=contact_number, address=address, profile_image=profile_image)
             messages.success(request, 'Registration Successfull! please login')
             return redirect('login')

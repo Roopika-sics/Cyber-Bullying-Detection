@@ -5,7 +5,7 @@ from django.views.decorators.cache import never_cache
 from account.models import User
 from posts.models import Post, Comment
 from accounts.models import Profile
-
+from advertisers.models import Advertiser
 # Create your views here.
 
 def is_admin(user):
@@ -15,7 +15,17 @@ def is_admin(user):
 @login_required
 @user_passes_test(is_admin)
 def admin_dashboard(request):
-    return render(request, 'admin_panel/admin_dashboard.html')
+    advertisers = User.objects.filter(is_active=False, user_type='advertiser')
+    recent_posts = Post.objects.order_by('-created_at')[:3]
+    return render(request, 'admin_panel/admin_dashboard.html', {'advertisers': advertisers, 'recent_posts': recent_posts})
+
+def all_advertisers_view(request):
+    advertisers = Advertiser.objects.all()
+    return render(request, 'admin_panel/advertiser_requests.html', {'advertisers': advertisers})
+
+def all_posts_view(request):
+    posts = Post.objects.all().order_by('-created_at')
+    return render(request, 'admin_panel/recent_posts.html', {'posts': posts})
 
 @never_cache
 @login_required
