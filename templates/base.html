@@ -61,6 +61,11 @@
                         </a>
                     </li>
                     <li class="nav-item navbar_nav-item flex justify-center items-center">
+                        <a class="nav-link navbar_links" href="{% url 'my_posts' user_id=user.id %}">
+                            My Post
+                        </a>
+                    </li>
+                    <li class="nav-item navbar_nav-item flex justify-center items-center">
                         <form action="{% url 'toggle_safe_mode' %}" method="POST" class="m-0">
                             {% csrf_token %}
                             <button type="submit" class="flex items-center gap-2 px-3 py-1.5 rounded-full transition-all duration-300 {% if request.user.profile.safe_mode %}bg-green-100 hover:bg-green-200{% else %}bg-red-100 hover:bg-red-200{% endif %}">

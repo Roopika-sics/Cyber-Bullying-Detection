@@ -1,11 +1,18 @@
 import pickle
 import validators
 from src.pipeline.predict_pipeline import PredictPipeline
+import gdown
+import os
 
+# https://drive.google.com/file/d/1ESxaL6dcF2nyL-7xso6SF6x4jAw1gcNi/view?usp=sharing
+
+GOOGLE_DRIVE_FILE_ID = '1ESxaL6dcF2nyL-7xso6SF6x4jAw1gcNi'
 # Load the trained ML model
+if not os.path.isfile('rf.pkl'):
+    gdown.download(id=GOOGLE_DRIVE_FILE_ID, output='rf.pkl', quiet=False)
+    
 with open('rf.pkl', 'rb') as f:
     model = pickle.load(f)
-
 # Initialize the prediction pipeline
 pred = PredictPipeline()
 

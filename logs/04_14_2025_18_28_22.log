@@ -1,0 +1,11 @@
+[ 2025-04-14 18:29:00,279 ] 248 django.request - WARNING - Not Found: /posts/my-posts/2/font.css
+[ 2025-04-14 18:29:02,532 ] 248 django.request - WARNING - Not Found: /posts/create/font.css
+[ 2025-04-14 18:29:03,365 ] 248 django.request - WARNING - Not Found: /posts/my-posts/2/font.css
+[ 2025-04-14 18:29:13,351 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-04-14 18:29:17,882 ] 248 django.request - WARNING - Not Found: /posts/my-posts/2/font.css
+[ 2025-04-14 18:29:24,768 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-14 18:29:31,128 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-14 18:29:36,767 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-14 18:29:41,212 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-14 18:29:48,205 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-14 18:29:50,445 ] 248 django.request - WARNING - Not Found: /register/font.css
