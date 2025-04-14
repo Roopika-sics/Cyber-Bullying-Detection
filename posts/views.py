@@ -96,17 +96,35 @@ def report_comment(request, comment_id):
     
     return JsonResponse({"success": False}, status=400)
 
+@login_required
 def my_posts(request, user_id):
     my_posts = Post.objects.filter(user_id=user_id)
     return render(request, 'posts/my_posts.html', {'my_posts':my_posts})
 
 @login_required
 def delete_post(request, post_id):
-    post = get_object_or_404(Post, id=post_id)
-    if request.user == post.user:
+    print(f"User: {request.user}, Post ID: {post_id}")
+    post = Post.objects.filter(id=post_id, user=request.user).first()
+    
+    if post:
         post.delete()
-    return redirect('my_posts')
+        return redirect('my_posts', user_id=request.user.id)
+    else:
+        return redirect('home')
 
+    
+@login_required
+def edit_post(request, post_id):
+    post = get_object_or_404(Post, id=post_id, user=request.user)
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES, instance=post)
+        if form.is_valid():
+            form.save()
+            return redirect('my_post', post_id)
+    else:
+        form = PostForm(instance=post)
+
+    return render(request, 'posts/edit_post.html', {'form': form, 'post': post})
 @login_required
 def toggle_safe_mode(request):
     profile, created = Profile.objects.get_or_create(user=request.user)

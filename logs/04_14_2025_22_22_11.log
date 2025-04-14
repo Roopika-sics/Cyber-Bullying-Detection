@@ -1,0 +1,22 @@
+[ 2025-04-14 22:22:13,558 ] 248 django.request - WARNING - Not Found: /posts/my-posts/2/font.css
+[ 2025-04-14 22:22:17,751 ] 248 django.request - WARNING - Not Found: /posts/post/8/edit/font.css
+[ 2025-04-14 22:22:27,570 ] 248 django.request - ERROR - Internal Server Error: /posts/post/8/edit/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\views.py", line 117, in edit_post
+    return redirect('my_post', post_id)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 49, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 180, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'my_pos' not found. 'my_pos' is not a valid view function or pattern name.
+[ 2025-04-14 22:22:27,637 ] 248 django.request - WARNING - Not Found: /favicon.ico

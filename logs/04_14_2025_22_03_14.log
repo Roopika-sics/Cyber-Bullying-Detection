@@ -1,0 +1,8 @@
+[ 2025-04-14 22:03:22,640 ] 248 django.request - WARNING - Not Found: /posts/my-posts/2/font.css
+[ 2025-04-14 22:03:25,087 ] 248 django.request - WARNING - Not Found: /accounts/
+[ 2025-04-14 22:03:28,015 ] 248 django.request - WARNING - Not Found: /posts/my-posts/2/font.css
+[ 2025-04-14 22:03:30,289 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-14 22:03:34,966 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-04-14 22:03:37,267 ] 248 django.request - WARNING - Not Found: /posts/my-posts/2/font.css
+[ 2025-04-14 22:03:39,950 ] 248 django.request - WARNING - Not Found: /accounts/
+[ 2025-04-14 22:04:14,762 ] 266 django.utils.autoreload - INFO - C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\ai_phishing\settings.py changed, reloading.

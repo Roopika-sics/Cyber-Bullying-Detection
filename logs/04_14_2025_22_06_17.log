@@ -1,0 +1,5 @@
+[ 2025-04-14 22:06:18,830 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-14 22:06:20,566 ] 248 django.request - WARNING - Not Found: /posts/create/font.css
+[ 2025-04-14 22:06:21,821 ] 248 django.request - WARNING - Not Found: /posts/my-posts/2/font.css
+[ 2025-04-14 22:06:24,507 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-14 22:06:26,176 ] 248 django.request - WARNING - Not Found: /posts/create/font.css

@@ -1,0 +1,6 @@
+[ 2025-04-14 22:28:56,963 ] 248 django.request - WARNING - Not Found: /posts/my-posts/2/font.css
+[ 2025-04-14 22:28:58,073 ] 248 django.request - WARNING - Not Found: /posts/create/font.css
+[ 2025-04-14 22:28:58,943 ] 248 django.request - WARNING - Not Found: /posts/my-posts/2/font.css
+[ 2025-04-14 22:29:01,983 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-14 22:29:04,832 ] 248 django.request - WARNING - Not Found: /posts/my-posts/2/font.css
+[ 2025-04-14 22:29:39,776 ] 266 django.utils.autoreload - INFO - C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\views.py changed, reloading.

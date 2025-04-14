@@ -1,0 +1,8 @@
+[ 2025-04-14 21:53:46,500 ] 248 django.request - WARNING - Not Found: /posts/my-posts/2/font.css
+[ 2025-04-14 21:53:52,270 ] 248 django.request - WARNING - Not Found: /profile/user/font.css
+[ 2025-04-14 21:53:54,203 ] 248 django.request - WARNING - Not Found: /edit/font.css
+[ 2025-04-14 21:53:56,128 ] 248 django.request - WARNING - Not Found: /profile/user/font.css
+[ 2025-04-14 21:53:57,761 ] 248 django.request - WARNING - Not Found: /posts/create/font.css
+[ 2025-04-14 21:53:58,608 ] 248 django.request - WARNING - Not Found: /posts/my-posts/2/font.css
+[ 2025-04-14 21:54:00,935 ] 248 django.request - WARNING - Not Found: /accounts/login/
+[ 2025-04-14 21:55:26,813 ] 266 django.utils.autoreload - INFO - C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\accounts\urls.py changed, reloading.

@@ -1,0 +1,34 @@
+[ 2025-04-14 21:55:36,942 ] 248 django.request - WARNING - Not Found: /posts/my-posts/2/font.css
+[ 2025-04-14 21:55:40,266 ] 248 django.request - ERROR - Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: registration/login.html
+[ 2025-04-14 21:55:49,781 ] 248 django.request - WARNING - Not Found: /posts/my-posts/2/font.css
+[ 2025-04-14 21:55:51,566 ] 248 django.request - WARNING - Not Found: /posts/my-posts/2/font.css
+[ 2025-04-14 21:55:57,354 ] 248 django.request - ERROR - Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: registration/login.html
+[ 2025-04-14 21:56:36,885 ] 266 django.utils.autoreload - INFO - C:\Users\vivek\AppData\Local\Programs\Python\Python310\Lib\site-packages\django\contrib\auth\views.py changed, reloading.

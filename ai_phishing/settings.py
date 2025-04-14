@@ -51,6 +51,12 @@ AUTHENTICATION_BACKENDS = [
 
 AUTH_USER_MODEL = 'account.User'
 
+LOGIN_URL = '/accounts/'
+
+from django.urls import reverse_lazy
+
+LOGIN_URL = reverse_lazy('login')
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

@@ -1,0 +1,4 @@
+[ 2025-04-14 22:29:50,017 ] 248 django.request - WARNING - Not Found: /posts/my-posts/2/font.css
+[ 2025-04-14 22:29:53,622 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-14 22:30:39,528 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-14 22:31:21,740 ] 266 django.utils.autoreload - INFO - C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\views.py changed, reloading.

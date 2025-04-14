@@ -1,0 +1,2 @@
+[ 2025-04-14 21:53:18,634 ] 248 django.request - WARNING - Not Found: /posts/my-posts/2/font.css
+[ 2025-04-14 21:53:24,422 ] 248 django.request - WARNING - Not Found: /accounts/login/
