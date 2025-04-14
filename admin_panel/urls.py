@@ -12,6 +12,7 @@ urlpatterns = [
     path('user-profile-admin<str:username>/', views.user_profile_admin, name='user_profile_admin'),
 
     path('admin/advertisers/', views.all_advertisers_view, name='all_advertisers'),
+    path('advertisements/', views.all_advertisements, name='all_advertisements'),
     path('admin/posts/', views.all_posts_view, name='all_posts'),
     path('admin/advertiser/approve/<int:id>/', views.approve_advertiser, name='approve_advertiser'),
     path('admin/advertiser/reject/<int:id>/', views.reject_advertiser, name='reject_advertiser'),

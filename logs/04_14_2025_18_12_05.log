@@ -1,0 +1,5 @@
+[ 2025-04-14 18:16:24,941 ] 248 django.request - WARNING - Not Found: /admin_panel/user-profile-adminauser/
+[ 2025-04-14 18:16:33,453 ] 248 django.request - WARNING - Not Found: /admin_panel/user-profile-admintestuser/font.css
+[ 2025-04-14 18:16:33,476 ] 248 django.request - WARNING - Not Found: /admin_panel/user-profile-admintestuser/font.css
+[ 2025-04-14 18:16:42,476 ] 248 django.request - WARNING - Not Found: /admin_panel/user-profile-adminuseraa/
+[ 2025-04-14 18:17:24,748 ] 266 django.utils.autoreload - INFO - C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\admin_panel\views.py changed, reloading.

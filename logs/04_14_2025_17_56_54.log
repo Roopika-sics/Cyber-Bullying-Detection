@@ -1,0 +1,15 @@
+[ 2025-04-14 17:57:12,007 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-14 17:57:12,070 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-14 17:57:12,225 ] 248 django.request - WARNING - Not Found: /vite.svg
+[ 2025-04-14 17:57:19,397 ] 248 django.request - WARNING - Not Found: /favicon.ico
+[ 2025-04-14 17:57:51,160 ] 248 django.request - WARNING - Not Found: /admin_panel/user-profile-adminuser/font.css
+[ 2025-04-14 18:03:43,171 ] 248 django.request - WARNING - Not Found: /admin_panel/user-profile-adminadmin/
+[ 2025-04-14 18:03:45,079 ] 248 django.request - WARNING - Not Found: /admin_panel/user-profile-adminuser/font.css
+[ 2025-04-14 18:03:46,829 ] 248 django.request - WARNING - Not Found: /admin_panel/user-profile-adminauser/
+[ 2025-04-14 18:03:48,898 ] 248 django.request - WARNING - Not Found: /admin_panel/user-profile-adminauser/
+[ 2025-04-14 18:03:50,417 ] 248 django.request - WARNING - Not Found: /admin_panel/user-profile-adminuser/font.css
+[ 2025-04-14 18:03:52,068 ] 248 django.request - WARNING - Not Found: /admin_panel/user-profile-adminuser1/font.css
+[ 2025-04-14 18:03:53,750 ] 248 django.request - WARNING - Not Found: /admin_panel/user-profile-adminvivek/font.css
+[ 2025-04-14 18:03:55,761 ] 248 django.request - WARNING - Not Found: /admin_panel/user-profile-admintuser/font.css
+[ 2025-04-14 18:03:58,635 ] 248 django.request - WARNING - Not Found: /admin_panel/user-profile-adminxyz/font.css
+[ 2025-04-14 18:09:40,052 ] 266 django.utils.autoreload - INFO - C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\admin_panel\views.py changed, reloading.

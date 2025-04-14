@@ -1,0 +1,15 @@
+[ 2025-04-14 18:19:58,558 ] 248 django.request - WARNING - Not Found: /admin_panel/user-profile-adminuser/font.css
+[ 2025-04-14 18:20:00,493 ] 248 django.request - WARNING - Not Found: /admin_panel/user-profile-adminauser/
+[ 2025-04-14 18:20:02,418 ] 248 django.request - WARNING - Not Found: /admin_panel/user-profile-adminvivek/font.css
+[ 2025-04-14 18:20:05,284 ] 248 django.request - WARNING - Not Found: /admin_panel/user-profile-adminuser1/font.css
+[ 2025-04-14 18:20:07,277 ] 248 django.request - WARNING - Not Found: /admin_panel/user-profile-adminusera/
+[ 2025-04-14 18:20:09,586 ] 248 django.request - WARNING - Not Found: /admin_panel/user-profile-adminuser/font.css
+[ 2025-04-14 18:20:11,681 ] 248 django.request - WARNING - Not Found: /admin_panel/user-profile-adminuser1/font.css
+[ 2025-04-14 18:20:15,066 ] 248 django.request - WARNING - Not Found: /admin_panel/user-profile-adminuser/font.css
+[ 2025-04-14 18:20:17,591 ] 248 django.request - WARNING - Not Found: /admin_panel/user-profile-adminauser/
+[ 2025-04-14 18:20:24,435 ] 248 django.request - WARNING - Not Found: /admin_panel/user-profile-adminvivek/font.css
+[ 2025-04-14 18:20:26,930 ] 248 django.request - WARNING - Not Found: /admin_panel/user-profile-adminuser1/font.css
+[ 2025-04-14 18:20:29,420 ] 248 django.request - WARNING - Not Found: /admin_panel/user-profile-admintestuser/font.css
+[ 2025-04-14 18:20:34,204 ] 248 django.request - WARNING - Not Found: /admin_panel/user-profile-adminvvk/font.css
+[ 2025-04-14 18:20:38,436 ] 248 django.request - WARNING - Not Found: /admin_panel/user-profile-adminuser/font.css
+[ 2025-04-14 18:20:39,884 ] 248 django.request - WARNING - Not Found: /admin_panel/user-profile-adminauser/

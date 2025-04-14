@@ -8,12 +8,12 @@
                 <h2 class="text-3xl font-bold text-black">🛡️ Abusive Comments</h2>
                 <p class="text-sm text-gray-500 mt-1">Review and moderate comments flagged by users or detected by system</p>
             </div>
-            <a href="{% url 'admin_dashboard' %}" class="inline-flex items-center gap-2 text-sm font-medium text-black bg-orange-100 px-4 py-2 rounded-xl hover:bg-gray-200 transition">
+            <!-- <a href="{% url 'admin_dashboard' %}" class="inline-flex items-center gap-2 text-sm font-medium text-black bg-orange-500 px-4 py-2 rounded-xl hover:bg-gray-200 transition">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                 </svg>
                 Back to Dashboard
-            </a>
+            </a> -->
         </div>
 
         <div class="p-6 space-y-10">
@@ -39,14 +39,14 @@
                                         <form action="{% url 'delete_comment' comment.id %}" method="POST">
                                             {% csrf_token %}
                                             <button type="submit" class="bg-red-600 hover:bg-red-700 text-white text-sm px-3 py-1.5 rounded-md transition flex items-center gap-1">
-                                                <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M9 2a1 1 0..." /></svg>
+                                                <!-- <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M9 2a1 1 0..." /></svg> -->
                                                 Delete
                                             </button>
                                         </form>
-                                        <button class="bg-gray-200 text-black text-sm px-3 py-1.5 rounded-md hover:bg-gray-300 transition flex items-center gap-1">
+                                        <!-- <button class="bg-gray-200 text-black text-sm px-3 py-1.5 rounded-md hover:bg-gray-300 transition flex items-center gap-1">
                                             <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 2a1 1 0..." /></svg>
                                             Ignore
-                                        </button>
+                                        </button> -->
                                     </div>
                                 </div>
                                 <div class="mt-3 text-sm text-black">
@@ -91,7 +91,7 @@
                                         <form action="{% url 'delete_comment' comment.id %}" method="POST">
                                             {% csrf_token %}
                                             <button type="submit" class="bg-red-600 hover:bg-red-700 text-white text-sm px-3 py-1.5 rounded-md transition flex items-center gap-1">
-                                                <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="..." /></svg>
+                                                <!-- <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="..." /></svg> -->
                                                 Delete
                                             </button>
                                         </form>

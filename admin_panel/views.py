@@ -5,7 +5,7 @@ from django.views.decorators.cache import never_cache
 from account.models import User
 from posts.models import Post, Comment
 from accounts.models import Profile
-from advertisers.models import Advertiser
+from advertisers.models import Advertisements
 # Create your views here.
 
 def is_admin(user):
@@ -66,6 +66,10 @@ def all_users(request):
 def all_posts(request):
     posts = Post.objects.all()
     return render(request, 'admin_panel/all_posts.html', {'posts': posts})
+
+def all_advertisements(request):
+    advertisements = Advertisements.objects.all()
+    return render(request, 'admin_panel/all_advertisements.html', {'advertisements': advertisements})
 
 @never_cache
 @user_passes_test(is_admin)

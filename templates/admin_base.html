@@ -46,7 +46,7 @@
             <i class="ph ph-book-open mr-2"></i> View Blogs
           </a>
           <a
-            href="#"
+            href="{% url 'all_users' %}"
             class="flex items-center py-2 px-4 rounded mb-2 {% if request.resolver_match.view_name == 'all_users' %} bg-orange-500 text-white {% else %} hover:bg-gray-300 {% endif %}"
           >
             <i class="ph ph-users mr-2"></i> View Users
@@ -58,7 +58,7 @@
             <i class="ph ph-storefront mr-2"></i> Advertisers
           </a>
           <a
-            href="#"
+            href="{% url 'all_advertisements' %}"
             class="flex items-center py-2 px-4 rounded mb-2 {% if request.resolver_match.view_name == 'all_advertisements' %} bg-orange-500 text-white {% else %} hover:bg-gray-300 {% endif %}"
           >
             <i class="ph ph-megaphone mr-2"></i> Advertisements
