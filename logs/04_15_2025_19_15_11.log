@@ -1,0 +1,64 @@
+[ 2025-04-15 19:15:15,142 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-15 19:15:15,275 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-15 19:15:15,682 ] 248 django.request - WARNING - Not Found: /vite.svg
+[ 2025-04-15 19:15:24,873 ] 248 django.request - WARNING - Not Found: /favicon.ico
+[ 2025-04-15 19:15:33,190 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-15 19:15:41,055 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-04-15 19:15:53,092 ] 248 django.request - WARNING - Not Found: /posts/my-posts/2/font.css
+[ 2025-04-15 19:15:54,772 ] 248 django.request - WARNING - Not Found: /posts/post/1/edit/font.css
+[ 2025-04-15 19:15:58,873 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-15 19:16:01,515 ] 248 django.request - WARNING - Not Found: /posts/my-posts/2/font.css
+[ 2025-04-15 19:16:19,300 ] 248 django.request - WARNING - Not Found: /posts/create/font.css
+[ 2025-04-15 19:16:22,023 ] 248 django.request - WARNING - Not Found: /profile/user/font.css
+[ 2025-04-15 19:16:24,101 ] 248 django.request - WARNING - Not Found: /edit/font.css
+[ 2025-04-15 19:16:26,608 ] 248 django.request - WARNING - Not Found: /profile/user/font.css
+[ 2025-04-15 19:16:31,489 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-04-15 19:41:02,146 ] 248 django.request - WARNING - Not Found: /posts/my-posts/2/font.css
+[ 2025-04-15 19:41:33,548 ] 248 django.request - WARNING - Not Found: /posts/create/font.css
+[ 2025-04-15 19:41:36,714 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-04-15 21:07:07,424 ] 248 django.request - WARNING - Not Found: /posts/my-posts/2/font.css
+[ 2025-04-15 21:07:11,469 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-04-15 21:08:54,635 ] 248 django.request - WARNING - Not Found: /favicon.ico
+[ 2025-04-15 21:09:09,639 ] 248 django.request - ERROR - Internal Server Error: /posts/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\views.py", line 30, in post_list
+    user_interests = [interest.strip().lower().replace(" ", "") for interest in user_profile.area_of_interest.split(",")]
+AttributeError: 'NoneType' object has no attribute 'area_of_interest'
+[ 2025-04-15 21:09:18,319 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-15 21:09:18,362 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-15 21:09:22,461 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-15 21:09:28,017 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-04-15 21:09:32,813 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-15 21:09:36,633 ] 248 django.request - WARNING - Not Found: /advertisers/add-advertisement/font.css
+[ 2025-04-15 21:10:24,948 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-15 21:10:28,760 ] 248 django.request - WARNING - Not Found: /register/font.css
+[ 2025-04-15 22:43:15,882 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-15 22:43:18,715 ] 248 django.request - WARNING - Not Found: /advertisers/register/font.css
+[ 2025-04-15 22:45:41,177 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-15 22:45:47,360 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-04-15 22:45:49,454 ] 248 django.request - WARNING - Not Found: /posts/my-posts/19/font.css
+[ 2025-04-15 22:45:50,373 ] 248 django.request - WARNING - Not Found: /posts/create/font.css
+[ 2025-04-15 22:45:51,486 ] 248 django.request - WARNING - Not Found: /posts/my-posts/19/font.css
+[ 2025-04-15 22:45:52,810 ] 248 django.request - WARNING - Not Found: /posts/create/font.css
+[ 2025-04-15 22:46:02,809 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-04-15 22:46:12,671 ] 248 django.request - WARNING - Not Found: /posts/post/10/font.css
+[ 2025-04-15 22:47:03,469 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-04-15 22:47:07,551 ] 248 django.request - WARNING - Not Found: /posts/my-posts/19/font.css
+[ 2025-04-15 22:47:10,612 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-15 22:47:16,285 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-15 22:47:22,406 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-15 22:47:27,858 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-15 22:47:38,612 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-04-15 22:47:40,005 ] 248 django.request - WARNING - Not Found: /posts/my-posts/19/font.css
+[ 2025-04-15 22:48:34,021 ] 248 django.request - WARNING - Not Found: /posts/my-posts/19/font.css
+[ 2025-04-15 22:49:27,520 ] 248 django.request - WARNING - Not Found: /posts/my-posts/19/font.css
+[ 2025-04-15 22:49:44,244 ] 248 django.request - WARNING - Not Found: /posts/post/10/edit/font.css
+[ 2025-04-15 22:50:54,897 ] 266 django.utils.autoreload - INFO - C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\urls.py changed, reloading.

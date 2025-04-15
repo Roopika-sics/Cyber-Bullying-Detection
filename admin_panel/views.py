@@ -57,7 +57,7 @@ def reject_advertiser(request, id):
 @login_required
 @user_passes_test(is_admin)
 def all_users(request):
-    users = User.objects.all()
+    users = User.objects.filter(user_type='normal', is_superuser=False)
     return render(request, 'admin_panel/all_users.html', {'users':users})
 
 @never_cache

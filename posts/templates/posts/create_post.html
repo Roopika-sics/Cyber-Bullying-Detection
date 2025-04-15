@@ -6,7 +6,9 @@
     <h1 class="text-3xl font-bold text-gray-800 mb-8">Create Post</h1>
 
     {% if messages %}
-    <div class="p-4 bg-red-50 border-l-4 border-red-500">
+    <div class="p-4 bg-red-50 border-l-4 border-red-500 relative">
+        <button type="button" class="absolute top-0 right-0 text-gray-600 hover:text-gray-900"
+                onclick="this.parentElement.style.display='none'">&times;</button>
         {% for message in messages %}
         <p class="text-red-700">{{ message }}</p>
         {% endfor %}

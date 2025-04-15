@@ -2,13 +2,19 @@
 {% block title %}My Posts | SocialConnect{% endblock %}
 
 {% block content %}
+
+{% if messages %}
+<div class="p-4 bg-red-50 border-l-4 border-red-500 relative">
+    <button type="button" class="absolute top-0 right-0 text-gray-600 hover:text-gray-900"
+            onclick="this.parentElement.style.display='none'">&times;</button>
+    {% for message in messages %}
+    <p class="text-red-700">{{ message }}</p>
+    {% endfor %}
+</div>
+{% endif %}
+
 <main class="max-w-7xl mx-auto px-4 py-8">
     <h1 class="text-2xl font-semibold mb-6">My Posts</h1>
-    {% if user.is_authenticated %}
-    <p>You are logged in as {{ user.username }}.</p>
-{% else %}
-    <p>You are not logged in. Please log in first.</p>
-{% endif %}
     {% if my_posts %}
         {% for post in my_posts %}
             <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-md overflow-hidden mb-8">
@@ -28,11 +34,12 @@
                     <!-- Edit & Delete Options -->
                     <div class="space-x-2">
                         <a href="{% url 'edit_post' post.id %}" class="text-blue-600 hover:underline">Edit</a>
-                        <form method="POST" action="{% url 'delete_post' post.id %}" class="inline">
+                        <a href="{% url 'delete_my_post' post.id %}" class="text-red-600 hover:underline">Delete</a>
+                        <!-- <form method="POST" action="{% url 'delete_post' post.id %}" class="inline">
                             {% csrf_token %}
                             <button type="submit"
                                     class="text-red-600 hover:underline">Delete</button>
-                        </form>
+                        </form> -->
                     </div>
                 </div>
 

@@ -41,7 +41,7 @@
       <div class="mt-4 flex space-x-2">
         <a href="{% url 'user_profile_admin' user.username %}" class="px-3 py-1 text-sm bg-blue-100 text-blue-800 rounded hover:bg-blue-200 font-medium">View</a>
         {% if not user.is_superuser %}
-        <a href="{% url 'suspend_user' user.id %}" class="px-3 py-1 text-sm bg-red-100 text-red-800 rounded hover:bg-red-200 font-medium">Suspend</a>
+        <a href="{% url 'suspend_user' user.id %}" class="px-3 py-1 text-sm bg-red-100 text-red-800 rounded hover:bg-red-200 font-medium">Active/Inactive</a>
         {% endif %}
       </div>
     </div>

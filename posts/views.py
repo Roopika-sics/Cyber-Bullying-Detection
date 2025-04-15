@@ -8,6 +8,7 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 from accounts.models import Profile
 from advertisers.models import Advertisements
+from django.contrib import messages
 @never_cache
 @login_required
 def create_post(request):
@@ -108,6 +109,7 @@ def delete_post(request, post_id):
     
     if post:
         post.delete()
+        messages.success(request, "Post deleted successfully.")
         return redirect('my_posts', user_id=request.user.id)
     else:
         return redirect('home')

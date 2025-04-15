@@ -17,7 +17,8 @@
           <th class="border p-2">Email</th>
           <th class="border p-2">Company Name</th>
           <th class="border p-2">Business Category</th>
-          <th class="border p-2">Action</th>
+          <th class="border p-2">Status</th>
+          <th class="border p-2">Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -29,9 +30,16 @@
             <td class="border p-2">{{ advertiser.email }}</td>
             <td class="border p-2">{{ advertiser.advertiser.business_name }}</td>
             <td class="border p-2">{{ advertiser.advertiser.business_type }}</td>
+            <td class="border p-2">
+              {% if advertiser.is_active %}
+                <span class="bg-green-100 text-green-800 px-2 py-1 rounded">Active</span>
+              {% else %}
+                <span class="bg-red-100 text-red-800 px-2 py-1 rounded">Inactive</span>
+              {% endif %}
+            </td>
           <td class="border p-2">
-            <a href="" class="text-green-600">✅</a>
-            <a href="" class="text-red-600">❌</a>
+            <a href="{% url 'approve_advertiser' advertiser.id %}" class="text-green-600">✅</a>
+            <a href="{% url 'reject_advertiser' advertiser.id %}" class="text-red-600">❌</a>
           </td>
         </tr>
         {% empty %}

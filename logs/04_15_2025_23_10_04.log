@@ -1,0 +1,14 @@
+[ 2025-04-15 23:10:10,724 ] 248 django.request - ERROR - Internal Server Error: /admin_panel/admin/advertiser/approve/20/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\cache.py", line 81, in _view_wrapper
+    add_never_cache_headers(response)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\cache.py", line 293, in add_never_cache_headers
+    patch_response_headers(response, cache_timeout=-1)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\cache.py", line 284, in patch_response_headers
+    if not response.has_header("Expires"):
+AttributeError: 'NoneType' object has no attribute 'has_header'
+[ 2025-04-15 23:10:31,239 ] 266 django.utils.autoreload - INFO - C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\admin_panel\views.py changed, reloading.
