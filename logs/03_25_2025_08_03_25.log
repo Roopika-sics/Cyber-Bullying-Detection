@@ -1,0 +1,3 @@
+[ 2025-03-25 08:03:30,442 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-03-25 08:03:30,648 ] 248 django.request - WARNING - Not Found: /vite.svg
+[ 2025-03-25 08:03:37,345 ] 248 django.request - WARNING - Not Found: /posts/font.css

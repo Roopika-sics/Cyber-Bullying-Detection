@@ -1,0 +1,24 @@
+[ 2025-03-22 17:07:16,549 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 17:07:19,536 ] 248 django.request - WARNING - Not Found: /advertisers/ad-click/1/font.css
+[ 2025-03-22 17:07:21,841 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 17:07:24,760 ] 248 django.request - WARNING - Not Found: /advertisers/ad-click/2/font.css
+[ 2025-03-22 17:07:26,182 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 17:07:28,299 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 17:07:43,457 ] 248 django.request - WARNING - Not Found: /advertisers/user-details/font.css
+[ 2025-03-22 17:07:49,422 ] 248 django.request - WARNING - Not Found: /advertisers/user-details/font.css
+[ 2025-03-22 17:07:50,573 ] 248 django.request - WARNING - Not Found: /advertisers/user-details/font.css
+[ 2025-03-22 17:07:51,351 ] 248 django.request - WARNING - Not Found: /advertisers/user-details/font.css
+[ 2025-03-22 17:08:03,774 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 17:08:07,739 ] 248 django.request - WARNING - Not Found: /advertisers/user-details/font.css
+[ 2025-03-22 17:08:08,730 ] 248 django.request - WARNING - Not Found: /advertisers/user-details/font.css
+[ 2025-03-22 17:08:09,289 ] 248 django.request - WARNING - Not Found: /advertisers/user-details/font.css
+[ 2025-03-22 17:08:27,188 ] 248 django.request - WARNING - Not Found: /advertisers/user-details/font.css
+[ 2025-03-22 17:08:30,580 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 17:08:34,969 ] 248 django.request - WARNING - Not Found: /advertisers/user-details/font.css
+[ 2025-03-22 17:08:35,658 ] 248 django.request - WARNING - Not Found: /advertisers/user-details/font.css
+[ 2025-03-22 17:08:39,030 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 17:08:40,728 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 17:08:42,402 ] 248 django.request - WARNING - Not Found: /advertisers/ad-click/2/font.css
+[ 2025-03-22 17:08:44,658 ] 248 django.request - WARNING - Not Found: /advertisers/user-details/font.css
+[ 2025-03-22 17:08:46,432 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 17:08:50,399 ] 266 django.utils.autoreload - INFO - C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\advertisers\views.py changed, reloading.

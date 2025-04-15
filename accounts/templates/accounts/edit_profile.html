@@ -1,59 +1,82 @@
 {% extends "base.html" %}
 
-{% block title %}Edit Profile{% endblock %}
-
 {% block content %}
-<div class="max-w-3xl mx-auto mt-10 bg-gray-800 p-6 rounded-lg shadow-lg text-white">
-    <h2 class="text-3xl font-bold text-blue-400">Edit Profile</h2>
+<main class="max-w-2xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-10">
+    <!-- Profile Section -->
+    <div class="text-center mb-6">
+        <h2 class="text-2xl font-bold text-gray-800">Edit Profile</h2>
+        <img 
+            src="{{ user.profile.profile_image.url }}" 
+            alt="Profile Image"
+            class="w-32 h-32 mx-auto rounded-full mb-4 border border-gray-300"
+            onerror="this.src='/static/assets/Images/user_empty_profile.png';"
+        />
+    </div>
 
-    {% if messages %}
-        {% for message in messages %}
-            <div class="mb-4 p-3 rounded {% if message.tags == 'success' %} bg-green-500 {% else %} bg-red-500 {% endif %}">
-                {{ message }}
-            </div>
-        {% endfor %}
-    {% endif %}
-
-    <form method="POST" class="mt-6">
+    <!-- Form Section -->
+    <form method="POST" enctype="multipart/form-data" class="space-y-6">
         {% csrf_token %}
-        
-        <div class="mb-4">
-            <label class="block text-lg font-semibold">Username</label>
-            {{ form.username }}
+
+        <!-- Username -->
+        <div>
+            <label class="block text-gray-700 font-semibold">Username</label>
+            <input type="text" name="username" value="{{ form.username.value|default_if_none:'' }}" 
+                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 border-gray-400 focus:ring-blue-500" required>
         </div>
 
-        <div class="mb-4">
-            <label class="block text-lg font-semibold">Email</label>
-            {{ form.email }}
+        <!-- Email -->
+        <div>
+            <label class="block text-gray-700 font-semibold">Email</label>
+            <input type="email" name="email" value="{{ form.email.value|default_if_none:'' }}" 
+                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 border-gray-400 focus:ring-blue-500" required>
         </div>
 
-        <div class="mb-4">
-            <label class="block text-lg font-semibold">Age</label>
-            {{ form.age }}
+        <!-- Age -->
+        <div>
+            <label class="block text-gray-700 font-semibold">Age</label>
+            <input type="number" name="age" value="{{ form.age.value|default_if_none:'' }}" 
+                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 border-gray-400 focus:ring-blue-500">
         </div>
 
-        <div class="mb-4">
-            <label class="block text-lg font-semibold">Country</label>
-            {{ form.country }}
+        <!-- Area of Interest -->
+        <div>
+            <label class="block text-gray-700 font-semibold">Area of Interest</label>
+            <input type="text" name="area_of_interest" value="{{ form.area_of_interest.value|default_if_none:'' }}" 
+                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 border-gray-400 focus:ring-blue-500">
         </div>
 
-        <div class="mb-4">
-            <label class="block text-lg font-semibold">State</label>
-            {{ form.state }}
-        </div>
-
-        <div class="mb-4">
-            <label class="block text-lg font-semibold">Area of Interest</label>
-            {{ form.area_of_interest }}
-        </div>
-        <div class="btns flex justify-between">
-            <button type="submit" class="px-4 py-2 bg-blue-500 hover:bg-blue-700 rounded">Update Profile</button>
-            <div class="mt-4">
-                <a href="{% url 'user_profile' user.username %}" class="text-blue-300 hover:underline">Back to Profile</a>
+        <!-- Country & State -->
+        <div class="flex flex-col md:flex-row gap-4">
+            <div class="w-full md:w-1/2">
+                <label class="block text-gray-700 font-semibold">Country</label>
+                <input type="text" name="country" value="{{ form.country.value|default_if_none:'' }}" 
+                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 border-gray-400 focus:ring-blue-500">
             </div>
+
+            <div class="w-full md:w-1/2">
+                <label class="block text-gray-700 font-semibold">State</label>
+                <input type="text" name="state" value="{{ form.state.value|default_if_none:'' }}" 
+                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 border-gray-400 focus:ring-blue-500">
+            </div>
+        </div>
+
+        <!-- Profile Image Upload -->
+        <div>
+            <label class="block text-gray-700 font-semibold">Profile Image</label>
+            <input type="file" name="profile_image" class="w-full px-4 py-2 border rounded-lg focus:outline-none border-gray-400">
+        </div>
+
+        <!-- Buttons -->
+        <div class="flex justify-center mt-8 gap-4">
+            <a href="{% url 'user_profile' user.username %}" 
+                class="px-12 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-decoration-none">
+                Cancel
+            </a>
+            <button type="submit" 
+                class="px-12 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors">
+                Save Changes
+            </button>
         </div>
     </form>
-    
-    
-</div>
+</main>
 {% endblock %}

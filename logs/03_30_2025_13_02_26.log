@@ -1,0 +1,13 @@
+[ 2025-03-30 13:02:30,199 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-03-30 13:02:30,411 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-03-30 13:02:30,596 ] 248 django.request - WARNING - Not Found: /vite.svg
+[ 2025-03-30 13:02:35,067 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-03-30 13:02:38,129 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-03-30 13:02:44,203 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-30 13:02:50,644 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-30 13:02:52,053 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-30 13:02:52,755 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-30 13:02:53,419 ] 248 django.request - WARNING - Not Found: /posts/create/font.css
+[ 2025-03-30 13:03:11,484 ] 248 django.request - WARNING - Not Found: /profile/user/font.css
+[ 2025-03-30 13:03:12,939 ] 248 django.request - WARNING - Not Found: /edit/font.css
+[ 2025-03-30 13:03:17,245 ] 248 django.request - WARNING - Not Found: /font.css

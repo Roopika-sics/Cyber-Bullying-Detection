@@ -1,0 +1,16 @@
+[ 2025-03-23 14:55:36,248 ] 248 django.request - WARNING - Not Found: /advertisers/user-details/font.css
+[ 2025-03-23 14:55:39,992 ] 248 django.request - WARNING - Not Found: /accounts/login/font.css
+[ 2025-03-23 14:55:44,510 ] 248 django.request - WARNING - Not Found: /advertisers/add-advertisement/font.css
+[ 2025-03-23 14:55:45,935 ] 248 django.request - WARNING - Not Found: /advertisers/user-details/font.css
+[ 2025-03-23 14:55:50,799 ] 248 django.request - WARNING - Not Found: /accounts/login/font.css
+[ 2025-03-23 14:58:00,403 ] 248 django.request - WARNING - Not Found: /advertisers/user-details/font.css
+[ 2025-03-23 14:58:04,269 ] 248 django.request - WARNING - Not Found: /accounts/login/font.css
+[ 2025-03-23 14:58:07,295 ] 248 django.request - WARNING - Not Found: /accounts/login/font.css
+[ 2025-03-23 14:58:12,044 ] 248 django.request - WARNING - Not Found: /accounts/login/font.css
+[ 2025-03-23 14:59:16,893 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-23 14:59:43,955 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 14:59:47,982 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 15:01:14,294 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 15:02:26,114 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 15:02:56,388 ] 248 django.request - WARNING - Not Found: /posts/post/2/font.css
+[ 2025-03-23 15:03:14,778 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css

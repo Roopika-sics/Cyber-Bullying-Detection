@@ -1,0 +1,71 @@
+[ 2025-03-24 17:45:51,481 ] 248 django.request - WARNING - Not Found: /advertisers/edit/font.css
+[ 2025-03-24 17:45:53,967 ] 248 django.request - WARNING - Not Found: /advertisers/profile/usera/font.css
+[ 2025-03-24 17:45:55,232 ] 248 django.request - WARNING - Not Found: /advertisers/edit/font.css
+[ 2025-03-24 17:45:56,459 ] 248 django.request - WARNING - Not Found: /advertisers/profile/usera/font.css
+[ 2025-03-24 17:45:57,508 ] 248 django.request - WARNING - Not Found: /advertisers/edit/font.css
+[ 2025-03-24 17:46:03,588 ] 248 django.request - WARNING - Not Found: /advertisers/profile/usera/font.css
+[ 2025-03-24 17:46:16,524 ] 248 django.request - WARNING - Not Found: /advertisers/profile/usera/font.css
+[ 2025-03-24 17:46:24,971 ] 248 django.request - WARNING - Not Found: /advertisers/edit/font.css
+[ 2025-03-24 17:46:26,524 ] 248 django.request - WARNING - Not Found: /advertisers/profile/usera/font.css
+[ 2025-03-24 17:46:27,903 ] 248 django.request - ERROR - Internal Server Error: /posts/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\views.py", line 30, in post_list
+    user_interests = [interest.strip().lower().replace(" ", "") for interest in user_profile.area_of_interest.split(",")]
+AttributeError: 'NoneType' object has no attribute 'area_of_interest'
+[ 2025-03-24 17:46:40,881 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-03-24 17:47:12,613 ] 248 django.request - WARNING - Not Found: /advertisers/add-advertisement/font.css
+[ 2025-03-24 17:47:15,617 ] 248 django.request - ERROR - Internal Server Error: /posts/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\views.py", line 30, in post_list
+    user_interests = [interest.strip().lower().replace(" ", "") for interest in user_profile.area_of_interest.split(",")]
+AttributeError: 'NoneType' object has no attribute 'area_of_interest'
+[ 2025-03-24 17:48:20,038 ] 248 django.request - ERROR - Internal Server Error: /posts/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\views.py", line 30, in post_list
+    user_interests = [interest.strip().lower().replace(" ", "") for interest in user_profile.area_of_interest.split(",")]
+AttributeError: 'NoneType' object has no attribute 'area_of_interest'
+[ 2025-03-24 17:51:05,449 ] 248 django.request - WARNING - Not Found: /advertisers/add-advertisement/font.css
+[ 2025-03-24 17:52:18,571 ] 248 django.request - WARNING - Not Found: /advertisers/add-advertisement/font.css
+[ 2025-03-24 17:52:24,202 ] 248 django.request - WARNING - Not Found: /advertisers/add-advertisement/font.css
+[ 2025-03-24 17:52:27,485 ] 248 django.request - WARNING - Not Found: /advertisers/add-advertisement/font.css
+[ 2025-03-24 17:52:36,251 ] 248 django.request - WARNING - Not Found: /advertisers/add-advertisement/font.css
+[ 2025-03-24 17:52:42,707 ] 248 django.request - WARNING - Not Found: /advertisers/add-advertisement/font.css
+[ 2025-03-24 17:52:56,364 ] 248 django.request - WARNING - Not Found: /advertisers/add-advertisement/font.css
+[ 2025-03-24 17:52:56,837 ] 248 django.request - WARNING - Not Found: /advertisers/add-advertisement/font.css
+[ 2025-03-24 17:53:12,190 ] 248 django.request - WARNING - Not Found: /advertisers/add-advertisement/font.css
+[ 2025-03-24 17:53:13,526 ] 248 django.request - WARNING - Not Found: /advertisers/add-advertisement/font.css
+[ 2025-03-24 17:53:20,900 ] 248 django.request - WARNING - Not Found: /advertisers/add-advertisement/font.css
+[ 2025-03-24 17:53:21,485 ] 248 django.request - WARNING - Not Found: /advertisers/add-advertisement/font.css
+[ 2025-03-24 17:53:25,181 ] 248 django.request - WARNING - Not Found: /advertisers/add-advertisement/font.css
+[ 2025-03-24 17:53:27,638 ] 248 django.request - WARNING - Not Found: /advertisers/add-advertisement/font.css
+[ 2025-03-24 17:54:11,230 ] 248 django.request - WARNING - Not Found: /advertisers/add-advertisement/font.css
+[ 2025-03-24 17:54:20,173 ] 248 django.request - WARNING - Not Found: /advertisers/add-advertisement/font.css
+[ 2025-03-24 17:54:25,775 ] 248 django.request - WARNING - Not Found: /advertisers/add-advertisement/font.css
+[ 2025-03-24 17:54:32,214 ] 248 django.request - WARNING - Not Found: /advertisers/add-advertisement/font.css
+[ 2025-03-24 17:55:38,346 ] 248 django.request - WARNING - Not Found: /advertisers/view-advertisements/font.css
+[ 2025-03-24 17:55:42,562 ] 248 django.request - WARNING - Not Found: /advertisers/user-details/font.css
+[ 2025-03-24 17:55:43,245 ] 248 django.request - WARNING - Not Found: /advertisers/view-advertisements/font.css

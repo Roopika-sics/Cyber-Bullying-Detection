@@ -1,0 +1,19 @@
+[ 2025-03-22 23:40:00,042 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 23:40:02,134 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:40:03,923 ] 248 django.request - WARNING - Not Found: /get_post_comments/2/
+[ 2025-03-22 23:41:27,284 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 23:41:27,287 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:41:27,319 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:41:29,551 ] 248 django.request - WARNING - Not Found: /get_post_comments/2/
+[ 2025-03-22 23:46:14,847 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 23:46:14,869 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:46:16,818 ] 248 django.request - WARNING - Not Found: /get_post_comments/2/
+[ 2025-03-22 23:46:36,319 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 23:46:36,326 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:46:36,362 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:46:37,521 ] 248 django.request - WARNING - Not Found: /get_post_comments/2/
+[ 2025-03-22 23:46:41,040 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 23:46:41,046 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:46:41,063 ] 248 django.request - WARNING - Not Found: /posts/assets/Images/pfpimg.png
+[ 2025-03-22 23:46:42,601 ] 248 django.request - WARNING - Not Found: /get_post_comments/2/
+[ 2025-03-22 23:46:54,065 ] 266 django.utils.autoreload - INFO - C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\views.py changed, reloading.

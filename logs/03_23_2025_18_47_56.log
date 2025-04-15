@@ -1,0 +1,13 @@
+[ 2025-03-23 18:48:35,066 ] 248 django.request - WARNING - Not Found: /edit/font.css
+[ 2025-03-23 18:48:37,962 ] 248 django.request - ERROR - Internal Server Error: /edit/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\accounts\views.py", line 157, in edit_profile
+    profile.profile_image = form.cleaned_data['profile_image']
+AttributeError: 'Profile' object has no attribute 'profile'
+[ 2025-03-23 18:48:38,028 ] 248 django.request - WARNING - Not Found: /favicon.ico

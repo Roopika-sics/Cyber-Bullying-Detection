@@ -1,0 +1,50 @@
+[ 2025-04-13 19:48:06,121 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-13 19:48:06,166 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-13 19:48:06,309 ] 248 django.request - WARNING - Not Found: /vite.svg
+[ 2025-04-13 19:48:17,453 ] 248 django.request - WARNING - Not Found: /advertisers/register/font.css
+[ 2025-04-13 19:48:20,781 ] 248 django.request - WARNING - Not Found: /register/font.css
+[ 2025-04-13 19:48:43,465 ] 248 django.request - WARNING - Not Found: /register/font.css
+[ 2025-04-13 19:48:54,389 ] 248 django.request - WARNING - Not Found: /register/font.css
+[ 2025-04-13 19:49:21,839 ] 248 django.request - WARNING - Not Found: /register/font.css
+[ 2025-04-13 19:49:26,552 ] 248 django.request - WARNING - Not Found: /register/font.css
+[ 2025-04-13 19:49:34,333 ] 248 django.request - WARNING - Not Found: /register/font.css
+[ 2025-04-13 19:49:37,192 ] 248 django.request - WARNING - Not Found: /register/font.css
+[ 2025-04-13 19:49:40,248 ] 248 django.request - WARNING - Not Found: /register/font.css
+[ 2025-04-13 19:50:32,578 ] 248 django.request - WARNING - Not Found: /register/font.css
+[ 2025-04-13 19:50:34,484 ] 248 django.request - WARNING - Not Found: /register/font.css
+[ 2025-04-13 19:50:40,961 ] 248 django.request - WARNING - Not Found: /register/font.css
+[ 2025-04-13 19:50:57,807 ] 248 django.request - WARNING - Not Found: /advertisers/register/font.css
+[ 2025-04-13 19:51:45,711 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-13 19:51:49,088 ] 248 django.request - WARNING - Not Found: /admin_panel/dashboard/font.css
+[ 2025-04-13 19:54:30,338 ] 248 django.request - ERROR - Internal Server Error: /admin_panel/dashboard/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\admin_panel\views.py", line 18, in admin_dashboard
+    return render(request, 'admin_panel/admin_dashboard.html')
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: admin_panel/admin_dashboard.html
+[ 2025-04-13 19:54:30,411 ] 248 django.request - WARNING - Not Found: /favicon.ico
+[ 2025-04-13 20:25:42,875 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-13 20:25:43,098 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-13 20:25:43,299 ] 248 django.request - WARNING - Not Found: /vite.svg
+[ 2025-04-13 20:25:48,071 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-13 20:25:50,801 ] 248 django.request - WARNING - Not Found: /advertisers/register/font.css
+[ 2025-04-13 20:26:06,869 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-13 20:26:10,912 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-13 20:26:15,421 ] 248 django.request - WARNING - Not Found: /advertisers/add-advertisement/font.css
+[ 2025-04-13 20:26:19,295 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-13 20:27:16,788 ] 266 django.utils.autoreload - INFO - C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\advertisers\views.py changed, reloading.

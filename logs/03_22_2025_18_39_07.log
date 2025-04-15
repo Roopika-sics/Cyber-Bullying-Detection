@@ -1,0 +1,8 @@
+[ 2025-03-22 18:39:33,254 ] 248 django.request - WARNING - Not Found: /advertisers/ad-click/2/font.css
+[ 2025-03-22 18:39:33,300 ] 248 django.request - WARNING - Not Found: /advertisers/ad-click/2/font.css
+[ 2025-03-22 18:39:47,464 ] 248 django.request - WARNING - Not Found: /advertisers/ad-click/2/font.css
+[ 2025-03-22 18:39:47,494 ] 248 django.request - WARNING - Not Found: /advertisers/ad-click/2/font.css
+[ 2025-03-22 18:40:20,246 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 18:40:54,894 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 18:40:56,124 ] 248 django.request - WARNING - Not Found: /advertisers/ad-click/2/font.css
+[ 2025-03-22 18:40:56,151 ] 248 django.request - WARNING - Not Found: /advertisers/ad-click/2/font.css

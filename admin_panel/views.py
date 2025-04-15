@@ -2,10 +2,10 @@ from django.contrib import messages
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.views.decorators.cache import never_cache
-from django.contrib.auth.models import User
+from account.models import User
 from posts.models import Post, Comment
 from accounts.models import Profile
-
+from advertisers.models import Advertisements
 # Create your views here.
 
 def is_admin(user):
@@ -15,7 +15,43 @@ def is_admin(user):
 @login_required
 @user_passes_test(is_admin)
 def admin_dashboard(request):
-    return render(request, 'admin_panel/admin_dashboard.html')
+    advertisers = User.objects.filter(is_active=False, user_type='advertiser')
+    recent_posts = Post.objects.order_by('-created_at')[:3]
+    return render(request, 'admin_panel/admin_dashboard.html', {'advertisers': advertisers, 'recent_posts': recent_posts})
+
+@never_cache
+@user_passes_test(is_admin)
+@login_required
+def all_advertisers_view(request):
+    advertisers = User.objects.filter(user_type='advertiser')
+    return render(request, 'admin_panel/advertiser_requests.html', {'advertisers': advertisers})
+
+@never_cache
+@user_passes_test(is_admin)
+@login_required
+def all_posts_view(request):
+    posts = Post.objects.all().order_by('-created_at')
+    return render(request, 'admin_panel/recent_posts.html', {'posts': posts})
+
+@never_cache
+@user_passes_test(is_admin)
+@login_required
+def approve_advertiser(request, id):
+    advertiser = User.objects.get(id=id)
+    advertiser.is_active = True
+    advertiser.save()
+    messages.success(request, "The advertiser has been approved successfully.")
+    return redirect('all_advertisers')
+
+@never_cache
+@user_passes_test(is_admin)
+@login_required
+def reject_advertiser(request, id):
+    advertiser = get_object_or_404(User, id=id)
+    advertiser.is_active = False
+    advertiser.save()
+    messages.error(request, "The advertiser has been rejected.")
+    return redirect('all_advertisers')
 
 @never_cache
 @login_required
@@ -30,6 +66,10 @@ def all_users(request):
 def all_posts(request):
     posts = Post.objects.all()
     return render(request, 'admin_panel/all_posts.html', {'posts': posts})
+
+def all_advertisements(request):
+    advertisements = Advertisements.objects.all()
+    return render(request, 'admin_panel/all_advertisements.html', {'advertisements': advertisements})
 
 @never_cache
 @user_passes_test(is_admin)

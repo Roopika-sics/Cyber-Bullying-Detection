@@ -1,0 +1,5 @@
+[ 2025-04-13 22:22:08,524 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-13 22:22:08,582 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-13 22:22:12,278 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-13 22:22:13,937 ] 248 django.request - WARNING - Not Found: /advertisers/register/font.css
+[ 2025-04-13 22:37:14,537 ] 266 django.utils.autoreload - INFO - C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\admin_panel\views.py changed, reloading.

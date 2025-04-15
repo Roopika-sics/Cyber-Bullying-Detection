@@ -1,0 +1,5 @@
+[ 2025-04-13 20:27:28,571 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-13 20:27:31,242 ] 248 django.request - WARNING - Not Found: /advertisers/register/font.css
+[ 2025-04-13 20:27:52,850 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-13 20:27:56,714 ] 248 django.request - WARNING - Not Found: /advertisers/add-advertisement/font.css
+[ 2025-04-13 20:28:04,733 ] 266 django.utils.autoreload - INFO - C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\advertisers\views.py changed, reloading.

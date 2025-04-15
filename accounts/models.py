@@ -1,6 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
-
+from account.models import User 
 # Create your models here.
 
 class Profile(models.Model):
@@ -9,6 +8,8 @@ class Profile(models.Model):
     age = models.IntegerField(null=True)
     country = models.CharField(max_length=20, null=True)
     state = models.CharField(max_length=20, null=True)
+    safe_mode = models.BooleanField(default=True)
+    profile_image = models.ImageField(upload_to='profile_images/', null=True, blank=True)
 
 
     def __str__(self):

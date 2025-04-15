@@ -1,0 +1,138 @@
+[ 2025-03-23 12:44:52,701 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 12:44:52,709 ] 248 django.request - WARNING - Not Found: /posts/post/1/assets/Images/pfpimg.png
+[ 2025-03-23 12:44:55,932 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 12:44:55,948 ] 248 django.request - WARNING - Not Found: /posts/post/1/assets/Images/pfpimg.png
+[ 2025-03-23 12:44:59,035 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 12:44:59,041 ] 248 django.request - WARNING - Not Found: /posts/post/1/assets/Images/pfpimg.png
+[ 2025-03-23 12:45:58,197 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 12:45:58,204 ] 248 django.request - WARNING - Not Found: /posts/post/1/assets/Images/pfpimg.png
+[ 2025-03-23 12:46:00,520 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 12:46:00,530 ] 248 django.request - WARNING - Not Found: /posts/post/1/assets/Images/pfpimg.png
+[ 2025-03-23 12:46:03,821 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 12:46:03,826 ] 248 django.request - WARNING - Not Found: /posts/post/1/assets/Images/pfpimg.png
+[ 2025-03-23 12:46:17,495 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 12:46:17,511 ] 248 django.request - WARNING - Not Found: /posts/post/1/assets/Images/pfpimg.png
+[ 2025-03-23 12:46:24,051 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 12:46:24,058 ] 248 django.request - WARNING - Not Found: /posts/post/1/assets/Images/pfpimg.png
+[ 2025-03-23 12:46:26,989 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 12:46:26,991 ] 248 django.request - WARNING - Not Found: /posts/post/1/assets/Images/pfpimg.png
+[ 2025-03-23 12:50:47,898 ] 248 django.request - WARNING - Not Found: /posts/post/1/assets/Images/pfpimg.png
+[ 2025-03-23 12:50:47,898 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 12:50:49,717 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-23 12:50:51,937 ] 248 django.request - WARNING - Not Found: /posts/post/2/assets/Images/pfpimg.png
+[ 2025-03-23 12:50:51,941 ] 248 django.request - WARNING - Not Found: /posts/post/2/font.css
+[ 2025-03-23 12:50:55,414 ] 248 django.request - WARNING - Not Found: /posts/post/2/assets/Images/pfpimg.png
+[ 2025-03-23 12:50:55,414 ] 248 django.request - WARNING - Not Found: /posts/post/2/font.css
+[ 2025-03-23 12:50:58,215 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 12:50:58,219 ] 248 django.request - WARNING - Not Found: /posts/post/1/assets/Images/pfpimg.png
+[ 2025-03-23 12:51:13,934 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-23 12:51:16,086 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 12:51:16,089 ] 248 django.request - WARNING - Not Found: /posts/post/1/assets/Images/pfpimg.png
+[ 2025-03-23 12:51:21,133 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 12:51:21,142 ] 248 django.request - WARNING - Not Found: /posts/post/1/assets/Images/pfpimg.png
+[ 2025-03-23 12:51:58,923 ] 248 django.request - WARNING - Not Found: /posts/post/1/assets/Images/pfpimg.png
+[ 2025-03-23 12:51:58,927 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 12:52:04,063 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 12:52:04,068 ] 248 django.request - WARNING - Not Found: /posts/post/1/assets/Images/pfpimg.png
+[ 2025-03-23 12:52:19,806 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 12:52:19,811 ] 248 django.request - WARNING - Not Found: /posts/post/1/assets/Images/pfpimg.png
+[ 2025-03-23 12:52:55,671 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 12:52:55,674 ] 248 django.request - WARNING - Not Found: /posts/post/1/assets/Images/pfpimg.png
+[ 2025-03-23 12:55:35,674 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 12:55:35,677 ] 248 django.request - WARNING - Not Found: /posts/post/1/assets/Images/pfpimg.png
+[ 2025-03-23 13:00:49,913 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 13:00:49,941 ] 248 django.request - WARNING - Not Found: /posts/post/1/assets/Images/pfpimg.png
+[ 2025-03-23 13:01:04,809 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 13:02:10,935 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 13:02:36,032 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 13:02:45,640 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 13:02:53,023 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 13:03:38,978 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 13:03:59,080 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 13:04:03,000 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 13:04:18,532 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 13:04:28,335 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 13:04:31,861 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 13:05:02,080 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 13:05:05,713 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 13:05:10,005 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 13:06:10,925 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 13:06:14,630 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 13:06:32,656 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 13:06:34,684 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 13:06:38,235 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 13:07:23,071 ] 248 django.request - WARNING - Not Found: /favicon.ico
+[ 2025-03-23 13:07:46,141 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 13:07:51,127 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 13:23:08,293 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 13:23:27,377 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 13:23:49,396 ] 248 django.request - ERROR - Internal Server Error: /posts/post/1/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\views.py", line 48, in post_details
+    return render(request, "posts/post_details.html", {"post": post})
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'comment_on_post' not found. 'comment_on_post' is not a valid view function or pattern name.
+[ 2025-03-23 13:25:24,071 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 13:25:28,232 ] 248 django.request - WARNING - Bad Request: /posts/comment/1/
+[ 2025-03-23 13:25:33,098 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 13:25:38,460 ] 248 django.request - WARNING - Bad Request: /posts/comment/1/
+[ 2025-03-23 13:25:40,289 ] 248 django.request - WARNING - Bad Request: /posts/comment/1/
+[ 2025-03-23 13:25:43,278 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 13:31:43,344 ] 248 django.request - WARNING - Not Found: /posts/post/1/font.css
+[ 2025-03-23 13:31:45,703 ] 248 django.request - WARNING - Not Found: /comment/1/
+[ 2025-03-23 13:31:47,029 ] 248 django.request - WARNING - Not Found: /comment/1/
+[ 2025-03-23 13:31:48,089 ] 248 django.request - WARNING - Not Found: /comment/1/
+[ 2025-03-23 13:31:48,422 ] 248 django.request - WARNING - Not Found: /comment/1/
+[ 2025-03-23 13:31:48,591 ] 248 django.request - WARNING - Not Found: /comment/1/
+[ 2025-03-23 13:31:50,215 ] 248 django.request - WARNING - Not Found: /comment/1/
+[ 2025-03-23 13:31:55,482 ] 248 django.request - WARNING - Not Found: /comment/1/
+[ 2025-03-23 13:31:55,632 ] 248 django.request - WARNING - Not Found: /comment/1/
+[ 2025-03-23 13:31:55,857 ] 248 django.request - WARNING - Not Found: /comment/1/
+[ 2025-03-23 13:32:10,602 ] 266 django.utils.autoreload - INFO - C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\views.py changed, reloading.

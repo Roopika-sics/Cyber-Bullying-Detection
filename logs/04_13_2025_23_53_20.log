@@ -1,0 +1,11 @@
+[ 2025-04-13 23:53:20,963 ] 248 django.request - WARNING - Not Found: /accounts/login/
+[ 2025-04-13 23:53:26,775 ] 248 django.request - WARNING - Not Found: /accounts/login/
+[ 2025-04-13 23:53:29,232 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-13 23:53:39,063 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-13 23:53:45,561 ] 248 django.request - WARNING - Not Found: /accounts/login/
+[ 2025-04-13 23:53:54,878 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-13 23:53:55,352 ] 248 django.request - WARNING - Not Found: /accounts/login/
+[ 2025-04-13 23:54:02,931 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-04-13 23:54:05,479 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-13 23:54:05,901 ] 248 django.request - WARNING - Not Found: /accounts/login/
+[ 2025-04-13 23:54:23,988 ] 266 django.utils.autoreload - INFO - C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\admin_panel\views.py changed, reloading.

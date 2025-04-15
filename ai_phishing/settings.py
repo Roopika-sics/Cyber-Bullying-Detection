@@ -41,11 +41,15 @@ INSTALLED_APPS = [
     'posts',
     'home',
     'admin_panel',
+    'advertisers',
+    'account',
 ]
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
+
+AUTH_USER_MODEL = 'account.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

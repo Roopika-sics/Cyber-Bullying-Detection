@@ -1,0 +1,11 @@
+[ 2025-03-22 17:05:59,419 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-03-22 17:06:02,014 ] 248 django.request - ERROR - Internal Server Error: /advertisers/ad-click/1/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\advertisers\views.py", line 74, in ad_click
+    ad = get_object_or_404(Ad, id=ad_id)
+NameError: name 'Ad' is not defined
+[ 2025-03-22 17:06:11,337 ] 266 django.utils.autoreload - INFO - C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\advertisers\views.py changed, reloading.

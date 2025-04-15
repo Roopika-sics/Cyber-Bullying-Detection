@@ -1,0 +1,12 @@
+[ 2025-04-14 14:13:17,213 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-14 14:13:17,252 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-14 14:13:17,782 ] 248 django.request - WARNING - Not Found: /vite.svg
+[ 2025-04-14 14:13:22,278 ] 248 django.request - WARNING - Not Found: /favicon.ico
+[ 2025-04-14 14:16:50,427 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-14 14:16:50,515 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-14 14:16:50,934 ] 248 django.request - WARNING - Not Found: /vite.svg
+[ 2025-04-14 14:16:55,488 ] 248 django.request - WARNING - Not Found: /posts/create/font.css
+[ 2025-04-14 14:16:57,338 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-04-14 14:17:49,528 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-04-14 14:17:57,283 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-04-14 14:20:12,435 ] 248 django.request - WARNING - Not Found: /admin_panel/users/font.css

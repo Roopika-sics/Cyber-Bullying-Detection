@@ -1,0 +1,2 @@
+[ 2025-03-23 18:56:29,728 ] 248 django.request - WARNING - Not Found: /edit/font.css
+[ 2025-03-23 18:56:45,215 ] 266 django.utils.autoreload - INFO - C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\accounts\views.py changed, reloading.

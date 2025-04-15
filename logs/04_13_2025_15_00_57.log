@@ -1,0 +1,2 @@
+[ 2025-04-13 15:17:02,774 ] 248 django.request - WARNING - Not Found: /advertisers/register/font.css
+[ 2025-04-13 15:17:47,142 ] 266 django.utils.autoreload - INFO - C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\advertisers\forms.py changed, reloading.
