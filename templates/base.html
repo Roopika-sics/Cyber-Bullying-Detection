@@ -594,11 +594,20 @@
     function previewImage_1(event) {
         const preview = document.getElementById("previewImage");
         const uploadIcon = document.getElementById("uploadIcon");
-        preview.classList.remove("hidden");
-        uploadIcon.style.display = "none";
-        preview.src = URL.createObjectURL(event.target.files[0]);
+
+        const file = event.target.files[0];
+        if (file) {
+            const imageUrl = URL.createObjectURL(file);
+            preview.src = imageUrl;
+            preview.classList.remove("hidden");
+
+            if (uploadIcon) {
+                uploadIcon.classList.add("hidden");
+            }
+        }
     }
 </script>
+
 
 </body>
 </html>

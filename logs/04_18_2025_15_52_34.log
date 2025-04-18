@@ -1,0 +1,24 @@
+[ 2025-04-18 15:52:38,510 ] 248 django.request - WARNING - Not Found: /posts/my-posts/19/font.css
+[ 2025-04-18 15:52:38,640 ] 248 django.request - WARNING - Not Found: /posts/my-posts/19/font.css
+[ 2025-04-18 15:52:40,906 ] 248 django.request - WARNING - Not Found: /posts/my-posts/19/font.css
+[ 2025-04-18 15:52:42,555 ] 248 django.request - WARNING - Not Found: /posts/post/16/edit/font.css
+[ 2025-04-18 15:52:48,157 ] 248 django.request - ERROR - Internal Server Error: /posts/post/16/edit/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\views.py", line 125, in edit_post
+    return redirect('my_posts')
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 49, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 180, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'my_posts' with no arguments not found. 1 pattern(s) tried: ['posts/my\\-posts/(?P<user_id>[0-9]+)/\\Z']
+[ 2025-04-18 15:52:52,962 ] 266 django.utils.autoreload - INFO - C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\views.py changed, reloading.

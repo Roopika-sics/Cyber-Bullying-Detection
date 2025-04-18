@@ -122,7 +122,7 @@ def edit_post(request, post_id):
         form = PostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
             form.save()
-            return redirect('my_post', post_id)
+            return redirect('my_posts', user_id=request.user.id)
     else:
         form = PostForm(instance=post)
 

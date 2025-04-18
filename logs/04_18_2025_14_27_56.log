@@ -1,0 +1,69 @@
+[ 2025-04-18 14:28:27,512 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-18 14:28:27,542 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-18 14:28:27,922 ] 248 django.request - WARNING - Not Found: /vite.svg
+[ 2025-04-18 14:28:33,065 ] 248 django.request - WARNING - Not Found: /favicon.ico
+[ 2025-04-18 14:28:35,493 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-18 14:28:39,389 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-18 14:28:44,141 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-18 14:28:54,859 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-04-18 14:28:59,540 ] 248 django.request - WARNING - Not Found: /posts/my-posts/19/font.css
+[ 2025-04-18 14:29:01,368 ] 248 django.request - WARNING - Not Found: /posts/post/15/edit/font.css
+[ 2025-04-18 14:29:10,158 ] 248 django.request - WARNING - Not Found: /posts/post/15/edit/font.css
+[ 2025-04-18 15:45:42,651 ] 248 django.request - WARNING - Not Found: /posts/my-posts/19/font.css
+[ 2025-04-18 15:45:44,672 ] 248 django.request - WARNING - Not Found: /posts/post/15/edit/font.css
+[ 2025-04-18 15:45:59,684 ] 248 django.request - ERROR - Internal Server Error: /posts/post/15/edit/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\views.py", line 125, in edit_post
+    return redirect('my_post', post_id)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 49, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 180, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'my_post' not found. 'my_post' is not a valid view function or pattern name.
+[ 2025-04-18 15:46:13,587 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-04-18 15:46:18,060 ] 248 django.request - WARNING - Not Found: /posts/my-posts/19/font.css
+[ 2025-04-18 15:46:19,409 ] 248 django.request - WARNING - Not Found: /posts/post/15/edit/font.css
+[ 2025-04-18 15:47:00,791 ] 248 django.request - WARNING - Not Found: /posts/post/15/edit/font.css
+[ 2025-04-18 15:47:10,600 ] 248 django.request - WARNING - Not Found: /posts/post/15/edit/font.css
+[ 2025-04-18 15:47:17,508 ] 248 django.request - WARNING - Not Found: /posts/my-posts/19/font.css
+[ 2025-04-18 15:47:21,940 ] 248 django.request - WARNING - Not Found: /posts/create/font.css
+[ 2025-04-18 15:50:39,884 ] 248 django.request - WARNING - Not Found: /posts/create/font.css
+[ 2025-04-18 15:50:43,005 ] 248 django.request - WARNING - Not Found: /posts/create/font.css
+[ 2025-04-18 15:50:44,063 ] 248 django.request - WARNING - Not Found: /posts/my-posts/19/font.css
+[ 2025-04-18 15:50:45,899 ] 248 django.request - WARNING - Not Found: /posts/create/font.css
+[ 2025-04-18 15:50:53,099 ] 248 django.request - WARNING - Not Found: /posts/font.css
+[ 2025-04-18 15:50:55,348 ] 248 django.request - WARNING - Not Found: /posts/my-posts/19/font.css
+[ 2025-04-18 15:50:56,694 ] 248 django.request - WARNING - Not Found: /posts/post/16/edit/font.css
+[ 2025-04-18 15:51:02,996 ] 248 django.request - ERROR - Internal Server Error: /posts/post/16/edit/
+Traceback (most recent call last):
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\views.py", line 125, in edit_post
+    return redirect('my_post', post_id)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 49, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 180, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\vivek\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'my_post' not found. 'my_post' is not a valid view function or pattern name.
+[ 2025-04-18 15:51:05,781 ] 248 django.request - WARNING - Not Found: /posts/create/font.css
+[ 2025-04-18 15:51:06,854 ] 248 django.request - WARNING - Not Found: /posts/my-posts/19/font.css
+[ 2025-04-18 15:51:09,921 ] 248 django.request - WARNING - Not Found: /posts/post/16/edit/font.css
+[ 2025-04-18 15:51:40,384 ] 266 django.utils.autoreload - INFO - C:\Users\vivek\Desktop\Projects\Cyber Guardia\Cyber-Bullying-Detection\posts\views.py changed, reloading.
