@@ -2,108 +2,68 @@
 {% block title %}Login{% endblock %}
 {% block content %}
 {% load static %}
-<!-- {% block navbar %}{% endblock %} -->
 
-<div
-            class="modal homepage-navbar-modal-logout"
-            id="logoutModal"
-            style="display: none"
-        >
-            <div class="modal-dialog">
-                <div class="modal-content homepage-navbar-modal-content">
-                    <div class="modal-header homepage-modal-logout-header">
-                        <h5 class="modal-title">
-                            Are you sure you want to Logout?
-                        </h5>
-                    </div>
-                    <div class="modal-footer homepage-modal-logout-footer">
-                        <button
-                            class="btn btn-danger w-25"
-                            onclick="confirmLogout()"
-                        >
-                            Yes
-                        </button>
-                        <button
-                            class="btn btn-secondary w-25"
-                            onclick="cancelLogout()"
-                        >
-                            No
-                        </button>
-                    </div>
-                </div>
+<div class="Login-container d-flex justify-content-center">
+    <div class="col-md-6 Login_RightSide">
+        <p class="Login_RightSide_head text-center">Login!</p>
+        <form method="post" action="{% url 'login' %}" class="mx-auto">
+          {% csrf_token %}
+          {% if messages %}
+          <div class="mb-4 text-center">
+              {% for message in messages %}
+                  {% if message.tags == "success" %}
+                      <p class="text-green-500">{{ message }}</p>
+                  {% elif message.tags == "error" %}
+                      <p class="text-red-500">{{ message }}</p>
+                  {% endif %}
+              {% endfor %}
+          </div>
+          {% endif %}
+            <div class="mb-4 mt-3">
+                <input
+                    type="text"
+                    class="form-control"
+                    id="username"
+                    placeholder="Username"
+                    name="username"
+                    required
+                />
+                <div class="error" id="username-error"></div>
             </div>
-        </div>
 
-        <div class="Login-container">
-            <div class="row">
-                <div class="col-md-6 Login_LeftSide">
-                    <img
-                        class="Login_Page_Img"
-                        src="{% static 'Images/Login_Background.png' %}"
-                        alt="Background"
-                    />
-                </div>
-                <div class="col-md-6 Login_RightSide">
-                    <p class="Login_RightSide_head">Login!</p>
-                    <form method="post" action="{% url 'login' %}">
-                      {% csrf_token %}
-                      {% if messages %}
-                      <div class="mb-4 text-center">
-                          {% for message in messages %}
-                              {% if message.tags == "success" %}
-                                  <p class="text-green-500">{{ message }}</p>
-                              {% elif message.tags == "error" %}
-                                  <p class="text-red-500">{{ message }}</p>
-                              {% endif %}
-                          {% endfor %}
-                      </div>
-                      {% endif %}
-                        <div class="mb-4 mt-3">
-                            <input
-                                type="text"
-                                class="form-control"
-                                id="username"
-                                placeholder="Username"
-                                name="username"
-                                required
-                            />
-                            <div class="error" id="username-error"></div>
-                        </div>
-
-                        <div class="mb-4 position-relative">
-                            <input
-                                type="password"
-                                class="form-control"
-                                id="password"
-                                placeholder="Password"
-                                name="password"
-                                required
-                            />
-                            <div class="error" id="password-error"></div>
-                        </div>
-
-                        <div class="d-flex justify-content-end mb-3">
-                            <a href="{% url 'forgot_password' %}" class="login-forgetpass"
-                                >Forget Password?</a
-                            >
-                        </div>
-
-                        <div class="error" id="api-error"></div>
-
-                        <button type="submit" class="btn Login_Button mb-5">
-                            Login
-                        </button>
-                    </form>
-                    <p>
-                        Don't have an account?
-                        <a class="signup-decoration" href="{% url 'register' %}">
-                            <span class="dont-have-an-account-signup"
-                                >Sign Up</span
-                            >
-                        </a>
-                    </p>
-                </div>
+            <div class="mb-4 position-relative">
+                <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    placeholder="Password"
+                    name="password"
+                    required
+                />
+                <div class="error" id="password-error"></div>
             </div>
-        </div>
+
+            <div class="d-flex justify-content-end mb-3">
+                <a href="{% url 'forgot_password' %}" class="login-forgetpass"
+                    >Forget Password?</a
+                >
+            </div>
+
+            <div class="error" id="api-error"></div>
+
+            <button type="submit" class="btn Login_Button mb-5">
+                Login
+            </button>
+        </form>
+        <p class="text-center">
+            Don't have an account?
+            <a class="signup-decoration" href="{% url 'register' %}">
+                <span class="dont-have-an-account-signup"
+                    >Sign Up</span
+                >
+            </a>
+        </p>
+    </div>
+</div>
 
 {% endblock %}

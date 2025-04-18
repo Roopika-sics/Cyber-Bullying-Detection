@@ -5,17 +5,9 @@
 {% block navbar %}{% endblock %}
 
 <div class="signup-container">
-    <div class="Signup_LeftSide">
-        <img
-            class="SignUp_Page_Img"
-            src="{% static 'Images/Signup_Page_Img.png' %}"
-            alt="Sign Up"
-        />
-    </div>
-
     <div class="Signup_RightSide">
         <p class="Signup_RightSide_head">Sign Up!</p>
-        <form method="post" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data" class="flex flex-col items-center justify-center">
             {% csrf_token %}
 
             <!-- Image Upload -->
@@ -121,3 +113,4 @@ function previewImage(event) {
 </script>
 
 {% endblock %}
+
