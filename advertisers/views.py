@@ -30,7 +30,7 @@ def resister(request):
             messages.success(request, 'Registration Successfull! please login')
             return redirect('login')
     else:
-        form = AdvertiserRegistrationForm
+        form = AdvertiserRegistrationForm()
     return render(request, 'advertisers/register.html', {'form': form})
 
 @never_cache
