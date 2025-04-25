@@ -72,3 +72,6 @@
 [ 2025-04-18 16:09:03,187 ] 248 django.request - WARNING - Not Found: /advertisers/view-advertisements/font.css
 [ 2025-04-18 16:09:04,241 ] 248 django.request - WARNING - Not Found: /advertisers/user-details/font.css
 [ 2025-04-18 16:09:07,306 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-18 16:09:34,903 ] 248 django.request - WARNING - Not Found: /font.css
+[ 2025-04-18 16:10:56,454 ] 248 django.request - WARNING - Not Found: /advertisers/register/font.css
+[ 2025-04-18 16:11:00,123 ] 248 django.request - WARNING - Not Found: /register/font.css
