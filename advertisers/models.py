@@ -18,6 +18,11 @@ class Advertisements(models.Model):
         ('lifestyle', 'Life Style'),
         ('food_cooking', 'Food and Cooking'),
         ('electronics_appliances', 'Electronics and Home Appliances'),
+        ('movie', 'Movie'),
+        ('music', 'Music'),
+        ('photography', 'Photography'),
+        ('gaming', 'Gaming'),
+        ('travel', 'Travel'),
     ]
     advertiser = models.ForeignKey(Advertiser, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
